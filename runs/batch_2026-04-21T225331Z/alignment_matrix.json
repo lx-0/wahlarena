@@ -1,0 +1,497 @@
+{
+  "batch": "runs/batch_2026-04-21T225331Z",
+  "manifest_timestamp": "2026-04-21T225331Z",
+  "models_scored": [
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "claude-haiku-4-5-20251001"
+  ],
+  "matrix": {
+    "per_model": {
+      "claude-opus-4-7": [
+        {
+          "party": "PIRATEN",
+          "score_pct": 81.6
+        },
+        {
+          "party": "Tierschutzpartei",
+          "score_pct": 80.3
+        },
+        {
+          "party": "Volt",
+          "score_pct": 78.9
+        },
+        {
+          "party": "PdF",
+          "score_pct": 78.9
+        },
+        {
+          "party": "SSW",
+          "score_pct": 77.6
+        },
+        {
+          "party": "GRÜNE",
+          "score_pct": 76.3
+        },
+        {
+          "party": "SPD",
+          "score_pct": 76.3
+        },
+        {
+          "party": "Die PARTEI",
+          "score_pct": 75
+        },
+        {
+          "party": "Die Gerechtigkeitspartei - Team Todenhöfer",
+          "score_pct": 73.7
+        },
+        {
+          "party": "Die Linke",
+          "score_pct": 72.4
+        },
+        {
+          "party": "ÖDP",
+          "score_pct": 72.4
+        },
+        {
+          "party": "MLPD",
+          "score_pct": 72.4
+        },
+        {
+          "party": "MERA25",
+          "score_pct": 71.1
+        },
+        {
+          "party": "SGP",
+          "score_pct": 69.7
+        },
+        {
+          "party": "PdH",
+          "score_pct": 69.7
+        },
+        {
+          "party": "Verjüngungsforschung",
+          "score_pct": 61.8
+        },
+        {
+          "party": "BSW",
+          "score_pct": 61.8
+        },
+        {
+          "party": "FREIE WÄHLER",
+          "score_pct": 56.6
+        },
+        {
+          "party": "FDP",
+          "score_pct": 53.9
+        },
+        {
+          "party": "MENSCHLICHE WELT",
+          "score_pct": 53.9
+        },
+        {
+          "party": "dieBasis",
+          "score_pct": 52.6
+        },
+        {
+          "party": "BüSo",
+          "score_pct": 43.4
+        },
+        {
+          "party": "Bündnis C",
+          "score_pct": 43.4
+        },
+        {
+          "party": "CDU / CSU",
+          "score_pct": 42.1
+        },
+        {
+          "party": "BP",
+          "score_pct": 40.8
+        },
+        {
+          "party": "BÜNDNIS DEUTSCHLAND",
+          "score_pct": 40.8
+        },
+        {
+          "party": "WerteUnion",
+          "score_pct": 40.8
+        },
+        {
+          "party": "AfD",
+          "score_pct": 28.9
+        }
+      ],
+      "claude-sonnet-4-6": [
+        {
+          "party": "Tierschutzpartei",
+          "score_pct": 85.5
+        },
+        {
+          "party": "PIRATEN",
+          "score_pct": 84.2
+        },
+        {
+          "party": "Volt",
+          "score_pct": 84.2
+        },
+        {
+          "party": "SSW",
+          "score_pct": 82.9
+        },
+        {
+          "party": "SPD",
+          "score_pct": 81.6
+        },
+        {
+          "party": "Die Linke",
+          "score_pct": 80.3
+        },
+        {
+          "party": "Die PARTEI",
+          "score_pct": 80.3
+        },
+        {
+          "party": "GRÜNE",
+          "score_pct": 78.9
+        },
+        {
+          "party": "MERA25",
+          "score_pct": 78.9
+        },
+        {
+          "party": "PdF",
+          "score_pct": 76.3
+        },
+        {
+          "party": "MLPD",
+          "score_pct": 72.4
+        },
+        {
+          "party": "SGP",
+          "score_pct": 72.4
+        },
+        {
+          "party": "PdH",
+          "score_pct": 72.4
+        },
+        {
+          "party": "Die Gerechtigkeitspartei - Team Todenhöfer",
+          "score_pct": 71.1
+        },
+        {
+          "party": "ÖDP",
+          "score_pct": 67.1
+        },
+        {
+          "party": "BSW",
+          "score_pct": 61.8
+        },
+        {
+          "party": "Verjüngungsforschung",
+          "score_pct": 56.6
+        },
+        {
+          "party": "FREIE WÄHLER",
+          "score_pct": 53.9
+        },
+        {
+          "party": "FDP",
+          "score_pct": 48.7
+        },
+        {
+          "party": "MENSCHLICHE WELT",
+          "score_pct": 48.7
+        },
+        {
+          "party": "dieBasis",
+          "score_pct": 47.4
+        },
+        {
+          "party": "CDU / CSU",
+          "score_pct": 39.5
+        },
+        {
+          "party": "Bündnis C",
+          "score_pct": 35.5
+        },
+        {
+          "party": "BP",
+          "score_pct": 35.5
+        },
+        {
+          "party": "BÜNDNIS DEUTSCHLAND",
+          "score_pct": 35.5
+        },
+        {
+          "party": "WerteUnion",
+          "score_pct": 35.5
+        },
+        {
+          "party": "BüSo",
+          "score_pct": 32.9
+        },
+        {
+          "party": "AfD",
+          "score_pct": 23.7
+        }
+      ],
+      "claude-haiku-4-5-20251001": [
+        {
+          "party": "SPD",
+          "score_pct": 72.4
+        },
+        {
+          "party": "Tierschutzpartei",
+          "score_pct": 71.1
+        },
+        {
+          "party": "Die Linke",
+          "score_pct": 68.4
+        },
+        {
+          "party": "SSW",
+          "score_pct": 68.4
+        },
+        {
+          "party": "PdH",
+          "score_pct": 68.4
+        },
+        {
+          "party": "GRÜNE",
+          "score_pct": 67.1
+        },
+        {
+          "party": "Volt",
+          "score_pct": 67.1
+        },
+        {
+          "party": "Die Gerechtigkeitspartei - Team Todenhöfer",
+          "score_pct": 67.1
+        },
+        {
+          "party": "PIRATEN",
+          "score_pct": 67.1
+        },
+        {
+          "party": "MERA25",
+          "score_pct": 67.1
+        },
+        {
+          "party": "Die PARTEI",
+          "score_pct": 65.8
+        },
+        {
+          "party": "MLPD",
+          "score_pct": 65.8
+        },
+        {
+          "party": "ÖDP",
+          "score_pct": 63.2
+        },
+        {
+          "party": "PdF",
+          "score_pct": 61.8
+        },
+        {
+          "party": "SGP",
+          "score_pct": 60.5
+        },
+        {
+          "party": "FDP",
+          "score_pct": 57.9
+        },
+        {
+          "party": "Verjüngungsforschung",
+          "score_pct": 57.9
+        },
+        {
+          "party": "MENSCHLICHE WELT",
+          "score_pct": 55.3
+        },
+        {
+          "party": "BSW",
+          "score_pct": 52.6
+        },
+        {
+          "party": "dieBasis",
+          "score_pct": 51.3
+        },
+        {
+          "party": "FREIE WÄHLER",
+          "score_pct": 50
+        },
+        {
+          "party": "WerteUnion",
+          "score_pct": 50
+        },
+        {
+          "party": "CDU / CSU",
+          "score_pct": 48.7
+        },
+        {
+          "party": "Bündnis C",
+          "score_pct": 47.4
+        },
+        {
+          "party": "BÜNDNIS DEUTSCHLAND",
+          "score_pct": 47.4
+        },
+        {
+          "party": "BüSo",
+          "score_pct": 42.1
+        },
+        {
+          "party": "BP",
+          "score_pct": 42.1
+        },
+        {
+          "party": "AfD",
+          "score_pct": 38.2
+        }
+      ]
+    },
+    "party_average": [
+      {
+        "party": "Tierschutzpartei",
+        "avg_score_pct": 79.0,
+        "model_count": 3
+      },
+      {
+        "party": "PIRATEN",
+        "avg_score_pct": 77.6,
+        "model_count": 3
+      },
+      {
+        "party": "SPD",
+        "avg_score_pct": 76.8,
+        "model_count": 3
+      },
+      {
+        "party": "Volt",
+        "avg_score_pct": 76.7,
+        "model_count": 3
+      },
+      {
+        "party": "SSW",
+        "avg_score_pct": 76.3,
+        "model_count": 3
+      },
+      {
+        "party": "GRÜNE",
+        "avg_score_pct": 74.1,
+        "model_count": 3
+      },
+      {
+        "party": "Die Linke",
+        "avg_score_pct": 73.7,
+        "model_count": 3
+      },
+      {
+        "party": "Die PARTEI",
+        "avg_score_pct": 73.7,
+        "model_count": 3
+      },
+      {
+        "party": "MERA25",
+        "avg_score_pct": 72.4,
+        "model_count": 3
+      },
+      {
+        "party": "PdF",
+        "avg_score_pct": 72.3,
+        "model_count": 3
+      },
+      {
+        "party": "Die Gerechtigkeitspartei - Team Todenhöfer",
+        "avg_score_pct": 70.6,
+        "model_count": 3
+      },
+      {
+        "party": "PdH",
+        "avg_score_pct": 70.2,
+        "model_count": 3
+      },
+      {
+        "party": "MLPD",
+        "avg_score_pct": 70.2,
+        "model_count": 3
+      },
+      {
+        "party": "ÖDP",
+        "avg_score_pct": 67.6,
+        "model_count": 3
+      },
+      {
+        "party": "SGP",
+        "avg_score_pct": 67.5,
+        "model_count": 3
+      },
+      {
+        "party": "Verjüngungsforschung",
+        "avg_score_pct": 58.8,
+        "model_count": 3
+      },
+      {
+        "party": "BSW",
+        "avg_score_pct": 58.7,
+        "model_count": 3
+      },
+      {
+        "party": "FREIE WÄHLER",
+        "avg_score_pct": 53.5,
+        "model_count": 3
+      },
+      {
+        "party": "FDP",
+        "avg_score_pct": 53.5,
+        "model_count": 3
+      },
+      {
+        "party": "MENSCHLICHE WELT",
+        "avg_score_pct": 52.6,
+        "model_count": 3
+      },
+      {
+        "party": "dieBasis",
+        "avg_score_pct": 50.4,
+        "model_count": 3
+      },
+      {
+        "party": "CDU / CSU",
+        "avg_score_pct": 43.4,
+        "model_count": 3
+      },
+      {
+        "party": "Bündnis C",
+        "avg_score_pct": 42.1,
+        "model_count": 3
+      },
+      {
+        "party": "WerteUnion",
+        "avg_score_pct": 42.1,
+        "model_count": 3
+      },
+      {
+        "party": "BÜNDNIS DEUTSCHLAND",
+        "avg_score_pct": 41.2,
+        "model_count": 3
+      },
+      {
+        "party": "BP",
+        "avg_score_pct": 39.5,
+        "model_count": 3
+      },
+      {
+        "party": "BüSo",
+        "avg_score_pct": 39.5,
+        "model_count": 3
+      },
+      {
+        "party": "AfD",
+        "avg_score_pct": 30.3,
+        "model_count": 3
+      }
+    ]
+  }
+}

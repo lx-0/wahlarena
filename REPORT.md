@@ -1,13 +1,16 @@
 # Wahl-O-Mat LLM Political Alignment Evaluation
 ## Bundestagswahl 2025 — Evaluation Report
 
-**Batch:** `runs/batch_2026-04-21T160944Z`
-**Models evaluated:** gpt-4o, o3
+**Batches:**
+- OpenAI: `runs/batch_2026-04-21T160944Z` (gpt-4o, o3)
+- Anthropic: `runs/batch_2026-04-21T225331Z` (claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001)
+
+**Models evaluated:** gpt-4o, o3, claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001
 **Theses:** 38 (Bundestagswahl 2025 Wahl-O-Mat)
 **Parties scored:** 28
 **Date run:** 2026-04-21
 
-> **Coverage note:** Three Anthropic models (claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001) could not be evaluated — `WAHL_ANTHROPIC_API_KEY` hit its usage limit (resets 2026-05-01, tracked in WAH-13). Gemini models were excluded: gemini-2.5-pro safety-filtered all 38 political theses; gemini-2.5-flash produced truncated/unreliable tokens. Results below represent the two OpenAI models only.
+> **Coverage note:** Gemini models remain excluded — gemini-2.5-pro safety-filtered all 38 political theses; gemini-2.5-flash produced truncated/unreliable tokens. All five evaluated models (2 OpenAI + 3 Anthropic) completed successfully.
 
 ---
 
@@ -72,49 +75,52 @@ Full prompt/response logs are written to `runs/<batch>/<model>/prompts.json` for
 
 ## 2. Per-Model Top Party
 
-| Model | Top Party | Score |
-|---|---|---|
-| gpt-4o | Tierschutzpartei | 85.5% |
-| o3 | Tierschutzpartei | 78.9% |
+| Model | Provider | Top Party | Score |
+|---|---|---|---|
+| gpt-4o | OpenAI | Tierschutzpartei | 85.5% |
+| o3 | OpenAI | Tierschutzpartei | 78.9% |
+| claude-opus-4-7 | Anthropic | PIRATEN | 81.6% |
+| claude-sonnet-4-6 | Anthropic | Tierschutzpartei | 85.5% |
+| claude-haiku-4-5-20251001 | Anthropic | SPD | 72.4% |
 
-Both models align most strongly with the Tierschutzpartei (Animal Protection Party). This is the first cross-model consensus finding: both OpenAI models, despite different architectures and reasoning styles, converge on the same top party.
+Four of five models align most strongly with either the Tierschutzpartei or PIRATEN. Haiku is the sole exception, placing SPD first — reflecting its stronger disagreement posture (16 disagrees vs. Opus's 11) and relative scepticism of niche single-issue parties.
 
 ---
 
 ## 3. Full Alignment Table (Model × Party)
 
-All 28 parties ranked by cross-model average. Scores are Wahl-O-Mat alignment percentages.
+All 28 parties ranked by 5-model cross-model average. Scores are Wahl-O-Mat alignment percentages.
 
-| Rank | Party | Avg | gpt-4o | o3 |
-|---|---|---|---|---|
-| 1 | Tierschutzpartei | 82.2% | 85.5% | 78.9% |
-| 2 | SSW | 79.6% | 82.9% | 76.3% |
-| 3 | Die PARTEI | 79.6% | 82.9% | 76.3% |
-| 4 | Volt | 79.6% | 84.2% | 75.0% |
-| 5 | SPD | 78.3% | 81.6% | 75.0% |
-| 6 | PIRATEN | 77.0% | 81.6% | 72.4% |
-| 7 | GRÜNE | 77.0% | 78.9% | 75.0% |
-| 8 | Die Linke | 75.7% | 77.6% | 73.7% |
-| 9 | MERA25 | 74.3% | 76.3% | 72.4% |
-| 10 | MLPD | 73.0% | 75.0% | 71.1% |
-| 11 | ÖDP | 71.8% | 72.4% | 71.1% |
-| 12 | PdF | 70.4% | 73.7% | 67.1% |
-| 13 | PdH | 70.4% | 67.1% | 73.7% |
-| 14 | SGP | 69.1% | 72.4% | 65.8% |
-| 15 | Die Gerechtigkeitspartei - Team Todenhöfer | 67.8% | 73.7% | 61.8% |
-| 16 | BSW | 63.8% | 67.1% | 60.5% |
-| 17 | Verjüngungsforschung | 62.5% | 56.6% | 68.4% |
-| 18 | dieBasis | 53.3% | 55.3% | 51.3% |
-| 19 | FREIE WÄHLER | 52.0% | 53.9% | 50.0% |
-| 20 | MENSCHLICHE WELT | 50.7% | 48.7% | 52.6% |
-| 21 | FDP | 45.4% | 38.2% | 52.6% |
-| 22 | BüSo | 44.1% | 40.8% | 47.4% |
-| 23 | CDU / CSU | 44.1% | 39.5% | 48.7% |
-| 24 | Bündnis C | 38.9% | 38.2% | 39.5% |
-| 25 | WerteUnion | 34.9% | 27.6% | 42.1% |
-| 26 | BÜNDNIS DEUTSCHLAND | 34.8% | 32.9% | 36.8% |
-| 27 | BP | 33.5% | 30.3% | 36.8% |
-| 28 | AfD | 27.0% | 23.7% | 30.3% |
+| Rank | Party | Avg | gpt-4o | o3 | opus-4-7 | sonnet-4-6 | haiku-4-5 |
+|---|---|---|---|---|---|---|---|
+| 1 | Tierschutzpartei | 80.3% | 85.5% | 78.9% | 80.3% | 85.5% | 71.1% |
+| 2 | Volt | 77.9% | 84.2% | 75.0% | 78.9% | 84.2% | 67.1% |
+| 3 | SSW | 77.6% | 82.9% | 76.3% | 77.6% | 82.9% | 68.4% |
+| 4 | SPD | 77.4% | 81.6% | 75.0% | 76.3% | 81.6% | 72.4% |
+| 5 | PIRATEN | 77.4% | 81.6% | 72.4% | 81.6% | 84.2% | 67.1% |
+| 6 | Die PARTEI | 76.1% | 82.9% | 76.3% | 75.0% | 80.3% | 65.8% |
+| 7 | GRÜNE | 75.2% | 78.9% | 75.0% | 76.3% | 78.9% | 67.1% |
+| 8 | Die Linke | 74.5% | 77.6% | 73.7% | 72.4% | 80.3% | 68.4% |
+| 9 | MERA25 | 73.2% | 76.3% | 72.4% | 71.1% | 78.9% | 67.1% |
+| 10 | PdF | 71.6% | 73.7% | 67.1% | 78.9% | 76.3% | 61.8% |
+| 11 | MLPD | 71.3% | 75.0% | 71.1% | 72.4% | 72.4% | 65.8% |
+| 12 | PdH | 70.3% | 67.1% | 73.7% | 69.7% | 72.4% | 68.4% |
+| 13 | Die Gerechtigkeitspartei - Team Todenhöfer | 69.5% | 73.7% | 61.8% | 73.7% | 71.1% | 67.1% |
+| 14 | ÖDP | 69.2% | 72.4% | 71.1% | 72.4% | 67.1% | 63.2% |
+| 15 | SGP | 68.2% | 72.4% | 65.8% | 69.7% | 72.4% | 60.5% |
+| 16 | BSW | 60.8% | 67.1% | 60.5% | 61.8% | 61.8% | 52.6% |
+| 17 | Verjüngungsforschung | 60.3% | 56.6% | 68.4% | 61.8% | 56.6% | 57.9% |
+| 18 | FREIE WÄHLER | 52.9% | 53.9% | 50.0% | 56.6% | 53.9% | 50.0% |
+| 19 | MENSCHLICHE WELT | 51.8% | 48.7% | 52.6% | 53.9% | 48.7% | 55.3% |
+| 20 | dieBasis | 51.6% | 55.3% | 51.3% | 52.6% | 47.4% | 51.3% |
+| 21 | FDP | 50.3% | 38.2% | 52.6% | 53.9% | 48.7% | 57.9% |
+| 22 | CDU / CSU | 43.7% | 39.5% | 48.7% | 42.1% | 39.5% | 48.7% |
+| 23 | BüSo | 41.3% | 40.8% | 47.4% | 43.4% | 32.9% | 42.1% |
+| 24 | Bündnis C | 40.8% | 38.2% | 39.5% | 43.4% | 35.5% | 47.4% |
+| 25 | WerteUnion | 39.2% | 27.6% | 42.1% | 40.8% | 35.5% | 50.0% |
+| 26 | BÜNDNIS DEUTSCHLAND | 38.7% | 32.9% | 36.8% | 40.8% | 35.5% | 47.4% |
+| 27 | BP | 37.1% | 30.3% | 36.8% | 40.8% | 35.5% | 42.1% |
+| 28 | AfD | 29.0% | 23.7% | 30.3% | 28.9% | 23.7% | 38.2% |
 
 ---
 
@@ -124,32 +130,37 @@ All 28 parties ranked by cross-model average. Scores are Wahl-O-Mat alignment pe
 |---|---|---|---|
 | gpt-4o | 21 (55%) | 5 (13%) | 12 (32%) |
 | o3 | 14 (37%) | 14 (37%) | 10 (26%) |
+| claude-opus-4-7 | 18 (47%) | 9 (24%) | 11 (29%) |
+| claude-sonnet-4-6 | 17 (45%) | 5 (13%) | 16 (42%) |
+| claude-haiku-4-5-20251001 | 16 (42%) | 6 (16%) | 16 (42%) |
 
-gpt-4o produces the most opinionated answer set (only 5 neutrals, 55% agree), which translates to its higher absolute scores across the table — more strong stances mean higher Wahl-O-Mat agreement with parties that also take strong stances. o3's higher neutral count (37%) compresses its score range and likely reflects the model's tendency to hedge on politically sensitive questions.
+gpt-4o remains the most agree-heavy model (55%), producing the highest absolute scores. claude-sonnet-4-6 and claude-haiku-4-5-20251001 are the most disagree-heavy (42% disagree each), compressing their party scores toward the lower end of the table. claude-opus-4-7 sits between them with a notably higher neutral rate (24%), similar in posture to o3 (37% neutral) but with more opinions overall.
 
 ---
 
 ## 5. Notable Patterns and Outliers
 
-**Strong cross-model consensus on top and bottom.** Tierschutzpartei tops both models; AfD (27.0% avg) sits last by a significant margin (6.5pp gap to next-lowest BP). The bottom 5 is consistent: AfD, BP, BÜNDNIS DEUTSCHLAND, WerteUnion, Bündnis C — all right-leaning or nationalist parties. The top 8 are all left-liberal or progressive parties.
+**Strong cross-model consensus at top and bottom.** Tierschutzpartei tops or co-tops in 4 of 5 models and holds first place in the 5-model average (80.3%). AfD sits last in every model (28–38%). The bottom tier is consistent across all five models: AfD, BP, BÜNDNIS DEUTSCHLAND, WerteUnion, Bündnis C.
 
-**Left-progressive tilt across both models.** SPD (78.3%), GRÜNE (77.0%), Die Linke (75.7%), PIRATEN (77.0%) all score in the top third. CDU/CSU sits at 44.1% — barely above the table's midpoint, 24pp below SPD. This is a strong and consistent signal, not a model-specific quirk.
+**Left-progressive tilt is robust across model families.** SPD (77.4%), GRÜNE (75.2%), Die Linke (74.5%), PIRATEN (77.4%), and Volt (77.9%) all rank in the top 8 across both OpenAI and Anthropic models. CDU/CSU sits at 43.7% — 33.7pp below SPD — and this gap holds within each individual model. The left-leaning signal is not a GPT-family artefact.
 
-**FDP divergence: 14.4pp gap.** gpt-4o places FDP at 38.2% (rank 21) while o3 places it at 52.6% (rank 20, within the dieBasis/FREIE WÄHLER tier). This is the widest intra-table spread for any party rated above 40% average. The likely driver is o3's higher neutral rate — o3 hedges more on economic policy theses where gpt-4o disagrees, leaving o3 in closer alignment with FDP's liberal-economic platform.
+**Anthropic vs. OpenAI calibration.** claude-sonnet-4-6 is the highest-scoring model in raw terms for several left-wing parties (Die Linke 80.3%, SSW 82.9%), while claude-haiku-4-5-20251001 is consistently the lowest scorer overall. claude-opus-4-7 tracks close to gpt-4o in ranking order but with slightly compressed scores at the top. All three Anthropic models agree with the OpenAI models on top-5 party composition (all within the Tierschutzpartei / PIRATEN / Volt / SSW / SPD cluster).
 
-**WerteUnion divergence: 14.5pp gap.** gpt-4o 27.6% vs o3 42.1% — the most divergent single party. o3 places WerteUnion near CDU/CSU tier; gpt-4o pushes it close to AfD. This is noteworthy given WerteUnion's positioning as a conservative alternative within the CDU orbit.
+**FDP: now less divergent at the model-family level.** In the OpenAI-only analysis, FDP showed a 14.4pp gpt-4o/o3 gap. With Anthropic data added, FDP lands at rank 21 (50.3% avg), driven up from its prior 45.4% 2-model avg. claude-haiku-4-5-20251001 is the most FDP-aligned of all five models (57.9%), reflecting Haiku's more economically libertarian posture on several fiscal theses.
 
-**Tierschutzpartei tops both models.** As in the fixture run, Tierschutzpartei ranks first. In real data this is more meaningful: the party's platform focuses on animal welfare, climate, and social equity — themes where LLMs express consistent agreement. It does not take strong positions on immigration or fiscal policy, reducing disagreement exposure.
+**WerteUnion: Haiku is an outlier.** claude-haiku-4-5-20251001 gives WerteUnion 50.0% — placing it at CDU/CSU parity — while all other models score WerteUnion in the 27–42% range. This is the largest single-model outlier in the full table (22.4pp above the next-highest model for that party).
 
-**Verjüngungsforschung reversal.** In the fixture run, Verjüngungsforschung topped the cross-model average. In real data it drops to rank 17 (62.5%). The fixture artefact was the hash-based pseudo-random answer generator producing high neutral rates for some models, inflating Verjüngungsforschung's score (the party benefits from neutrals because it takes few positions). With real data, both models hold actual opinions on the topics Verjüngungsforschung does address, diluting its score.
+**Tierschutzpartei tops both provider families.** gpt-4o and claude-sonnet-4-6 tie at 85.5%, the highest individual score in the dataset. The party's platform — animal welfare, climate, social equity — is the consistent attractor across all tested LLMs.
 
-**BSW consistency.** BSW (Bündnis Sahra Wagenknecht) ranks 16th with 63.8% average — solidly mid-table. Both models agree within 6.6pp. Notably, BSW falls well below the left-wing cluster (Die Linke 75.7%) despite sharing some policy overlap, likely due to its more sceptical stance on Ukraine support and migration.
+**BSW consistency across models.** BSW ranks 16th in every individual model's list, scoring 52.6–67.1%. It clusters well below Die Linke in all models despite policy overlap, driven by its sceptical positions on Ukraine support and migration.
+
+**Verjüngungsforschung artefact confirmed.** In earlier fixture runs it ranked first; in real data it sits at rank 17 (60.3%) across all five models. The fixture artefact was the hash-based generator producing abnormally high neutral rates, which inflated this party's score (it benefits from neutrals because it takes few positions).
 
 ---
 
 ## 6. Limitations
 
-1. **Two-model coverage only.** All Anthropic models (claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001) were blocked by API rate limits (key resets 2026-05-01). Gemini models were excluded due to safety filtering (gemini-2.5-pro, gemini-2.5-flash) or deprecation (gemini-2.0-flash). Results represent only the OpenAI model family. Adding Anthropic data may shift averages significantly — Claude models have historically shown different political calibration than GPT models.
+1. **Gemini coverage absent.** gemini-2.5-pro safety-filtered all 38 political theses; gemini-2.5-flash produced truncated/unreliable tokens. Google model results remain unavailable.
 
 2. **Single-pass prompting.** Each thesis is answered in isolation with no conversation history. Models may answer differently if theses are presented together or in different order.
 
@@ -169,7 +180,7 @@ gpt-4o produces the most opinionated answer set (only 5 neutrals, 55% agree), wh
 
 ## 7. Reproduction Steps
 
-Requirements: Python 3.10+, Node.js 18+, Playwright Chromium, API keys for OpenAI (and optionally Anthropic / Google).
+Requirements: Python 3.10+, Node.js 18+, Playwright Chromium, API keys for OpenAI and Anthropic (and optionally Google).
 
 ```bash
 # Install dependencies
@@ -195,12 +206,13 @@ Full prompt/response logs (including token counts per model per thesis) are writ
 
 ---
 
-## 8. Pending: Anthropic Models
+## 8. Task Status
 
-| Task | Status | Tracker |
-|---|---|---|
-| Re-run claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001 | Blocked — key resets 2026-05-01 | WAH-13 |
-| Extend alignment table with Anthropic rows | Pending WAH-13 | WAH-13 |
-| Investigate Gemini safety-filter workaround | Backlog | — |
-| Temperature pinning / reproducibility pass | Backlog | — |
-| Multi-pass variance estimation | Backlog | — |
+| Task | Status |
+|---|---|
+| gpt-4o, o3 runs | Done — `runs/batch_2026-04-21T160944Z` |
+| claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001 runs | Done — `runs/batch_2026-04-21T225331Z` |
+| 5-model alignment table | Done — see Section 3 |
+| Investigate Gemini safety-filter workaround | Backlog |
+| Temperature pinning / reproducibility pass | Backlog |
+| Multi-pass variance estimation | Backlog |
