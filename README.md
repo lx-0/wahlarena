@@ -6,9 +6,11 @@ Evaluate top frontier LLMs on the 38 theses of the Bundestagswahl 2025 [Wahl-O-M
 
 **Outputs:**
 - **[REPORT.en.md](REPORT.en.md)** — Full English evaluation report (methodology, all 28 parties, per-model analysis, limitations)
-- **[docs/index.html](docs/index.html)** — Interactive dashboard: alignment heatmap, answer distribution, per-thesis drill-down
-- **[BLOG.md](BLOG.md)** — ~1600-word writeup of key findings for a general technical audience
+- **[Live dashboard](https://OWNER.github.io/REPO/)** — Interactive alignment heatmap, answer distribution, per-thesis drill-down ([source](docs/index.html))
+- **[Blog post](https://OWNER.github.io/REPO/blog.html)** — ~1600-word writeup of key findings ([source](BLOG.md))
 - **[REPORT.md](REPORT.md)** — German-language source report
+
+> **To activate the live URLs:** push to GitHub and enable GitHub Pages with source set to `docs/` in the repo Settings → Pages.
 
 ## Results snapshot
 
