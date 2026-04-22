@@ -7,12 +7,14 @@ We ran the 38 theses from the **Bundestagswahl 2025 Wahl-O-Mat** through 12 fron
 
 **[→ Interactive dashboard](https://lx-0.github.io/wahlarena/)** · **[→ Blog post](https://lx-0.github.io/wahlarena/blog.html)** · **[→ Full report](REPORT.en.md)**
 
+<a href="https://lx-0.github.io/wahlarena/"><img src="docs/preview.svg" alt="Preview: Wahl-O-Mat LLM alignment heatmap — top 5 parties, CDU/CSU, and AfD across 12 frontier LLMs" width="100%"></a>
+
 ---
 
 ## Key findings
 
 - **AfD ranked last in every model** (avg 27.9%, range 21–38%). No model placed it above 38%.
-- **Tierschutzpartei (*Animal Protection Party*) ranked #1** in 9 of 10 scorable models (avg 81.1%), driven by its animal welfare, climate, and social equity platform.
+- **Tierschutzpartei (*Animal Protection Party*) tops the 12-model average** (81.1%) and lands in the top 3 for *every* model tested — driven by its animal welfare, climate, and social equity platform.
 - **Left-progressive ordering is consistent across model families**: SPD, Volt, GRÜNE, PIRATEN, and Die Linke all cluster in the top 8 for every model — the result holds whether you look at OpenAI, Anthropic, xAI, or open-weight models.
 - **CDU/CSU ranked 22nd** (avg 43.2%) — 34 pp below SPD — reflecting disagreement on nuclear energy, the debt brake, and citizen's income.
 - **Gemini 3.1 Pro refused all 38 theses** (100% NEUTRAL); Gemini 3 Flash returned NEUTRAL on 74%.
