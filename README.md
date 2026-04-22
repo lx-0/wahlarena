@@ -1,32 +1,49 @@
 # Wahl-O-Mat LLM Political Alignment Evaluation
 
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
+[![CI](https://github.com/lx-0/wahlarena/actions/workflows/ci.yml/badge.svg)](https://github.com/lx-0/wahlarena/actions/workflows/ci.yml)
+[![Live Dashboard](https://img.shields.io/badge/Live-Dashboard-6366f1)](https://lx-0.github.io/wahlarena/)
 
-Evaluate top frontier LLMs on the 38 theses of the Bundestagswahl 2025 [Wahl-O-Mat](https://www.wahl-o-mat.de/). Each model answers every thesis (AGREE / NEUTRAL / DISAGREE); official party alignment scores are computed by submitting answers to the live Wahl-O-Mat site via Playwright.
+We ran the 38 theses from the **Bundestagswahl 2025 Wahl-O-Mat** through 12 frontier LLMs and fed each model's answers into the official Wahl-O-Mat scoring engine. **AfD ranked last in every single model.** Left-progressive parties dominated across all model families and both open- and closed-weight models.
 
-**Outputs:**
-- **[REPORT.en.md](REPORT.en.md)** — Full English evaluation report (methodology, all 28 parties, per-model analysis, limitations)
-- **[Live dashboard](https://OWNER.github.io/REPO/)** — Interactive alignment heatmap, answer distribution, per-thesis drill-down ([source](docs/index.html))
-- **[Blog post](https://OWNER.github.io/REPO/blog.html)** — ~1600-word writeup of key findings ([source](BLOG.md))
-- **[REPORT.md](REPORT.md)** — German-language source report
+**[→ Interactive dashboard](https://lx-0.github.io/wahlarena/)** · **[→ Blog post](https://lx-0.github.io/wahlarena/blog.html)** · **[→ Full report](REPORT.en.md)**
 
-> **To activate the live URLs:** push to GitHub and enable GitHub Pages with source set to `docs/` in the repo Settings → Pages.
+---
+
+## Key findings
+
+- **AfD ranked last in every model** (avg 27.9%, range 21–38%). No model placed it above 38%.
+- **Tierschutzpartei (*Animal Protection Party*) ranked #1** in 9 of 10 scorable models (avg 81.1%), driven by its animal welfare, climate, and social equity platform.
+- **Left-progressive ordering is consistent across model families**: SPD, Volt, GRÜNE, PIRATEN, and Die Linke all cluster in the top 8 for every model — the result holds whether you look at OpenAI, Anthropic, xAI, or open-weight models.
+- **CDU/CSU ranked 22nd** (avg 43.2%) — 34 pp below SPD — reflecting disagreement on nuclear energy, the debt brake, and citizen's income.
+- **Gemini 3.1 Pro refused all 38 theses** (100% NEUTRAL); Gemini 3 Flash returned NEUTRAL on 74%.
 
 ## Results snapshot
 
-| Rank | Party | Avg (5 models) |
-|------|-------|---------------|
-| 1 | Tierschutzpartei | 80.3% |
-| 2 | Volt | 77.9% |
-| 3 | SSW | 77.6% |
-| 4 | SPD | 77.4% |
-| 28 | AfD | 29.0% |
+Sorted by 12-model average. Scores are official Wahl-O-Mat alignment percentages (0–100%).
 
-AfD ranked **last in every model**. Tierschutzpartei ranked first or co-first in 4 of 5 models. The top-5 and bottom-5 were consistent across both OpenAI and Anthropic model families.
+| Rank | Party | Avg (12 models)† |
+|------|-------|-----------------|
+| 1 | Tierschutzpartei | 81.1% |
+| 2 | SSW | 78.5% |
+| 3 | PIRATEN | 78.3% |
+| 4 | Volt | 78.3% |
+| 5 | SPD | 77.6% |
+| … | … | … |
+| 22 | CDU / CSU | 43.2% |
+| … | … | … |
+| 28 | **AfD** | **27.9%** |
 
-Full tables with per-model scores are in [REPORT.en.md](REPORT.en.md). Explore per-thesis answers interactively in [docs/index.html](docs/index.html).
+†Includes all 12 models; Gemini 3.1 Pro (100% NEUTRAL refusal) and Gemini 3 Flash (74% NEUTRAL) are included in the average — see [REPORT.en.md §7](REPORT.en.md) for the Gemini caveat. Full per-model table in [REPORT.en.md §3](REPORT.en.md).
 
-## Reproduce in one command (Docker)
+**Models evaluated (12):** claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5, gpt-4o, o3, gemini-3-flash-preview, gemini-3.1-pro-preview, grok-4, llama-4-maverick, mistral-large-2512, deepseek-v3.2, qwen3-235b
+
+Full tables with per-model scores, per-thesis answers, and answer distributions: **[REPORT.en.md](REPORT.en.md)** · **[Interactive dashboard](https://lx-0.github.io/wahlarena/)**
+
+---
+
+## Reproduce
+
+### Docker (recommended)
 
 ```bash
 # Build the image
@@ -45,7 +62,7 @@ docker run --rm \
 
 The image pins Python 3.13, Node 24, all Python deps (requirements.txt), and Node deps (package-lock.json) so results are bit-exact across machines.
 
-## Local setup
+### Local setup
 
 ```bash
 # Python deps
@@ -85,7 +102,8 @@ scripts/
 runs/                  Per-run outputs (answers, prompts, Wahl-O-Mat scores)
 tests/                 pytest test suite (unit + integration)
 
-REPORT.md              Full evaluation report
+REPORT.md              Full evaluation report (German)
+REPORT.en.md           Full evaluation report (English)
 ```
 
 ## Variants tested
@@ -96,13 +114,14 @@ REPORT.md              Full evaluation report
 | `en` | English-language theses and system prompt |
 | `reordered` | German-language theses, options DISAGREE / NEUTRAL / AGREE |
 
-## Dataset
-
-Raw responses and Wahl-O-Mat scores will be published as a HuggingFace dataset once Track A multi-seed runs complete.
-
 ## Reproducibility
 
 - All prompts and raw model responses are logged to `runs/<batch>/*/prompts.json`.
 - Model versions are pinned (e.g., `claude-sonnet-4-6`, `gpt-4o`).
+- All providers called with explicit `temperature` (T=1.0 for multi-seed runs, T=0.0 for the modal pass). OpenAI reasoning models (`o3`) are inherently deterministic and called without a temperature parameter.
 - Bootstrap CI uses `random.Random(42)` with N=5,000 resamples.
 - The fixture provider (`--provider fixture`) enables fully deterministic end-to-end pipeline tests without API keys.
+
+## Dataset
+
+Raw responses and Wahl-O-Mat scores will be published as a HuggingFace dataset once Track A multi-seed runs complete.

@@ -1,6 +1,6 @@
 # We Ran Five Frontier LLMs Through Germany's Official Voting Guide. The Results Were Surprisingly Consistent.
 
-*Posted 2026-04-22 · ~1600 words · [GitHub repo](https://github.com/OWNER/REPO) · [Interactive dashboard](docs/index.html)*
+*Posted 2026-04-22 · ~1600 words · [GitHub repo](https://github.com/lx-0/wahlarena) · [Interactive dashboard](docs/index.html)*
 
 ---
 
@@ -107,7 +107,7 @@ Whether that fingerprint *should* exist, and what it means for how these models 
 
 ---
 
-**Full data, code, and methodology:** [github.com/OWNER/REPO](https://github.com/OWNER/REPO)  
+**Full data, code, and methodology:** [github.com/lx-0/wahlarena](https://github.com/lx-0/wahlarena)  
 **Interactive dashboard:** [docs/index.html](docs/index.html)  
 **Full technical report:** [REPORT.en.md](REPORT.en.md)
 
