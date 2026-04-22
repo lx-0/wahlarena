@@ -90,11 +90,13 @@ def get_variant_prompts(variant: str) -> tuple[str, str]:
         return SYSTEM_PROMPT, THESIS_PROMPT_TEMPLATE
 
 
-def ask_anthropic(model: str, theses: list, system_prompt: str, template: str) -> tuple[list, list]:
+def ask_anthropic(model: str, theses: list, system_prompt: str, template: str,
+                  temperature: float = 1.0) -> tuple[list, list]:
     import anthropic
     client = anthropic.Anthropic(api_key=os.environ['WAHL_ANTHROPIC_API_KEY'])
     answers = []
     log = []
+    _temp_deprecated = False  # set True if model rejects temperature
 
     for thesis in theses:
         prompt = template.format(
@@ -102,16 +104,28 @@ def ask_anthropic(model: str, theses: list, system_prompt: str, template: str) -
             topic=thesis['topic'],
             statement=thesis['statement']
         )
-        response = client.messages.create(
-            model=model,
-            max_tokens=10,
-            system=system_prompt,
-            messages=[{'role': 'user', 'content': prompt}]
-        )
+        create_kwargs = {
+            'model': model,
+            'max_tokens': 10,
+            'system': system_prompt,
+            'messages': [{'role': 'user', 'content': prompt}],
+        }
+        if not _temp_deprecated:
+            create_kwargs['temperature'] = temperature
+        try:
+            response = client.messages.create(**create_kwargs)
+        except anthropic.BadRequestError as exc:
+            if 'temperature' in str(exc).lower() and 'deprecated' in str(exc).lower():
+                _temp_deprecated = True
+                print(f"  NOTE: {model} rejects temperature param — running without it", flush=True)
+                create_kwargs.pop('temperature', None)
+                response = client.messages.create(**create_kwargs)
+            else:
+                raise
         raw = response.content[0].text.strip().upper()
         choice = ANSWER_MAP.get(raw, 0)
         answers.append(choice)
-        log.append({
+        entry = {
             'thesis_index': thesis['index'],
             'topic': thesis['topic'],
             'statement': thesis['statement'],
@@ -120,15 +134,19 @@ def ask_anthropic(model: str, theses: list, system_prompt: str, template: str) -
             'choice': choice,
             'model': model,
             'input_tokens': response.usage.input_tokens,
-            'output_tokens': response.usage.output_tokens
-        })
+            'output_tokens': response.usage.output_tokens,
+        }
+        if _temp_deprecated:
+            entry['temperature_deprecated'] = True
+        log.append(entry)
         print(f"  [{thesis['index']+1}/38] {thesis['topic']}: {raw} → {choice}")
         time.sleep(0.3)
 
     return answers, log
 
 
-def ask_openai(model: str, theses: list, system_prompt: str, template: str) -> tuple[list, list]:
+def ask_openai(model: str, theses: list, system_prompt: str, template: str,
+               temperature: float = 1.0) -> tuple[list, list]:
     from openai import OpenAI
     client = OpenAI(api_key=os.environ['WAHL_OPENAI_API_KEY'])
     answers = []
@@ -150,8 +168,10 @@ def ask_openai(model: str, theses: list, system_prompt: str, template: str) -> t
         }
         if is_reasoning:
             create_kwargs['max_completion_tokens'] = 200
+            # reasoning models don't support temperature
         else:
             create_kwargs['max_tokens'] = 10
+            create_kwargs['temperature'] = temperature
         response = client.chat.completions.create(**create_kwargs)
         raw = response.choices[0].message.content.strip().upper()
         choice = ANSWER_MAP.get(raw, 0)
@@ -203,7 +223,8 @@ def ask_fixture(model: str, theses: list, system_prompt: str, template: str) -> 
     return answers, log
 
 
-def ask_google(model: str, theses: list, system_prompt: str, template: str) -> tuple[list, list]:
+def ask_google(model: str, theses: list, system_prompt: str, template: str,
+               temperature: float = 1.0) -> tuple[list, list]:
     import google.generativeai as genai
     genai.configure(api_key=os.environ['WAHL_GEMINI_API_KEY'])
 
@@ -237,7 +258,7 @@ def ask_google(model: str, theses: list, system_prompt: str, template: str) -> t
         )
         response = gen_model.generate_content(
             prompt,
-            generation_config={'max_output_tokens': max_tokens, 'temperature': 0.0}
+            generation_config={'max_output_tokens': max_tokens, 'temperature': temperature}
         )
         try:
             raw = response.text.strip().upper()
@@ -264,7 +285,8 @@ def ask_google(model: str, theses: list, system_prompt: str, template: str) -> t
     return answers, log
 
 
-def ask_openrouter(model: str, theses: list, system_prompt: str, template: str) -> tuple[list, list]:
+def ask_openrouter(model: str, theses: list, system_prompt: str, template: str,
+                   temperature: float = 1.0) -> tuple[list, list]:
     """OpenRouter: unified gateway to open-weight and third-party models."""
     from openai import OpenAI
     client = OpenAI(
@@ -287,6 +309,7 @@ def ask_openrouter(model: str, theses: list, system_prompt: str, template: str) 
         response = client.chat.completions.create(
             model=model,
             max_tokens=50,
+            temperature=temperature,
             messages=[
                 {'role': 'system', 'content': system_prompt},
                 {'role': 'user', 'content': prompt},
@@ -314,7 +337,8 @@ def ask_openrouter(model: str, theses: list, system_prompt: str, template: str) 
     return answers, log
 
 
-def ask_xai(model: str, theses: list, system_prompt: str, template: str) -> tuple[list, list]:
+def ask_xai(model: str, theses: list, system_prompt: str, template: str,
+            temperature: float = 1.0) -> tuple[list, list]:
     """xAI Grok via OpenAI-compatible API."""
     from openai import OpenAI
     client = OpenAI(
@@ -333,6 +357,7 @@ def ask_xai(model: str, theses: list, system_prompt: str, template: str) -> tupl
         response = client.chat.completions.create(
             model=model,
             max_tokens=50,
+            temperature=temperature,
             messages=[
                 {'role': 'system', 'content': system_prompt},
                 {'role': 'user', 'content': prompt},
@@ -368,6 +393,8 @@ def main():
     parser.add_argument('--variant', choices=['original', 'en', 'reordered'], default='original',
                         help='Prompt variant: original (default), en (English), reordered (options reversed)')
     parser.add_argument('--theses-file', help='Path to theses JSON (override; required for --variant en if theses_en.json absent)')
+    parser.add_argument('--temperature', type=float, default=1.0,
+                        help='Sampling temperature (default 1.0; use 0 for deterministic modal pass)')
     args = parser.parse_args()
 
     # Load theses
@@ -404,19 +431,19 @@ def main():
             print(f"Cannot detect provider for model '{args.model}'. Use --provider.", file=sys.stderr)
             sys.exit(1)
 
-    print(f"Running model: {args.model} (provider: {provider}, variant: {args.variant})")
+    print(f"Running model: {args.model} (provider: {provider}, variant: {args.variant}, temperature: {args.temperature})")
     print(f"Output: {out_dir}")
 
     if provider == 'anthropic':
-        answers, log = ask_anthropic(args.model, theses, system_prompt, template)
+        answers, log = ask_anthropic(args.model, theses, system_prompt, template, args.temperature)
     elif provider == 'openai':
-        answers, log = ask_openai(args.model, theses, system_prompt, template)
+        answers, log = ask_openai(args.model, theses, system_prompt, template, args.temperature)
     elif provider == 'google':
-        answers, log = ask_google(args.model, theses, system_prompt, template)
+        answers, log = ask_google(args.model, theses, system_prompt, template, args.temperature)
     elif provider == 'openrouter':
-        answers, log = ask_openrouter(args.model, theses, system_prompt, template)
+        answers, log = ask_openrouter(args.model, theses, system_prompt, template, args.temperature)
     elif provider == 'xai':
-        answers, log = ask_xai(args.model, theses, system_prompt, template)
+        answers, log = ask_xai(args.model, theses, system_prompt, template, args.temperature)
     elif provider == 'fixture':
         answers, log = ask_fixture(args.model, theses, system_prompt, template)
 
@@ -433,6 +460,7 @@ def main():
         'model': args.model,
         'provider': provider,
         'variant': args.variant,
+        'temperature': args.temperature,
         'system_prompt': system_prompt,
         'timestamp': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
         'answers': answers,

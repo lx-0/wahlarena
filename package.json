@@ -1,0 +1,9 @@
+{
+  "name": "wahlomat-llm-eval",
+  "version": "1.0.0",
+  "description": "Bundestagswahl 2025 Wahl-O-Mat LLM political-views evaluation",
+  "private": true,
+  "dependencies": {
+    "playwright": "^1.51.0"
+  }
+}

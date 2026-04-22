@@ -1,0 +1,192 @@
+[
+  {
+    "index": 0,
+    "topic": "Unterstützung der Ukraine",
+    "statement": "Deutschland soll die Ukraine weiterhin militärisch unterstützen."
+  },
+  {
+    "index": 1,
+    "topic": "Erneuerbare Energien",
+    "statement": "Der Ausbau erneuerbarer Energien soll weiterhin vom Staat finanziell gefördert werden."
+  },
+  {
+    "index": 2,
+    "topic": "Streichung des Bürgergelds",
+    "statement": "Das Bürgergeld soll denjenigen gestrichen werden, die wiederholt Stellenangebote ablehnen."
+  },
+  {
+    "index": 3,
+    "topic": "Tempolimit auf Autobahnen",
+    "statement": "Auf allen Autobahnen soll ein generelles Tempolimit gelten."
+  },
+  {
+    "index": 4,
+    "topic": "Abweisung Asylsuchender",
+    "statement": "Asylsuchende, die über einen anderen EU-Staat eingereist sind, sollen an den deutschen Grenzen abgewiesen werden."
+  },
+  {
+    "index": 5,
+    "topic": "Begrenzung der Mietpreise",
+    "statement": "Bei Neuvermietungen sollen die Mietpreise weiterhin gesetzlich begrenzt werden."
+  },
+  {
+    "index": 6,
+    "topic": "Automatisierte Gesichtserkennung",
+    "statement": "An Bahnhöfen soll die Bundespolizei Software zur automatisierten Gesichtserkennung einsetzen dürfen."
+  },
+  {
+    "index": 7,
+    "topic": "Energieintensive Unternehmen",
+    "statement": "Energieintensive Unternehmen sollen vom Staat einen finanziellen Ausgleich für ihre Stromkosten erhalten."
+  },
+  {
+    "index": 8,
+    "topic": "Rente nach 40 Beitragsjahren",
+    "statement": "Alle Beschäftigten sollen bereits nach 40 Beitragsjahren ohne Abschläge in Rente gehen können."
+  },
+  {
+    "index": 9,
+    "topic": "Grundgesetz",
+    "statement": "Im einleitenden Satz des Grundgesetzes soll weiterhin die Formulierung „Verantwortung vor Gott“ stehen."
+  },
+  {
+    "index": 10,
+    "topic": "Anwerbung von Fachkräften",
+    "statement": "Deutschland soll weiterhin die Anwerbung von Fachkräften aus dem Ausland fördern."
+  },
+  {
+    "index": 11,
+    "topic": "Nutzung der Kernenergie",
+    "statement": "Für die Stromerzeugung soll Deutschland wieder Kernenergie nutzen."
+  },
+  {
+    "index": 12,
+    "topic": "Anhebung des Spitzensteuersatzes",
+    "statement": "Bei der Besteuerung von Einkommen soll der Spitzensteuersatz angehoben werden."
+  },
+  {
+    "index": 13,
+    "topic": "Kompetenzen in der Schulpolitik",
+    "statement": "Der Bund soll mehr Kompetenzen in der Schulpolitik erhalten."
+  },
+  {
+    "index": 14,
+    "topic": "Rüstungsexporte nach Israel",
+    "statement": "Aus Deutschland sollen weiterhin Rüstungsgüter nach Israel exportiert werden dürfen."
+  },
+  {
+    "index": 15,
+    "topic": "Krankenkassen",
+    "statement": "Alle Bürgerinnen und Bürger sollen in gesetzlichen Krankenkassen versichert sein müssen."
+  },
+  {
+    "index": 16,
+    "topic": "Abschaffung der Frauenquote",
+    "statement": "Die gesetzliche Frauenquote in Vorständen und Aufsichtsräten börsennotierter Unternehmen soll abgeschafft werden."
+  },
+  {
+    "index": 17,
+    "topic": "Ökologische Landwirtschaft",
+    "statement": "Ökologische Landwirtschaft soll stärker gefördert werden als konventionelle Landwirtschaft."
+  },
+  {
+    "index": 18,
+    "topic": "Projekte gegen Rechtsextremismus",
+    "statement": "Der Bund soll Projekte gegen Rechtsextremismus verstärkt fördern."
+  },
+  {
+    "index": 19,
+    "topic": "Kontrolle von Zulieferern",
+    "statement": "Unternehmen sollen weiterhin die Einhaltung der Menschenrechte und des Umweltschutzes bei allen Zulieferern kontrollieren müssen."
+  },
+  {
+    "index": 20,
+    "topic": "Elternabhängiges BAföG",
+    "statement": "Die Ausbildungsförderung BAföG soll weiterhin abhängig vom Einkommen der Eltern gezahlt werden."
+  },
+  {
+    "index": 21,
+    "topic": "Schuldenbremse",
+    "statement": "Die Schuldenbremse im Grundgesetz soll beibehalten werden."
+  },
+  {
+    "index": 22,
+    "topic": "Arbeitserlaubnis für Asylsuchende",
+    "statement": "Asylsuchende sollen in Deutschland sofort nach ihrer Antragstellung eine Arbeitserlaubnis erhalten."
+  },
+  {
+    "index": 23,
+    "topic": "Verwerfen der Klimaziele",
+    "statement": "Deutschland soll das Ziel verwerfen, klimaneutral zu werden."
+  },
+  {
+    "index": 24,
+    "topic": "35-Stunden-Woche",
+    "statement": "In Deutschland soll die 35-Stunden-Woche als gesetzliche Regelarbeitszeit für alle Beschäftigten festgelegt werden."
+  },
+  {
+    "index": 25,
+    "topic": "Schwangerschaftsabbruch nach Beratung",
+    "statement": "Schwangerschaftsabbrüche sollen in den ersten drei Monaten weiterhin nur nach Beratung straffrei sein."
+  },
+  {
+    "index": 26,
+    "topic": "Nationale Währung",
+    "statement": "Der Euro soll in Deutschland durch eine nationale Währung ersetzt werden."
+  },
+  {
+    "index": 27,
+    "topic": "Schiene vor Straße",
+    "statement": "Beim Ausbau der Verkehrsinfrastruktur soll die Schiene Vorrang vor der Straße haben."
+  },
+  {
+    "index": 28,
+    "topic": "Ehrenamt",
+    "statement": "Ehrenamtliche Tätigkeiten sollen auf die zukünftige Rente angerechnet werden."
+  },
+  {
+    "index": 29,
+    "topic": "Umlegung der Grundsteuer",
+    "statement": "Die Grundsteuer soll weiterhin auf Mieterinnen und Mieter umgelegt werden dürfen."
+  },
+  {
+    "index": 30,
+    "topic": "Einschränkung des Streikrechts",
+    "statement": "Das Streikrecht für Beschäftigte in Unternehmen der kritischen Infrastruktur soll gesetzlich eingeschränkt werden."
+  },
+  {
+    "index": 31,
+    "topic": "Volksentscheide",
+    "statement": "In Deutschland soll es auf Bundesebene Volksentscheide geben können."
+  },
+  {
+    "index": 32,
+    "topic": "Strafrecht für unter 14-Jährige",
+    "statement": "Unter 14-Jährige sollen strafrechtlich belangt werden können."
+  },
+  {
+    "index": 33,
+    "topic": "Abschaffung von Zöllen",
+    "statement": "Deutschland soll sich für die Abschaffung der erhöhten EU-Zölle auf chinesische Elektroautos einsetzen."
+  },
+  {
+    "index": 34,
+    "topic": "Zweite Staatsbürgerschaft",
+    "statement": "In Deutschland soll es weiterhin generell möglich sein, neben der deutschen eine zweite Staatsbürgerschaft zu haben."
+  },
+  {
+    "index": 35,
+    "topic": "Soziales Pflichtjahr",
+    "statement": "Für junge Erwachsene soll ein soziales Pflichtjahr eingeführt werden."
+  },
+  {
+    "index": 36,
+    "topic": "Fossile Brennstoffe",
+    "statement": "Neue Heizungen sollen auch zukünftig vollständig mit fossilen Brennstoffen (z. B. Gas oder Öl) betrieben werden dürfen."
+  },
+  {
+    "index": 37,
+    "topic": "Erhöhung des Mindestlohns",
+    "statement": "Der gesetzliche Mindestlohn soll spätestens 2026 auf 15 Euro erhöht werden."
+  }
+]

@@ -46,7 +46,8 @@ MODELS = [
 ]
 
 
-def run_model(model: str, provider: str, run_dir: Path, fixture: bool) -> dict:
+def run_model(model: str, provider: str, run_dir: Path, fixture: bool,
+              temperature: float = 1.0) -> dict:
     actual_provider = 'fixture' if fixture else provider
     cmd = [
         sys.executable,
@@ -54,6 +55,7 @@ def run_model(model: str, provider: str, run_dir: Path, fixture: bool) -> dict:
         '--model', model,
         '--provider', actual_provider,
         '--out', str(run_dir),
+        '--temperature', str(temperature),
     ]
     print(f"\n{'='*60}")
     print(f"Model:    {model}  (provider: {actual_provider})")
@@ -85,6 +87,10 @@ def main():
     parser.add_argument('--models', help='Comma-separated model ids to run (overrides default list)')
     parser.add_argument('--skip-browser', action='store_true',
                         help='Skip Wahl-O-Mat browser automation step')
+    parser.add_argument('--temperature', type=float, default=1.0,
+                        help='Sampling temperature for all models (default 1.0; use 0 for modal pass)')
+    parser.add_argument('--label', default='batch',
+                        help='Prefix for the run directory, e.g. "modal_T0" (default: "batch")')
     args = parser.parse_args()
 
     if args.models:
@@ -99,19 +105,20 @@ def main():
         models = MODELS
 
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H%M%SZ')
-    batch_dir = PROJECT_DIR / 'runs' / f'batch_{timestamp}'
+    batch_dir = PROJECT_DIR / 'runs' / f'{args.label}_{timestamp}'
     batch_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Wahl-O-Mat Multi-Model Runner")
-    print(f"Batch:   {batch_dir}")
-    print(f"Models:  {len(models)}")
-    print(f"Fixture: {args.fixture}")
+    print(f"Batch:       {batch_dir}")
+    print(f"Models:      {len(models)}")
+    print(f"Temperature: {args.temperature}")
+    print(f"Fixture:     {args.fixture}")
 
     results = []
     for entry in models:
         run_dir = batch_dir / entry['model']
         try:
-            r = run_model(entry['model'], entry['provider'], run_dir, args.fixture)
+            r = run_model(entry['model'], entry['provider'], run_dir, args.fixture, args.temperature)
         except Exception as e:
             r = {
                 'model': entry['model'],
@@ -143,6 +150,8 @@ def main():
 
     manifest = {
         'timestamp': timestamp,
+        'temperature': args.temperature,
+        'label': args.label,
         'fixture': args.fixture,
         'models': results,
     }
