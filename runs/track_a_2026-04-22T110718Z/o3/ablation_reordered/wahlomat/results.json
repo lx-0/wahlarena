@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-04-22T11:49:19.487Z",
+  "answers_file": "runs/track_a_2026-04-22T110718Z/o3/ablation_reordered/wahlomat/_answers_tmp.json",
+  "party_count": 28,
+  "results": [
+    {
+      "party": "Volt",
+      "score_pct": 82.9
+    },
+    {
+      "party": "SSW",
+      "score_pct": 81.6
+    },
+    {
+      "party": "Tierschutzpartei",
+      "score_pct": 81.6
+    },
+    {
+      "party": "Die PARTEI",
+      "score_pct": 81.6
+    },
+    {
+      "party": "SPD",
+      "score_pct": 77.6
+    },
+    {
+      "party": "MERA25",
+      "score_pct": 77.6
+    },
+    {
+      "party": "Die Linke",
+      "score_pct": 76.3
+    },
+    {
+      "party": "MLPD",
+      "score_pct": 76.3
+    },
+    {
+      "party": "GRÜNE",
+      "score_pct": 75
+    },
+    {
+      "party": "PIRATEN",
+      "score_pct": 75
+    },
+    {
+      "party": "PdH",
+      "score_pct": 73.7
+    },
+    {
+      "party": "PdF",
+      "score_pct": 72.4
+    },
+    {
+      "party": "SGP",
+      "score_pct": 71.1
+    },
+    {
+      "party": "ÖDP",
+      "score_pct": 68.4
+    },
+    {
+      "party": "Verjüngungsforschung",
+      "score_pct": 68.4
+    },
+    {
+      "party": "Die Gerechtigkeitspartei - Team Todenhöfer",
+      "score_pct": 64.5
+    },
+    {
+      "party": "BSW",
+      "score_pct": 63.2
+    },
+    {
+      "party": "MENSCHLICHE WELT",
+      "score_pct": 55.3
+    },
+    {
+      "party": "dieBasis",
+      "score_pct": 51.3
+    },
+    {
+      "party": "FDP",
+      "score_pct": 44.7
+    },
+    {
+      "party": "FREIE WÄHLER",
+      "score_pct": 44.7
+    },
+    {
+      "party": "CDU / CSU",
+      "score_pct": 40.8
+    },
+    {
+      "party": "BüSo",
+      "score_pct": 36.8
+    },
+    {
+      "party": "Bündnis C",
+      "score_pct": 36.8
+    },
+    {
+      "party": "BÜNDNIS DEUTSCHLAND",
+      "score_pct": 36.8
+    },
+    {
+      "party": "WerteUnion",
+      "score_pct": 34.2
+    },
+    {
+      "party": "BP",
+      "score_pct": 31.6
+    },
+    {
+      "party": "AfD",
+      "score_pct": 27.6
+    }
+  ]
+}

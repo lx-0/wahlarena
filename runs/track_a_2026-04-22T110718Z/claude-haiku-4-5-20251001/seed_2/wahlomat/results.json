@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-04-22T12:17:22.597Z",
+  "answers_file": "runs/track_a_2026-04-22T110718Z/claude-haiku-4-5-20251001/seed_2/wahlomat/_answers_tmp.json",
+  "party_count": 28,
+  "results": [
+    {
+      "party": "Tierschutzpartei",
+      "score_pct": 73.7
+    },
+    {
+      "party": "SSW",
+      "score_pct": 71.1
+    },
+    {
+      "party": "Die Linke",
+      "score_pct": 71.1
+    },
+    {
+      "party": "PdH",
+      "score_pct": 71.1
+    },
+    {
+      "party": "SPD",
+      "score_pct": 69.7
+    },
+    {
+      "party": "GRÜNE",
+      "score_pct": 69.7
+    },
+    {
+      "party": "PIRATEN",
+      "score_pct": 69.7
+    },
+    {
+      "party": "Volt",
+      "score_pct": 69.7
+    },
+    {
+      "party": "MERA25",
+      "score_pct": 69.7
+    },
+    {
+      "party": "Die PARTEI",
+      "score_pct": 68.4
+    },
+    {
+      "party": "MLPD",
+      "score_pct": 68.4
+    },
+    {
+      "party": "ÖDP",
+      "score_pct": 65.8
+    },
+    {
+      "party": "Die Gerechtigkeitspartei - Team Todenhöfer",
+      "score_pct": 64.5
+    },
+    {
+      "party": "SGP",
+      "score_pct": 63.2
+    },
+    {
+      "party": "PdF",
+      "score_pct": 59.2
+    },
+    {
+      "party": "Verjüngungsforschung",
+      "score_pct": 57.9
+    },
+    {
+      "party": "FDP",
+      "score_pct": 55.3
+    },
+    {
+      "party": "MENSCHLICHE WELT",
+      "score_pct": 55.3
+    },
+    {
+      "party": "BSW",
+      "score_pct": 50
+    },
+    {
+      "party": "dieBasis",
+      "score_pct": 48.7
+    },
+    {
+      "party": "FREIE WÄHLER",
+      "score_pct": 47.4
+    },
+    {
+      "party": "WerteUnion",
+      "score_pct": 47.4
+    },
+    {
+      "party": "CDU / CSU",
+      "score_pct": 46.1
+    },
+    {
+      "party": "BüSo",
+      "score_pct": 44.7
+    },
+    {
+      "party": "Bündnis C",
+      "score_pct": 44.7
+    },
+    {
+      "party": "BÜNDNIS DEUTSCHLAND",
+      "score_pct": 44.7
+    },
+    {
+      "party": "BP",
+      "score_pct": 39.5
+    },
+    {
+      "party": "AfD",
+      "score_pct": 35.5
+    }
+  ]
+}

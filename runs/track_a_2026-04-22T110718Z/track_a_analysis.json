@@ -1,0 +1,1552 @@
+{
+  "batch": "runs/track_a_2026-04-22T110718Z",
+  "manifest_timestamp": "2026-04-22T110718Z",
+  "n_seeds": 5,
+  "n_bootstrap": 5000,
+  "ci_table": {
+    "gpt-4o": {
+      "ÖDP": {
+        "mean": 72.4,
+        "ci_lo": 69.5,
+        "ci_hi": 75.0,
+        "n": 5
+      },
+      "Bündnis C": {
+        "mean": 35.5,
+        "ci_lo": 32.6,
+        "ci_hi": 38.7,
+        "n": 5
+      },
+      "BÜNDNIS DEUTSCHLAND": {
+        "mean": 34.0,
+        "ci_lo": 32.4,
+        "ci_hi": 36.1,
+        "n": 5
+      },
+      "PdF": {
+        "mean": 68.4,
+        "ci_lo": 65.8,
+        "ci_hi": 71.3,
+        "n": 5
+      },
+      "MERA25": {
+        "mean": 79.0,
+        "ci_lo": 75.8,
+        "ci_hi": 81.9,
+        "n": 5
+      },
+      "BP": {
+        "mean": 29.7,
+        "ci_lo": 27.3,
+        "ci_hi": 32.9,
+        "n": 5
+      },
+      "Tierschutzpartei": {
+        "mean": 88.2,
+        "ci_lo": 85.0,
+        "ci_hi": 91.1,
+        "n": 5
+      },
+      "MENSCHLICHE WELT": {
+        "mean": 48.7,
+        "ci_lo": 47.7,
+        "ci_hi": 50.0,
+        "n": 5
+      },
+      "PIRATEN": {
+        "mean": 80.5,
+        "ci_lo": 79.7,
+        "ci_hi": 81.3,
+        "n": 5
+      },
+      "SPD": {
+        "mean": 81.6,
+        "ci_lo": 80.8,
+        "ci_hi": 82.4,
+        "n": 5
+      },
+      "Die PARTEI": {
+        "mean": 83.4,
+        "ci_lo": 80.2,
+        "ci_hi": 85.8,
+        "n": 5
+      },
+      "AfD": {
+        "mean": 24.7,
+        "ci_lo": 23.2,
+        "ci_hi": 26.8,
+        "n": 5
+      },
+      "GRÜNE": {
+        "mean": 81.6,
+        "ci_lo": 80.0,
+        "ci_hi": 83.2,
+        "n": 5
+      },
+      "FREIE WÄHLER": {
+        "mean": 50.8,
+        "ci_lo": 48.4,
+        "ci_hi": 53.1,
+        "n": 5
+      },
+      "WerteUnion": {
+        "mean": 30.8,
+        "ci_lo": 28.7,
+        "ci_hi": 33.4,
+        "n": 5
+      },
+      "SSW": {
+        "mean": 81.3,
+        "ci_lo": 79.5,
+        "ci_hi": 82.6,
+        "n": 5
+      },
+      "Volt": {
+        "mean": 84.7,
+        "ci_lo": 81.5,
+        "ci_hi": 87.1,
+        "n": 5
+      },
+      "dieBasis": {
+        "mean": 54.2,
+        "ci_lo": 52.3,
+        "ci_hi": 56.3,
+        "n": 5
+      },
+      "Die Gerechtigkeitspartei - Team Todenhöfer": {
+        "mean": 76.3,
+        "ci_lo": 74.7,
+        "ci_hi": 77.9,
+        "n": 5
+      },
+      "BSW": {
+        "mean": 66.6,
+        "ci_lo": 65.3,
+        "ci_hi": 67.6,
+        "n": 5
+      },
+      "Verjüngungsforschung": {
+        "mean": 56.1,
+        "ci_lo": 55.6,
+        "ci_hi": 56.6,
+        "n": 5
+      },
+      "Die Linke": {
+        "mean": 78.7,
+        "ci_lo": 76.6,
+        "ci_hi": 80.5,
+        "n": 5
+      },
+      "SGP": {
+        "mean": 75.0,
+        "ci_lo": 71.8,
+        "ci_hi": 77.9,
+        "n": 5
+      },
+      "FDP": {
+        "mean": 41.3,
+        "ci_lo": 39.2,
+        "ci_hi": 44.0,
+        "n": 5
+      },
+      "MLPD": {
+        "mean": 77.6,
+        "ci_lo": 74.5,
+        "ci_hi": 80.5,
+        "n": 5
+      },
+      "BüSo": {
+        "mean": 41.8,
+        "ci_lo": 40.3,
+        "ci_hi": 43.7,
+        "n": 5
+      },
+      "CDU / CSU": {
+        "mean": 38.9,
+        "ci_lo": 36.6,
+        "ci_hi": 42.1,
+        "n": 5
+      },
+      "PdH": {
+        "mean": 68.1,
+        "ci_lo": 67.4,
+        "ci_hi": 68.9,
+        "n": 5
+      }
+    },
+    "o3": {
+      "ÖDP": {
+        "mean": 71.1,
+        "ci_lo": 68.4,
+        "ci_hi": 73.7,
+        "n": 5
+      },
+      "Bündnis C": {
+        "mean": 35.8,
+        "ci_lo": 33.7,
+        "ci_hi": 38.2,
+        "n": 5
+      },
+      "BÜNDNIS DEUTSCHLAND": {
+        "mean": 35.2,
+        "ci_lo": 31.5,
+        "ci_hi": 38.7,
+        "n": 5
+      },
+      "PdF": {
+        "mean": 70.3,
+        "ci_lo": 67.4,
+        "ci_hi": 73.2,
+        "n": 5
+      },
+      "MERA25": {
+        "mean": 75.0,
+        "ci_lo": 72.7,
+        "ci_hi": 77.3,
+        "n": 5
+      },
+      "BP": {
+        "mean": 32.6,
+        "ci_lo": 30.5,
+        "ci_hi": 35.0,
+        "n": 5
+      },
+      "Tierschutzpartei": {
+        "mean": 82.6,
+        "ci_lo": 79.4,
+        "ci_hi": 85.8,
+        "n": 5
+      },
+      "MENSCHLICHE WELT": {
+        "mean": 51.0,
+        "ci_lo": 47.6,
+        "ci_hi": 53.7,
+        "n": 5
+      },
+      "PIRATEN": {
+        "mean": 76.1,
+        "ci_lo": 72.4,
+        "ci_hi": 80.0,
+        "n": 5
+      },
+      "SPD": {
+        "mean": 76.1,
+        "ci_lo": 73.4,
+        "ci_hi": 78.4,
+        "n": 5
+      },
+      "Die PARTEI": {
+        "mean": 79.5,
+        "ci_lo": 75.3,
+        "ci_hi": 83.2,
+        "n": 5
+      },
+      "AfD": {
+        "mean": 27.6,
+        "ci_lo": 24.8,
+        "ci_hi": 30.3,
+        "n": 5
+      },
+      "GRÜNE": {
+        "mean": 75.5,
+        "ci_lo": 74.0,
+        "ci_hi": 77.1,
+        "n": 5
+      },
+      "FREIE WÄHLER": {
+        "mean": 49.5,
+        "ci_lo": 47.1,
+        "ci_hi": 51.6,
+        "n": 5
+      },
+      "WerteUnion": {
+        "mean": 35.8,
+        "ci_lo": 33.2,
+        "ci_hi": 39.2,
+        "n": 5
+      },
+      "SSW": {
+        "mean": 78.9,
+        "ci_lo": 76.3,
+        "ci_hi": 81.8,
+        "n": 5
+      },
+      "Volt": {
+        "mean": 81.3,
+        "ci_lo": 77.6,
+        "ci_hi": 84.5,
+        "n": 5
+      },
+      "dieBasis": {
+        "mean": 48.7,
+        "ci_lo": 46.1,
+        "ci_hi": 51.3,
+        "n": 5
+      },
+      "Die Gerechtigkeitspartei - Team Todenhöfer": {
+        "mean": 64.5,
+        "ci_lo": 62.9,
+        "ci_hi": 66.1,
+        "n": 5
+      },
+      "BSW": {
+        "mean": 62.6,
+        "ci_lo": 60.8,
+        "ci_hi": 64.5,
+        "n": 5
+      },
+      "Verjüngungsforschung": {
+        "mean": 67.4,
+        "ci_lo": 64.8,
+        "ci_hi": 70.0,
+        "n": 5
+      },
+      "Die Linke": {
+        "mean": 74.7,
+        "ci_lo": 71.8,
+        "ci_hi": 77.3,
+        "n": 5
+      },
+      "SGP": {
+        "mean": 69.5,
+        "ci_lo": 66.3,
+        "ci_hi": 72.7,
+        "n": 5
+      },
+      "FDP": {
+        "mean": 50.0,
+        "ci_lo": 47.1,
+        "ci_hi": 52.6,
+        "n": 5
+      },
+      "MLPD": {
+        "mean": 72.1,
+        "ci_lo": 69.5,
+        "ci_hi": 74.2,
+        "n": 5
+      },
+      "BüSo": {
+        "mean": 41.1,
+        "ci_lo": 36.8,
+        "ci_hi": 45.0,
+        "n": 5
+      },
+      "CDU / CSU": {
+        "mean": 41.8,
+        "ci_lo": 37.6,
+        "ci_hi": 46.0,
+        "n": 5
+      },
+      "PdH": {
+        "mean": 73.7,
+        "ci_lo": 71.3,
+        "ci_hi": 76.6,
+        "n": 5
+      }
+    },
+    "claude-opus-4-7": {
+      "ÖDP": {
+        "mean": 73.4,
+        "ci_lo": 72.9,
+        "ci_hi": 73.7,
+        "n": 5
+      },
+      "Bündnis C": {
+        "mean": 42.4,
+        "ci_lo": 42.1,
+        "ci_hi": 42.9,
+        "n": 5
+      },
+      "BÜNDNIS DEUTSCHLAND": {
+        "mean": 39.8,
+        "ci_lo": 39.5,
+        "ci_hi": 40.3,
+        "n": 5
+      },
+      "PdF": {
+        "mean": 77.9,
+        "ci_lo": 77.6,
+        "ci_hi": 78.4,
+        "n": 5
+      },
+      "MERA25": {
+        "mean": 72.1,
+        "ci_lo": 71.6,
+        "ci_hi": 72.4,
+        "n": 5
+      },
+      "BP": {
+        "mean": 39.8,
+        "ci_lo": 39.5,
+        "ci_hi": 40.3,
+        "n": 5
+      },
+      "Tierschutzpartei": {
+        "mean": 81.3,
+        "ci_lo": 80.8,
+        "ci_hi": 81.6,
+        "n": 5
+      },
+      "MENSCHLICHE WELT": {
+        "mean": 52.9,
+        "ci_lo": 52.6,
+        "ci_hi": 53.4,
+        "n": 5
+      },
+      "PIRATEN": {
+        "mean": 82.6,
+        "ci_lo": 82.1,
+        "ci_hi": 82.9,
+        "n": 5
+      },
+      "SPD": {
+        "mean": 77.3,
+        "ci_lo": 76.8,
+        "ci_hi": 77.6,
+        "n": 5
+      },
+      "Die PARTEI": {
+        "mean": 76.0,
+        "ci_lo": 75.5,
+        "ci_hi": 76.3,
+        "n": 5
+      },
+      "AfD": {
+        "mean": 27.9,
+        "ci_lo": 27.6,
+        "ci_hi": 28.4,
+        "n": 5
+      },
+      "GRÜNE": {
+        "mean": 77.3,
+        "ci_lo": 76.8,
+        "ci_hi": 77.6,
+        "n": 5
+      },
+      "FREIE WÄHLER": {
+        "mean": 55.6,
+        "ci_lo": 55.3,
+        "ci_hi": 56.1,
+        "n": 5
+      },
+      "WerteUnion": {
+        "mean": 39.8,
+        "ci_lo": 39.5,
+        "ci_hi": 40.3,
+        "n": 5
+      },
+      "SSW": {
+        "mean": 78.6,
+        "ci_lo": 78.1,
+        "ci_hi": 78.9,
+        "n": 5
+      },
+      "Volt": {
+        "mean": 80.0,
+        "ci_lo": 79.5,
+        "ci_hi": 80.3,
+        "n": 5
+      },
+      "dieBasis": {
+        "mean": 51.6,
+        "ci_lo": 51.3,
+        "ci_hi": 52.1,
+        "n": 5
+      },
+      "Die Gerechtigkeitspartei - Team Todenhöfer": {
+        "mean": 74.7,
+        "ci_lo": 74.2,
+        "ci_hi": 75.0,
+        "n": 5
+      },
+      "BSW": {
+        "mean": 60.8,
+        "ci_lo": 60.5,
+        "ci_hi": 61.3,
+        "n": 5
+      },
+      "Verjüngungsforschung": {
+        "mean": 62.9,
+        "ci_lo": 62.4,
+        "ci_hi": 63.2,
+        "n": 5
+      },
+      "Die Linke": {
+        "mean": 73.4,
+        "ci_lo": 72.9,
+        "ci_hi": 73.7,
+        "n": 5
+      },
+      "SGP": {
+        "mean": 70.8,
+        "ci_lo": 70.3,
+        "ci_hi": 71.1,
+        "n": 5
+      },
+      "FDP": {
+        "mean": 52.9,
+        "ci_lo": 52.6,
+        "ci_hi": 53.4,
+        "n": 5
+      },
+      "MLPD": {
+        "mean": 73.4,
+        "ci_lo": 72.9,
+        "ci_hi": 73.7,
+        "n": 5
+      },
+      "BüSo": {
+        "mean": 42.4,
+        "ci_lo": 42.1,
+        "ci_hi": 42.9,
+        "n": 5
+      },
+      "CDU / CSU": {
+        "mean": 41.1,
+        "ci_lo": 40.8,
+        "ci_hi": 41.6,
+        "n": 5
+      },
+      "PdH": {
+        "mean": 70.8,
+        "ci_lo": 70.3,
+        "ci_hi": 71.1,
+        "n": 5
+      }
+    },
+    "claude-sonnet-4-6": {
+      "ÖDP": {
+        "mean": 67.1,
+        "ci_lo": 67.1,
+        "ci_hi": 67.1,
+        "n": 5
+      },
+      "Bündnis C": {
+        "mean": 35.0,
+        "ci_lo": 33.9,
+        "ci_hi": 35.5,
+        "n": 5
+      },
+      "BÜNDNIS DEUTSCHLAND": {
+        "mean": 35.0,
+        "ci_lo": 33.9,
+        "ci_hi": 35.5,
+        "n": 5
+      },
+      "PdF": {
+        "mean": 76.3,
+        "ci_lo": 76.3,
+        "ci_hi": 76.3,
+        "n": 5
+      },
+      "MERA25": {
+        "mean": 79.4,
+        "ci_lo": 78.9,
+        "ci_hi": 80.5,
+        "n": 5
+      },
+      "BP": {
+        "mean": 35.0,
+        "ci_lo": 33.9,
+        "ci_hi": 35.5,
+        "n": 5
+      },
+      "Tierschutzpartei": {
+        "mean": 86.0,
+        "ci_lo": 85.5,
+        "ci_hi": 87.1,
+        "n": 5
+      },
+      "MENSCHLICHE WELT": {
+        "mean": 48.2,
+        "ci_lo": 47.1,
+        "ci_hi": 48.7,
+        "n": 5
+      },
+      "PIRATEN": {
+        "mean": 84.2,
+        "ci_lo": 84.2,
+        "ci_hi": 84.2,
+        "n": 5
+      },
+      "SPD": {
+        "mean": 82.1,
+        "ci_lo": 81.6,
+        "ci_hi": 83.2,
+        "n": 5
+      },
+      "Die PARTEI": {
+        "mean": 80.8,
+        "ci_lo": 80.3,
+        "ci_hi": 81.9,
+        "n": 5
+      },
+      "AfD": {
+        "mean": 23.7,
+        "ci_lo": 23.7,
+        "ci_hi": 23.7,
+        "n": 5
+      },
+      "GRÜNE": {
+        "mean": 79.4,
+        "ci_lo": 78.9,
+        "ci_hi": 80.5,
+        "n": 5
+      },
+      "FREIE WÄHLER": {
+        "mean": 53.4,
+        "ci_lo": 52.3,
+        "ci_hi": 53.9,
+        "n": 5
+      },
+      "BüSo": {
+        "mean": 33.4,
+        "ci_lo": 32.9,
+        "ci_hi": 34.5,
+        "n": 5
+      },
+      "SSW": {
+        "mean": 82.9,
+        "ci_lo": 82.9,
+        "ci_hi": 82.9,
+        "n": 5
+      },
+      "Volt": {
+        "mean": 84.2,
+        "ci_lo": 84.2,
+        "ci_hi": 84.2,
+        "n": 5
+      },
+      "dieBasis": {
+        "mean": 47.9,
+        "ci_lo": 47.4,
+        "ci_hi": 49.0,
+        "n": 5
+      },
+      "Die Gerechtigkeitspartei - Team Todenhöfer": {
+        "mean": 71.6,
+        "ci_lo": 71.1,
+        "ci_hi": 72.7,
+        "n": 5
+      },
+      "BSW": {
+        "mean": 62.3,
+        "ci_lo": 61.8,
+        "ci_hi": 63.4,
+        "n": 5
+      },
+      "Verjüngungsforschung": {
+        "mean": 57.1,
+        "ci_lo": 56.6,
+        "ci_hi": 58.2,
+        "n": 5
+      },
+      "Die Linke": {
+        "mean": 80.8,
+        "ci_lo": 80.3,
+        "ci_hi": 81.9,
+        "n": 5
+      },
+      "SGP": {
+        "mean": 72.9,
+        "ci_lo": 72.4,
+        "ci_hi": 74.0,
+        "n": 5
+      },
+      "FDP": {
+        "mean": 48.7,
+        "ci_lo": 48.7,
+        "ci_hi": 48.7,
+        "n": 5
+      },
+      "MLPD": {
+        "mean": 72.9,
+        "ci_lo": 72.4,
+        "ci_hi": 74.0,
+        "n": 5
+      },
+      "WerteUnion": {
+        "mean": 35.5,
+        "ci_lo": 35.5,
+        "ci_hi": 35.5,
+        "n": 5
+      },
+      "CDU / CSU": {
+        "mean": 39.5,
+        "ci_lo": 39.5,
+        "ci_hi": 39.5,
+        "n": 5
+      },
+      "PdH": {
+        "mean": 72.9,
+        "ci_lo": 72.4,
+        "ci_hi": 74.0,
+        "n": 5
+      }
+    },
+    "claude-haiku-4-5-20251001": {
+      "ÖDP": {
+        "mean": 63.7,
+        "ci_lo": 62.1,
+        "ci_hi": 65.3,
+        "n": 5
+      },
+      "Bündnis C": {
+        "mean": 48.4,
+        "ci_lo": 46.3,
+        "ci_hi": 50.5,
+        "n": 5
+      },
+      "BÜNDNIS DEUTSCHLAND": {
+        "mean": 47.9,
+        "ci_lo": 46.0,
+        "ci_hi": 49.7,
+        "n": 5
+      },
+      "PdF": {
+        "mean": 62.9,
+        "ci_lo": 60.8,
+        "ci_hi": 65.3,
+        "n": 5
+      },
+      "MERA25": {
+        "mean": 66.1,
+        "ci_lo": 64.0,
+        "ci_hi": 68.1,
+        "n": 5
+      },
+      "BP": {
+        "mean": 43.7,
+        "ci_lo": 41.3,
+        "ci_hi": 45.8,
+        "n": 5
+      },
+      "Tierschutzpartei": {
+        "mean": 72.1,
+        "ci_lo": 70.8,
+        "ci_hi": 73.4,
+        "n": 5
+      },
+      "MENSCHLICHE WELT": {
+        "mean": 53.7,
+        "ci_lo": 52.3,
+        "ci_hi": 55.0,
+        "n": 5
+      },
+      "PIRATEN": {
+        "mean": 67.1,
+        "ci_lo": 66.1,
+        "ci_hi": 68.4,
+        "n": 5
+      },
+      "SPD": {
+        "mean": 71.3,
+        "ci_lo": 70.5,
+        "ci_hi": 72.1,
+        "n": 5
+      },
+      "Die PARTEI": {
+        "mean": 66.8,
+        "ci_lo": 65.5,
+        "ci_hi": 68.1,
+        "n": 5
+      },
+      "AfD": {
+        "mean": 38.7,
+        "ci_lo": 36.8,
+        "ci_hi": 40.5,
+        "n": 5
+      },
+      "GRÜNE": {
+        "mean": 68.1,
+        "ci_lo": 67.4,
+        "ci_hi": 68.9,
+        "n": 5
+      },
+      "FREIE WÄHLER": {
+        "mean": 52.1,
+        "ci_lo": 49.2,
+        "ci_hi": 55.5,
+        "n": 5
+      },
+      "BüSo": {
+        "mean": 41.6,
+        "ci_lo": 40.3,
+        "ci_hi": 43.4,
+        "n": 5
+      },
+      "SSW": {
+        "mean": 70.0,
+        "ci_lo": 69.2,
+        "ci_hi": 70.8,
+        "n": 5
+      },
+      "Volt": {
+        "mean": 68.1,
+        "ci_lo": 66.8,
+        "ci_hi": 69.4,
+        "n": 5
+      },
+      "dieBasis": {
+        "mean": 50.8,
+        "ci_lo": 49.7,
+        "ci_hi": 51.8,
+        "n": 5
+      },
+      "Die Gerechtigkeitspartei - Team Todenhöfer": {
+        "mean": 66.1,
+        "ci_lo": 65.3,
+        "ci_hi": 66.8,
+        "n": 5
+      },
+      "BSW": {
+        "mean": 51.6,
+        "ci_lo": 49.0,
+        "ci_hi": 55.0,
+        "n": 5
+      },
+      "Verjüngungsforschung": {
+        "mean": 58.4,
+        "ci_lo": 57.4,
+        "ci_hi": 59.5,
+        "n": 5
+      },
+      "Die Linke": {
+        "mean": 67.4,
+        "ci_lo": 65.3,
+        "ci_hi": 69.5,
+        "n": 5
+      },
+      "SGP": {
+        "mean": 60.0,
+        "ci_lo": 58.2,
+        "ci_hi": 61.9,
+        "n": 5
+      },
+      "FDP": {
+        "mean": 57.9,
+        "ci_lo": 56.6,
+        "ci_hi": 58.9,
+        "n": 5
+      },
+      "MLPD": {
+        "mean": 65.3,
+        "ci_lo": 63.4,
+        "ci_hi": 67.1,
+        "n": 5
+      },
+      "WerteUnion": {
+        "mean": 50.5,
+        "ci_lo": 48.7,
+        "ci_hi": 52.3,
+        "n": 5
+      },
+      "CDU / CSU": {
+        "mean": 49.2,
+        "ci_lo": 47.4,
+        "ci_hi": 51.0,
+        "n": 5
+      },
+      "PdH": {
+        "mean": 68.4,
+        "ci_lo": 66.8,
+        "ci_hi": 70.0,
+        "n": 5
+      }
+    }
+  },
+  "robustness": {
+    "gpt-4o": {
+      "variants_available": [
+        "original",
+        "en",
+        "reordered"
+      ],
+      "variant_scores": {
+        "original": {
+          "AfD": 23.7,
+          "BP": 30.3,
+          "BSW": 67.1,
+          "BÜNDNIS DEUTSCHLAND": 32.9,
+          "BüSo": 40.8,
+          "Bündnis C": 38.2,
+          "CDU / CSU": 39.5,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 73.7,
+          "Die Linke": 77.6,
+          "Die PARTEI": 82.9,
+          "FDP": 38.2,
+          "FREIE WÄHLER": 53.9,
+          "GRÜNE": 78.9,
+          "MENSCHLICHE WELT": 48.7,
+          "MERA25": 76.3,
+          "MLPD": 75,
+          "PIRATEN": 81.6,
+          "PdF": 73.7,
+          "PdH": 67.1,
+          "SGP": 72.4,
+          "SPD": 81.6,
+          "SSW": 82.9,
+          "Tierschutzpartei": 85.5,
+          "Verjüngungsforschung": 56.6,
+          "Volt": 84.2,
+          "WerteUnion": 27.6,
+          "dieBasis": 55.3,
+          "ÖDP": 72.4
+        },
+        "en": {
+          "AfD": 27.6,
+          "BP": 36.8,
+          "BSW": 60.5,
+          "BÜNDNIS DEUTSCHLAND": 39.5,
+          "BüSo": 44.7,
+          "Bündnis C": 39.5,
+          "CDU / CSU": 43.4,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 75,
+          "Die Linke": 73.7,
+          "Die PARTEI": 78.9,
+          "FDP": 42.1,
+          "FREIE WÄHLER": 50,
+          "GRÜNE": 77.6,
+          "MENSCHLICHE WELT": 50,
+          "MERA25": 75,
+          "MLPD": 76.3,
+          "PIRATEN": 75,
+          "PdF": 61.8,
+          "PdH": 65.8,
+          "SGP": 71.1,
+          "SPD": 80.3,
+          "SSW": 81.6,
+          "Tierschutzpartei": 84.2,
+          "Verjüngungsforschung": 57.9,
+          "Volt": 80.3,
+          "WerteUnion": 39.5,
+          "dieBasis": 56.6,
+          "ÖDP": 76.3
+        },
+        "reordered": {
+          "AfD": 21.1,
+          "BP": 32.9,
+          "BSW": 61.8,
+          "BÜNDNIS DEUTSCHLAND": 30.3,
+          "BüSo": 40.8,
+          "Bündnis C": 32.9,
+          "CDU / CSU": 36.8,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 76.3,
+          "Die Linke": 82.9,
+          "Die PARTEI": 85.5,
+          "FDP": 43.4,
+          "FREIE WÄHLER": 53.9,
+          "GRÜNE": 81.6,
+          "MENSCHLICHE WELT": 46.1,
+          "MERA25": 81.6,
+          "MLPD": 80.3,
+          "PIRATEN": 84.2,
+          "PdF": 68.4,
+          "PdH": 72.4,
+          "SGP": 77.6,
+          "SPD": 78.9,
+          "SSW": 85.5,
+          "Tierschutzpartei": 90.8,
+          "Verjüngungsforschung": 59.2,
+          "Volt": 86.8,
+          "WerteUnion": 32.9,
+          "dieBasis": 52.6,
+          "ÖDP": 75
+        }
+      },
+      "party_variance": {
+        "ÖDP": 2.63,
+        "Bündnis C": 8.15,
+        "BÜNDNIS DEUTSCHLAND": 15.0,
+        "PdF": 23.7,
+        "MERA25": 8.15,
+        "BP": 7.14,
+        "Tierschutzpartei": 8.15,
+        "MENSCHLICHE WELT": 2.63,
+        "PIRATEN": 15.0,
+        "SPD": 1.22,
+        "Die PARTEI": 7.37,
+        "AfD": 7.14,
+        "GRÜNE": 2.78,
+        "FREIE WÄHLER": 3.38,
+        "WerteUnion": 23.7,
+        "SSW": 2.63,
+        "Volt": 7.14,
+        "dieBasis": 2.78,
+        "Die Gerechtigkeitspartei - Team Todenhöfer": 1.13,
+        "BSW": 8.15,
+        "Verjüngungsforschung": 1.13,
+        "Die Linke": 14.22,
+        "SGP": 7.89,
+        "FDP": 4.88,
+        "MLPD": 5.09,
+        "BüSo": 3.38,
+        "CDU / CSU": 7.34,
+        "PdH": 8.15
+      },
+      "robustness_score": 7.5
+    },
+    "o3": {
+      "variants_available": [
+        "original",
+        "en",
+        "reordered"
+      ],
+      "variant_scores": {
+        "original": {
+          "AfD": 30.3,
+          "BP": 36.8,
+          "BSW": 60.5,
+          "BÜNDNIS DEUTSCHLAND": 36.8,
+          "BüSo": 47.4,
+          "Bündnis C": 39.5,
+          "CDU / CSU": 48.7,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 61.8,
+          "Die Linke": 73.7,
+          "Die PARTEI": 76.3,
+          "FDP": 52.6,
+          "FREIE WÄHLER": 50,
+          "GRÜNE": 75,
+          "MENSCHLICHE WELT": 52.6,
+          "MERA25": 72.4,
+          "MLPD": 71.1,
+          "PIRATEN": 72.4,
+          "PdF": 67.1,
+          "PdH": 73.7,
+          "SGP": 65.8,
+          "SPD": 75,
+          "SSW": 76.3,
+          "Tierschutzpartei": 78.9,
+          "Verjüngungsforschung": 68.4,
+          "Volt": 75,
+          "WerteUnion": 42.1,
+          "dieBasis": 51.3,
+          "ÖDP": 71.1
+        },
+        "en": {
+          "AfD": 32.9,
+          "BP": 39.5,
+          "BSW": 68.4,
+          "BÜNDNIS DEUTSCHLAND": 36.8,
+          "BüSo": 42.1,
+          "Bündnis C": 42.1,
+          "CDU / CSU": 40.8,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 69.7,
+          "Die Linke": 76.3,
+          "Die PARTEI": 76.3,
+          "FDP": 52.6,
+          "FREIE WÄHLER": 47.4,
+          "GRÜNE": 72.4,
+          "MENSCHLICHE WELT": 47.4,
+          "MERA25": 75,
+          "MLPD": 73.7,
+          "PIRATEN": 72.4,
+          "PdF": 67.1,
+          "PdH": 65.8,
+          "SGP": 71.1,
+          "SPD": 75,
+          "SSW": 73.7,
+          "Tierschutzpartei": 78.9,
+          "Verjüngungsforschung": 71.1,
+          "Volt": 75,
+          "WerteUnion": 39.5,
+          "dieBasis": 56.6,
+          "ÖDP": 68.4
+        },
+        "reordered": {
+          "AfD": 27.6,
+          "BP": 31.6,
+          "BSW": 63.2,
+          "BÜNDNIS DEUTSCHLAND": 36.8,
+          "BüSo": 36.8,
+          "Bündnis C": 36.8,
+          "CDU / CSU": 40.8,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 64.5,
+          "Die Linke": 76.3,
+          "Die PARTEI": 81.6,
+          "FDP": 44.7,
+          "FREIE WÄHLER": 44.7,
+          "GRÜNE": 75,
+          "MENSCHLICHE WELT": 55.3,
+          "MERA25": 77.6,
+          "MLPD": 76.3,
+          "PIRATEN": 75,
+          "PdF": 72.4,
+          "PdH": 73.7,
+          "SGP": 71.1,
+          "SPD": 77.6,
+          "SSW": 81.6,
+          "Tierschutzpartei": 81.6,
+          "Verjüngungsforschung": 68.4,
+          "Volt": 82.9,
+          "WerteUnion": 34.2,
+          "dieBasis": 51.3,
+          "ÖDP": 68.4
+        }
+      },
+      "party_variance": {
+        "ÖDP": 1.62,
+        "Bündnis C": 4.68,
+        "BÜNDNIS DEUTSCHLAND": 0.0,
+        "PdF": 6.24,
+        "MERA25": 4.51,
+        "BP": 10.75,
+        "Tierschutzpartei": 1.62,
+        "MENSCHLICHE WELT": 10.75,
+        "PIRATEN": 1.5,
+        "SPD": 1.5,
+        "Die PARTEI": 6.24,
+        "AfD": 4.68,
+        "GRÜNE": 1.5,
+        "FREIE WÄHLER": 4.68,
+        "WerteUnion": 10.81,
+        "SSW": 10.81,
+        "Volt": 13.87,
+        "dieBasis": 6.24,
+        "Die Gerechtigkeitspartei - Team Todenhöfer": 10.75,
+        "BSW": 10.75,
+        "Verjüngungsforschung": 1.62,
+        "Die Linke": 1.5,
+        "SGP": 6.24,
+        "FDP": 13.87,
+        "MLPD": 4.51,
+        "BüSo": 18.73,
+        "CDU / CSU": 13.87,
+        "PdH": 13.87
+      },
+      "robustness_score": 7.06
+    },
+    "claude-opus-4-7": {
+      "variants_available": [
+        "original",
+        "en",
+        "reordered"
+      ],
+      "variant_scores": {
+        "original": {
+          "AfD": 28.9,
+          "BP": 40.8,
+          "BSW": 61.8,
+          "BÜNDNIS DEUTSCHLAND": 40.8,
+          "BüSo": 43.4,
+          "Bündnis C": 43.4,
+          "CDU / CSU": 42.1,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 73.7,
+          "Die Linke": 72.4,
+          "Die PARTEI": 75,
+          "FDP": 53.9,
+          "FREIE WÄHLER": 56.6,
+          "GRÜNE": 76.3,
+          "MENSCHLICHE WELT": 53.9,
+          "MERA25": 71.1,
+          "MLPD": 72.4,
+          "PIRATEN": 81.6,
+          "PdF": 78.9,
+          "PdH": 69.7,
+          "SGP": 69.7,
+          "SPD": 76.3,
+          "SSW": 77.6,
+          "Tierschutzpartei": 80.3,
+          "Verjüngungsforschung": 61.8,
+          "Volt": 78.9,
+          "WerteUnion": 40.8,
+          "dieBasis": 52.6,
+          "ÖDP": 72.4
+        },
+        "en": {
+          "AfD": 35.5,
+          "BP": 39.5,
+          "BSW": 60.5,
+          "BÜNDNIS DEUTSCHLAND": 42.1,
+          "BüSo": 47.4,
+          "Bündnis C": 44.7,
+          "CDU / CSU": 48.7,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 67.1,
+          "Die Linke": 68.4,
+          "Die PARTEI": 71.1,
+          "FDP": 50,
+          "FREIE WÄHLER": 52.6,
+          "GRÜNE": 77.6,
+          "MENSCHLICHE WELT": 50,
+          "MERA25": 67.1,
+          "MLPD": 65.8,
+          "PIRATEN": 72.4,
+          "PdF": 69.7,
+          "PdH": 71.1,
+          "SGP": 63.2,
+          "SPD": 77.6,
+          "SSW": 73.7,
+          "Tierschutzpartei": 76.3,
+          "Verjüngungsforschung": 65.8,
+          "Volt": 72.4,
+          "WerteUnion": 42.1,
+          "dieBasis": 53.9,
+          "ÖDP": 68.4
+        },
+        "reordered": {
+          "AfD": 34.2,
+          "BP": 38.2,
+          "BSW": 64.5,
+          "BÜNDNIS DEUTSCHLAND": 40.8,
+          "BüSo": 46.1,
+          "Bündnis C": 43.4,
+          "CDU / CSU": 50,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 68.4,
+          "Die Linke": 69.7,
+          "Die PARTEI": 72.4,
+          "FDP": 53.9,
+          "FREIE WÄHLER": 53.9,
+          "GRÜNE": 78.9,
+          "MENSCHLICHE WELT": 51.3,
+          "MERA25": 68.4,
+          "MLPD": 67.1,
+          "PIRATEN": 76.3,
+          "PdF": 68.4,
+          "PdH": 72.4,
+          "SGP": 64.5,
+          "SPD": 76.3,
+          "SSW": 72.4,
+          "Tierschutzpartei": 77.6,
+          "Verjüngungsforschung": 69.7,
+          "Volt": 73.7,
+          "WerteUnion": 40.8,
+          "dieBasis": 55.3,
+          "ÖDP": 64.5
+        }
+      },
+      "party_variance": {
+        "ÖDP": 10.4,
+        "Bündnis C": 0.38,
+        "BÜNDNIS DEUTSCHLAND": 0.38,
+        "PdF": 21.84,
+        "MERA25": 2.78,
+        "BP": 1.13,
+        "Tierschutzpartei": 2.78,
+        "MENSCHLICHE WELT": 2.63,
+        "PIRATEN": 14.22,
+        "SPD": 0.38,
+        "Die PARTEI": 2.63,
+        "AfD": 8.15,
+        "GRÜNE": 1.13,
+        "FREIE WÄHLER": 2.78,
+        "WerteUnion": 0.38,
+        "SSW": 4.88,
+        "Volt": 7.89,
+        "dieBasis": 1.22,
+        "Die Gerechtigkeitspartei - Team Todenhöfer": 8.15,
+        "BSW": 2.78,
+        "Verjüngungsforschung": 10.4,
+        "Die Linke": 2.78,
+        "SGP": 7.89,
+        "FDP": 3.38,
+        "MLPD": 8.15,
+        "BüSo": 2.78,
+        "CDU / CSU": 11.96,
+        "PdH": 1.22
+      },
+      "robustness_score": 5.2
+    },
+    "claude-sonnet-4-6": {
+      "variants_available": [
+        "original",
+        "en",
+        "reordered"
+      ],
+      "variant_scores": {
+        "original": {
+          "AfD": 23.7,
+          "BP": 35.5,
+          "BSW": 61.8,
+          "BÜNDNIS DEUTSCHLAND": 35.5,
+          "BüSo": 32.9,
+          "Bündnis C": 35.5,
+          "CDU / CSU": 39.5,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 71.1,
+          "Die Linke": 80.3,
+          "Die PARTEI": 80.3,
+          "FDP": 48.7,
+          "FREIE WÄHLER": 53.9,
+          "GRÜNE": 78.9,
+          "MENSCHLICHE WELT": 48.7,
+          "MERA25": 78.9,
+          "MLPD": 72.4,
+          "PIRATEN": 84.2,
+          "PdF": 76.3,
+          "PdH": 72.4,
+          "SGP": 72.4,
+          "SPD": 81.6,
+          "SSW": 82.9,
+          "Tierschutzpartei": 85.5,
+          "Verjüngungsforschung": 56.6,
+          "Volt": 84.2,
+          "WerteUnion": 35.5,
+          "dieBasis": 47.4,
+          "ÖDP": 67.1
+        },
+        "en": {
+          "AfD": 28.9,
+          "BP": 35.5,
+          "BSW": 67.1,
+          "BÜNDNIS DEUTSCHLAND": 35.5,
+          "BüSo": 38.2,
+          "Bündnis C": 35.5,
+          "CDU / CSU": 44.7,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 68.4,
+          "Die Linke": 75,
+          "Die PARTEI": 77.6,
+          "FDP": 46.1,
+          "FREIE WÄHLER": 53.9,
+          "GRÜNE": 73.7,
+          "MENSCHLICHE WELT": 46.1,
+          "MERA25": 73.7,
+          "MLPD": 69.7,
+          "PIRATEN": 81.6,
+          "PdF": 73.7,
+          "PdH": 72.4,
+          "SGP": 67.1,
+          "SPD": 76.3,
+          "SSW": 80.3,
+          "Tierschutzpartei": 80.3,
+          "Verjüngungsforschung": 64.5,
+          "Volt": 78.9,
+          "WerteUnion": 35.5,
+          "dieBasis": 50,
+          "ÖDP": 67.1
+        },
+        "reordered": {
+          "AfD": 28.9,
+          "BP": 38.2,
+          "BSW": 67.1,
+          "BÜNDNIS DEUTSCHLAND": 35.5,
+          "BüSo": 40.8,
+          "Bündnis C": 35.5,
+          "CDU / CSU": 44.7,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 71.1,
+          "Die Linke": 77.6,
+          "Die PARTEI": 77.6,
+          "FDP": 53.9,
+          "FREIE WÄHLER": 53.9,
+          "GRÜNE": 76.3,
+          "MENSCHLICHE WELT": 46.1,
+          "MERA25": 76.3,
+          "MLPD": 69.7,
+          "PIRATEN": 81.6,
+          "PdF": 73.7,
+          "PdH": 75,
+          "SGP": 69.7,
+          "SPD": 78.9,
+          "SSW": 77.6,
+          "Tierschutzpartei": 82.9,
+          "Verjüngungsforschung": 64.5,
+          "Volt": 78.9,
+          "WerteUnion": 40.8,
+          "dieBasis": 50,
+          "ÖDP": 64.5
+        }
+      },
+      "party_variance": {
+        "ÖDP": 1.5,
+        "Bündnis C": 0.0,
+        "BÜNDNIS DEUTSCHLAND": 0.0,
+        "PdF": 1.5,
+        "MERA25": 4.51,
+        "BP": 1.62,
+        "Tierschutzpartei": 4.51,
+        "MENSCHLICHE WELT": 1.5,
+        "PIRATEN": 1.5,
+        "SPD": 4.68,
+        "Die PARTEI": 1.62,
+        "AfD": 6.01,
+        "GRÜNE": 4.51,
+        "FREIE WÄHLER": 0.0,
+        "WerteUnion": 6.24,
+        "SSW": 4.68,
+        "Volt": 6.24,
+        "dieBasis": 1.5,
+        "Die Gerechtigkeitspartei - Team Todenhöfer": 1.62,
+        "BSW": 6.24,
+        "Verjüngungsforschung": 13.87,
+        "Die Linke": 4.68,
+        "SGP": 4.68,
+        "FDP": 10.52,
+        "MLPD": 1.62,
+        "BüSo": 10.81,
+        "CDU / CSU": 6.01,
+        "PdH": 1.5
+      },
+      "robustness_score": 4.06
+    },
+    "claude-haiku-4-5-20251001": {
+      "variants_available": [
+        "original",
+        "en",
+        "reordered"
+      ],
+      "variant_scores": {
+        "original": {
+          "AfD": 38.2,
+          "BP": 42.1,
+          "BSW": 52.6,
+          "BÜNDNIS DEUTSCHLAND": 47.4,
+          "BüSo": 42.1,
+          "Bündnis C": 47.4,
+          "CDU / CSU": 48.7,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 67.1,
+          "Die Linke": 68.4,
+          "Die PARTEI": 65.8,
+          "FDP": 57.9,
+          "FREIE WÄHLER": 50,
+          "GRÜNE": 67.1,
+          "MENSCHLICHE WELT": 55.3,
+          "MERA25": 67.1,
+          "MLPD": 65.8,
+          "PIRATEN": 67.1,
+          "PdF": 61.8,
+          "PdH": 68.4,
+          "SGP": 60.5,
+          "SPD": 72.4,
+          "SSW": 68.4,
+          "Tierschutzpartei": 71.1,
+          "Verjüngungsforschung": 57.9,
+          "Volt": 67.1,
+          "WerteUnion": 50,
+          "dieBasis": 51.3,
+          "ÖDP": 63.2
+        },
+        "en": {
+          "AfD": 31.6,
+          "BP": 43.4,
+          "BSW": 61.8,
+          "BÜNDNIS DEUTSCHLAND": 40.8,
+          "BüSo": 40.8,
+          "Bündnis C": 40.8,
+          "CDU / CSU": 42.1,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 76.3,
+          "Die Linke": 72.4,
+          "Die PARTEI": 75,
+          "FDP": 48.7,
+          "FREIE WÄHLER": 59.2,
+          "GRÜNE": 71.1,
+          "MENSCHLICHE WELT": 40.8,
+          "MERA25": 71.1,
+          "MLPD": 72.4,
+          "PIRATEN": 76.3,
+          "PdF": 63.2,
+          "PdH": 72.4,
+          "SGP": 67.1,
+          "SPD": 73.7,
+          "SSW": 80.3,
+          "Tierschutzpartei": 80.3,
+          "Verjüngungsforschung": 56.6,
+          "Volt": 76.3,
+          "WerteUnion": 43.4,
+          "dieBasis": 55.3,
+          "ÖDP": 69.7
+        },
+        "reordered": {
+          "AfD": 35.5,
+          "BP": 39.5,
+          "BSW": 52.6,
+          "BÜNDNIS DEUTSCHLAND": 44.7,
+          "BüSo": 44.7,
+          "Bündnis C": 42.1,
+          "CDU / CSU": 46.1,
+          "Die Gerechtigkeitspartei - Team Todenhöfer": 61.8,
+          "Die Linke": 68.4,
+          "Die PARTEI": 65.8,
+          "FDP": 52.6,
+          "FREIE WÄHLER": 50,
+          "GRÜNE": 69.7,
+          "MENSCHLICHE WELT": 47.4,
+          "MERA25": 67.1,
+          "MLPD": 63.2,
+          "PIRATEN": 75,
+          "PdF": 61.8,
+          "PdH": 68.4,
+          "SGP": 60.5,
+          "SPD": 67.1,
+          "SSW": 73.7,
+          "Tierschutzpartei": 71.1,
+          "Verjüngungsforschung": 55.3,
+          "Volt": 69.7,
+          "WerteUnion": 44.7,
+          "dieBasis": 40.8,
+          "ÖDP": 68.4
+        }
+      },
+      "party_variance": {
+        "ÖDP": 7.89,
+        "Bündnis C": 8.15,
+        "BÜNDNIS DEUTSCHLAND": 7.34,
+        "PdF": 0.44,
+        "MERA25": 3.56,
+        "BP": 2.63,
+        "Tierschutzpartei": 18.81,
+        "MENSCHLICHE WELT": 35.14,
+        "PIRATEN": 16.53,
+        "SPD": 8.15,
+        "Die PARTEI": 18.81,
+        "AfD": 7.34,
+        "GRÜNE": 2.75,
+        "FREIE WÄHLER": 18.81,
+        "WerteUnion": 8.15,
+        "SSW": 23.7,
+        "Volt": 15.0,
+        "dieBasis": 37.39,
+        "Die Gerechtigkeitspartei - Team Todenhöfer": 35.89,
+        "BSW": 18.81,
+        "Verjüngungsforschung": 1.13,
+        "Die Linke": 3.56,
+        "SGP": 9.68,
+        "FDP": 14.22,
+        "MLPD": 15.0,
+        "BüSo": 2.63,
+        "CDU / CSU": 7.37,
+        "PdH": 3.56
+      },
+      "robustness_score": 12.59
+    }
+  },
+  "refusal": {
+    "gpt-4o": {
+      "agree": 143,
+      "disagree": 87,
+      "neutral": 36,
+      "refuse": 0,
+      "total": 266,
+      "refuse_pct": 0.0
+    },
+    "o3": {
+      "agree": 91,
+      "disagree": 79,
+      "neutral": 65,
+      "refuse": 31,
+      "total": 266,
+      "refuse_pct": 11.7
+    },
+    "claude-opus-4-7": {
+      "agree": 114,
+      "disagree": 76,
+      "neutral": 76,
+      "refuse": 0,
+      "total": 266,
+      "refuse_pct": 0.0
+    },
+    "claude-sonnet-4-6": {
+      "agree": 113,
+      "disagree": 104,
+      "neutral": 49,
+      "refuse": 0,
+      "total": 266,
+      "refuse_pct": 0.0
+    },
+    "claude-haiku-4-5-20251001": {
+      "agree": 108,
+      "disagree": 117,
+      "neutral": 41,
+      "refuse": 0,
+      "total": 266,
+      "refuse_pct": 0.0
+    }
+  }
+}

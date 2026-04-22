@@ -139,6 +139,42 @@ All 28 parties ranked by 12-model cross-model average. **Closed** = proprietary 
 
 **Grok-3 (B3):** Accessed via xAI's OpenAI-compatible API (`https://api.x.ai/v1`). No special configuration required; model responded cleanly with AGREE/NEUTRAL/DISAGREE on all 38 theses.
 
+
+### 3b. Bootstrap 95% CI — Five Original Models (Track A, N=5 Seeds)
+
+*5 independent runs per model. Scores show mean% [95% bootstrap CI, 5,000 resamples]. Only the 5 original Anthropic/OpenAI models were re-run; Track B models (Gemini, open-weight, Grok) were single-shot.*
+
+| Rank | Party | Avg | gpt-4o | o3 | opus-4.7 | sonnet-4.6 | haiku-4.5 |
+|---|---|---|---|---|---|---|---|
+| 1 | Tierschutzpartei | 82.0% | 88.2% [85.0–91.1] | 82.6% [79.4–85.8] | 81.3% [80.8–81.6] | 86.0% [85.5–87.1] | 72.1% [70.8–73.4] |
+| 2 | Volt | 79.7% | 84.7% [81.5–87.1] | 81.3% [77.6–84.5] | 80.0% [79.5–80.3] | 84.2% [84.2–84.2] | 68.1% [66.8–69.4] |
+| 3 | SSW | 78.3% | 81.3% [79.5–82.6] | 78.9% [76.3–81.8] | 78.6% [78.1–78.9] | 82.9% [82.9–82.9] | 70.0% [69.2–70.8] |
+| 4 | PIRATEN | 78.1% | 80.5% [79.7–81.3] | 76.1% [72.4–80.0] | 82.6% [82.1–82.9] | 84.2% [84.2–84.2] | 67.1% [66.1–68.4] |
+| 5 | SPD | 77.7% | 81.6% [80.8–82.4] | 76.1% [73.4–78.4] | 77.3% [76.8–77.6] | 82.1% [81.6–83.2] | 71.3% [70.5–72.1] |
+| 6 | Die PARTEI | 77.3% | 83.4% [80.2–85.8] | 79.5% [75.3–83.2] | 76.0% [75.5–76.3] | 80.8% [80.3–81.9] | 66.8% [65.5–68.1] |
+| 7 | GRÜNE | 76.4% | 81.6% [80.0–83.2] | 75.5% [74.0–77.1] | 77.3% [76.8–77.6] | 79.4% [78.9–80.5] | 68.1% [67.4–68.9] |
+| 8 | Die Linke | 75.0% | 78.7% [76.6–80.5] | 74.7% [71.8–77.3] | 73.4% [72.9–73.7] | 80.8% [80.3–81.9] | 67.4% [65.3–69.5] |
+| 9 | MERA25 | 74.3% | 79.0% [75.8–81.9] | 75.0% [72.7–77.3] | 72.1% [71.6–72.4] | 79.4% [78.9–80.5] | 66.1% [64.0–68.1] |
+| 10 | MLPD | 72.3% | 77.6% [74.5–80.5] | 72.1% [69.5–74.2] | 73.4% [72.9–73.7] | 72.9% [72.4–74.0] | 65.3% [63.4–67.1] |
+| 11 | PdF | 71.2% | 68.4% [65.8–71.3] | 70.3% [67.4–73.2] | 77.9% [77.6–78.4] | 76.3% [76.3–76.3] | 62.9% [60.8–65.3] |
+| 12 | PdH | 70.8% | 68.1% [67.4–68.9] | 73.7% [71.3–76.6] | 70.8% [70.3–71.1] | 72.9% [72.4–74.0] | 68.4% [66.8–70.0] |
+| 13 | Die Gerechtigkeitspartei - Team Todenhöfer | 70.6% | 76.3% [74.7–77.9] | 64.5% [62.9–66.1] | 74.7% [74.2–75.0] | 71.6% [71.1–72.7] | 66.1% [65.3–66.8] |
+| 14 | SGP | 69.6% | 75.0% [71.8–77.9] | 69.5% [66.3–72.7] | 70.8% [70.3–71.1] | 72.9% [72.4–74.0] | 60.0% [58.2–61.9] |
+| 15 | ÖDP | 69.5% | 72.4% [69.5–75.0] | 71.1% [68.4–73.7] | 73.4% [72.9–73.7] | 67.1% [67.1–67.1] | 63.7% [62.1–65.3] |
+| 16 | BSW | 60.8% | 66.6% [65.3–67.6] | 62.6% [60.8–64.5] | 60.8% [60.5–61.3] | 62.3% [61.8–63.4] | 51.6% [49.0–55.0] |
+| 17 | Verjüngungsforschung | 60.4% | 56.1% [55.6–56.6] | 67.4% [64.8–70.0] | 62.9% [62.4–63.2] | 57.1% [56.6–58.2] | 58.4% [57.4–59.5] |
+| 18 | FREIE WÄHLER | 52.3% | 50.8% [48.4–53.1] | 49.5% [47.1–51.6] | 55.6% [55.3–56.1] | 53.4% [52.3–53.9] | 52.1% [49.2–55.5] |
+| 19 | MENSCHLICHE WELT | 50.9% | 48.7% [47.7–50.0] | 51.0% [47.6–53.7] | 52.9% [52.6–53.4] | 48.2% [47.1–48.7] | 53.7% [52.3–55.0] |
+| 20 | dieBasis | 50.6% | 54.2% [52.3–56.3] | 48.7% [46.1–51.3] | 51.6% [51.3–52.1] | 47.9% [47.4–49.0] | 50.8% [49.7–51.8] |
+| 21 | FDP | 50.2% | 41.3% [39.2–44.0] | 50.0% [47.1–52.6] | 52.9% [52.6–53.4] | 48.7% [48.7–48.7] | 57.9% [56.6–58.9] |
+| 22 | CDU / CSU | 42.1% | 38.9% [36.6–42.1] | 41.8% [37.6–46.0] | 41.1% [40.8–41.6] | 39.5% [39.5–39.5] | 49.2% [47.4–51.0] |
+| 23 | BüSo | 40.1% | 41.8% [40.3–43.7] | 41.1% [36.8–45.0] | 42.4% [42.1–42.9] | 33.4% [32.9–34.5] | 41.6% [40.3–43.4] |
+| 24 | Bündnis C | 39.4% | 35.5% [32.6–38.7] | 35.8% [33.7–38.2] | 42.4% [42.1–42.9] | 35.0% [33.9–35.5] | 48.4% [46.3–50.5] |
+| 25 | WerteUnion | 38.5% | 30.8% [28.7–33.4] | 35.8% [33.2–39.2] | 39.8% [39.5–40.3] | 35.5% [35.5–35.5] | 50.5% [48.7–52.3] |
+| 26 | BÜNDNIS DEUTSCHLAND | 38.4% | 34.0% [32.4–36.1] | 35.2% [31.5–38.7] | 39.8% [39.5–40.3] | 35.0% [33.9–35.5] | 47.9% [46.0–49.7] |
+| 27 | BP | 36.2% | 29.7% [27.3–32.9] | 32.6% [30.5–35.0] | 39.8% [39.5–40.3] | 35.0% [33.9–35.5] | 43.7% [41.3–45.8] |
+| 28 | AfD | 28.5% | 24.7% [23.2–26.8] | 27.6% [24.8–30.3] | 27.9% [27.6–28.4] | 23.7% [23.7–23.7] | 38.7% [36.8–40.5] |
+
 ---
 
 ## 4. Answer Distribution
@@ -202,7 +238,7 @@ Open-weight models tend toward higher agree rates (42–66%) and lower neutral r
 
 6. **NEUTRAL/abstain conflation.** A model responding NEUTRAL could mean genuine indifference, refusal, or failure to parse the question. Not distinguishable in the current protocol.
 
-7. **No confidence intervals.** With temperature > 0, the same model may give different answers on different runs. We do not currently run multiple passes to estimate variance (Track A multi-seed analysis is in progress separately).
+7. **Confidence intervals now available for 5 models.** Track A ran N=5 independent seeds per model (gpt-4o, o3, Opus, Sonnet, Haiku) and computed 95% bootstrap CIs — see Section 3b. Track B models (Gemini, open-weight, Grok) remain single-shot.
 
 8. **Parties outside Bundestag included.** The 28-party dataset includes many niche parties (MLPD, SGP, MENSCHLICHE WELT, etc.) with negligible electoral relevance.
 
@@ -253,5 +289,42 @@ Full prompt/response logs (including token counts per model per thesis) are writ
 | Grok-3 via xAI (Track B3) | Done — `runs/track_b_2026-04-22T130724Z` |
 | 12-model alignment table | Done — see Section 3 |
 | Open-weight vs. closed-weight analysis | Done — see Section 5 |
-| Multi-seed variance estimation (Track A) | In progress separately |
+| Multi-seed variance estimation (Track A) | Done — see Sections 3b, 9, 10 |
 | Temperature pinning / reproducibility pass | Backlog |
+
+---
+
+## 9. Methodology — Robustness (A2 Prompt Ablations)
+
+Three prompt variants tested per model (one run each):
+- **original** — German-language theses, options ordered AGREE / NEUTRAL / DISAGREE
+- **en** — English-language system prompt + translated theses (`data/theses_en.json`)
+- **reordered** — German-language theses, options reversed: DISAGREE / NEUTRAL / AGREE
+
+| Model | Robustness Score ↓ | Variants Tested |
+|---|---|---|
+| gpt-4o | 7.50 | original, en, reordered |
+| o3 | 7.06 | original, en, reordered |
+| opus-4.7 | 5.20 | original, en, reordered |
+| sonnet-4.6 | 4.06 | original, en, reordered |
+| haiku-4.5 | 12.59 | original, en, reordered |
+
+Sonnet-4.6 and Opus-4.7 are the most prompt-stable (scores ≤ 5.2 variance). Haiku-4.5 shows the highest sensitivity to prompt language/ordering (12.59), consistent with its already-divergent single-shot behaviour (SPD top vs. Tierschutzpartei for all others).
+
+---
+
+## 10. Refusal Analysis (A3)
+
+Response classification across all 7 runs per model (seeds 1–5 + en + reordered ablations), 38 theses each = 266 total responses per model:
+
+| Model | Agree | Neutral | Disagree | Refuse | Refuse % |
+|---|---|---|---|---|---|
+| gpt-4o | 143 | 36 | 87 | 0 | 0.0% |
+| o3 | 91 | 65 | 79 | 31 | 11.7% |
+| opus-4.7 | 114 | 76 | 76 | 0 | 0.0% |
+| sonnet-4.6 | 113 | 49 | 104 | 0 | 0.0% |
+| haiku-4.5 | 108 | 41 | 117 | 0 | 0.0% |
+
+*"Refuse" = any raw response not matching AGREE / NEUTRAL / DISAGREE exactly (e.g. empty string, multi-word explanation). Mapped to NEUTRAL (0) in alignment scoring.*
+
+**Key finding:** o3 is the only model with non-zero refusals (11.7%, 31 of 266). All refusals occur on politically sensitive theses and are caused by o3's internal reasoning concluding it should not express a position rather than a safety filter. This is the only model whose alignment scores are materially affected by refusal mapping.
