@@ -1,12 +1,12 @@
 # Wahl-O-Mat LLM Political Alignment Evaluation
 ## Bundestagswahl 2025 — English Report
 
-**Models evaluated:** gpt-4o, o3, claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001  
+**Models evaluated (12):** claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001, gpt-4.1, o3, gemini-3-flash-preview, gemini-3.1-pro-preview, grok-4-0709, meta-llama/llama-4-maverick, mistralai/mistral-large-2512, deepseek/deepseek-v3.2, qwen/qwen3-235b-a22b  
 **Theses:** 38 (Bundestagswahl 2025 Wahl-O-Mat)  
 **Parties scored:** 28  
-**Date run:** 2026-04-21
+**Date run:** 2026-04-21 (multi-seed Track A); 2026-04-22 (T=0 modal pass, WAH-27)
 
-> **Gemini note:** gemini-2.5-pro safety-filtered all 38 political theses; gemini-2.5-flash produced truncated/unreliable tokens. Both Google models are excluded. All five evaluated models (2 OpenAI + 3 Anthropic) completed successfully.
+> **Gemini note (updated WAH-27):** gemini-3.1-pro-preview returned NEUTRAL on all 38 political theses (complete refusal at T=0 and T=1.0). gemini-3-flash-preview is included but produces a 74% NEUTRAL rate — severe safety-filter bias. Both models' results should be interpreted with this caveat. Prior gemini-2.5-pro and gemini-2.5-flash runs also failed (blocked or truncated).
 
 **Interactive dashboard:** [docs/index.html](docs/index.html)  
 **German source report:** [REPORT.md](REPORT.md)
@@ -96,13 +96,26 @@ This is intentional: the models were evaluated on their responses to the actual 
 
 Responses are mapped: `AGREE → +1`, `NEUTRAL → 0`, `DISAGREE → −1`. Unexpected tokens default to `0`.
 
-### 1.4 Alignment Scoring
+### 1.4 Two-Temperature Design
+
+All provider calls use an **explicit, uniform temperature** to ensure reproducibility:
+
+| Run type | Temperature | Purpose |
+|----------|-------------|---------|
+| Multi-seed (Track A) | `1.0` | Variance estimation — natural sampling spread |
+| T=0 modal pass | `0.0` | Deterministic reference — one shot per model |
+
+Prior to WAH-27, Google Gemini was inadvertently hard-coded to `temperature=0.0` while all other providers used their SDK default (~`1.0`). This inconsistency has been corrected: all providers now receive an explicit `temperature` parameter, and the value is recorded in every `prompts.json` artefact.
+
+Note: OpenAI reasoning models (`o3`, `o4-*`, etc.) do not accept a `temperature` parameter and are called without it; their outputs are already deterministic by design.
+
+### 1.5 Alignment Scoring
 
 Model answers are submitted to the official Wahl-O-Mat web interface via Playwright browser automation (`scripts/wahlomat_runner.js`). The Wahl-O-Mat computes a weighted cosine-style agreement score against each party's published positions, outputting a `score_pct` per party (0–100%).
 
 This means our party rankings inherit the official Wahl-O-Mat algorithm's weighting choices, which adds legitimacy but also means the scores are not directly comparable to a simple percentage-of-theses metric.
 
-### 1.5 Reproducing the Results
+### 1.6 Reproducing the Results
 
 ```bash
 # Install dependencies
@@ -113,8 +126,11 @@ npx playwright install chromium
 export WAHL_ANTHROPIC_API_KEY=sk-ant-...
 export WAHL_OPENAI_API_KEY=sk-...
 
-# Run all models (creates runs/batch_<timestamp>/)
+# Run all models at T=1.0 (creates runs/batch_<timestamp>/)
 python3 scripts/run_all_models.py
+
+# Run T=0 modal pass (creates runs/modal_T0_<timestamp>/)
+python3 scripts/run_all_models.py --temperature 0 --label modal_T0
 
 # Compute alignment matrix
 python3 scripts/compute_alignment.py --batch runs/batch_<timestamp>
@@ -214,7 +230,42 @@ Sorted by 5-model cross-model average. Scores are Wahl-O-Mat alignment percentag
 
 ---
 
-## 5. Notable Patterns and Outliers
+## 5. T=0 Modal Answer Pass
+
+The T=0 modal pass runs each model once at `temperature=0` to capture its deterministic "most likely" answer per thesis. Unlike the multi-seed Track A runs (which use `temperature=1.0` to estimate answer variance), the T=0 pass is a single-shot reference point — no confidence intervals are computed.
+
+**Run directory:** `runs/modal_T0_2026-04-22T152725Z/`
+
+| Model | Provider | AGREE (T=0) | NEUTRAL (T=0) | DISAGREE (T=0) |
+|-------|----------|-------------|---------------|----------------|
+| claude-opus-4-7 | Anthropic | 17 (45%) | 10 (26%) | 11 (29%) |
+| claude-sonnet-4-6 | Anthropic | 17 (45%) | 5 (13%) | 16 (42%) |
+| claude-haiku-4-5-20251001 | Anthropic | 16 (42%) | 7 (18%) | 15 (39%) |
+| gpt-4.1 | OpenAI | 21 (55%) | 2 (5%) | 15 (39%) |
+| o3 | OpenAI | 14 (37%) | 10 (26%) | 14 (37%) |
+| gemini-3-flash-preview | Google | 7 (18%) | 28 (74%) | 3 (8%) |
+| gemini-3.1-pro-preview | Google | 0 (0%) | **38 (100%)** | 0 (0%) |
+| grok-4-0709 | xAI | 20 (53%) | 2 (5%) | 16 (42%) |
+| meta-llama/llama-4-maverick | OpenRouter | 22 (58%) | 0 (0%) | 16 (42%) |
+| mistralai/mistral-large-2512 | OpenRouter | 21 (55%) | 4 (11%) | 13 (34%) |
+| deepseek/deepseek-v3.2 | OpenRouter | 23 (61%) | 1 (3%) | 14 (37%) |
+| qwen/qwen3-235b-a22b | OpenRouter | 16 (42%) | 4 (11%) | 18 (47%) |
+
+### Key Observations
+
+**Gemini 3.1 Pro: complete refusal.** gemini-3.1-pro-preview returned NEUTRAL on all 38 political theses at T=0. This is a full safety-filter block — the model refuses to take any stance on any thesis. At T=1.0 the same model also overwhelmingly returns NEUTRAL, confirming this is systematic policy rather than a temperature effect.
+
+**Gemini 3 Flash: near-total neutral bias.** gemini-3-flash-preview returns NEUTRAL on 74% of theses (28/38), with weak agree on the remaining 10. This differs substantially from every other provider in the roster.
+
+**Anthropic and OpenAI: high T=0/T=1.0 stability.** For the 3 Anthropic and 2 OpenAI models where multi-seed data also exists, the T=0 distributions match closely (within 2–3 theses), indicating stable modal answers at these political positions regardless of sampling temperature.
+
+**Open-weight models: decisive, low-neutral.** LLaMA 4 Maverick (0 neutral), DeepSeek V3.2 (1 neutral), Grok-4 (2 neutral), and GPT-4.1 (2 neutral) take clear stances on nearly every thesis. The exception is Qwen3-235B, which has the highest disagree rate in the roster (47%) with only 11% neutral.
+
+**o3 caveat.** o3 does not accept a temperature parameter; it is always deterministic. The T=0 and T=1.0 passes are behaviorally identical for this model.
+
+---
+
+## 6. Notable Patterns and Outliers
 
 ### Strong cross-model consensus at top and bottom
 
@@ -254,13 +305,13 @@ BSW (*Sahra Wagenknecht Alliance*) ranks 16th in every model's list (52.6–67.1
 
 ---
 
-## 6. Limitations
+## 7. Limitations
 
-1. **Gemini coverage absent.** gemini-2.5-pro safety-filtered all 38 political theses; gemini-2.5-flash produced truncated/unreliable tokens. Google model results remain unavailable.
+1. **Gemini coverage severely limited.** gemini-2.5-pro safety-filtered all 38 political theses; gemini-2.5-flash produced truncated/unreliable tokens. The updated Gemini 3 generation (WAH-27) fares no better: gemini-3.1-pro-preview returns NEUTRAL on 100% of theses (complete refusal); gemini-3-flash-preview returns NEUTRAL on 74%. Both Gemini 3 models are included in the T=0 table for completeness but their political-alignment scores cannot be meaningfully computed.
 
 2. **Single-pass prompting.** Each thesis is answered in isolation with no conversation history. Models may answer differently if theses are presented together, in different order, or with more context.
 
-3. **Temperature not pinned.** Provider default temperatures are used. For reproducibility, consider pinning gpt-4o to `temperature=0`. No multi-seed variance is currently estimated (single run per model).
+3. **Two-temperature design.** Multi-seed Track A runs use `temperature=1.0` (explicit, uniform across all providers). A separate `temperature=0` modal pass is included as a single-shot deterministic reference per model (see Section 1.4). OpenAI reasoning models (`o3`) are inherently deterministic and do not accept a temperature parameter.
 
 4. **o3 NEUTRAL inflation.** o3's 37% neutral rate likely reflects a combination of genuine indifference and refusal to engage with politically sensitive questions. This systematically compresses o3's party scores toward the 50% midpoint.
 
@@ -274,7 +325,7 @@ BSW (*Sahra Wagenknecht Alliance*) ranks 16th in every model's list (52.6–67.1
 
 ---
 
-## 7. Data and Code
+## 8. Data and Code
 
 | Resource | Location |
 |----------|----------|
@@ -289,7 +340,7 @@ BSW (*Sahra Wagenknecht Alliance*) ranks 16th in every model's list (52.6–67.1
 
 ---
 
-## 8. Planned Extensions
+## 9. Planned Extensions
 
 | Track | Description | Status |
 |-------|-------------|--------|

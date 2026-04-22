@@ -1,0 +1,170 @@
+[
+  {
+    "index": 0,
+    "id": "cb_parteien_0",
+    "name": "SPD",
+    "full_name": "Sozialdemokratische Partei Deutschlands"
+  },
+  {
+    "index": 1,
+    "id": "cb_parteien_1",
+    "name": "CDU / CSU",
+    "full_name": "Christlich Demokratische Union Deutschlands / Christlich-Soziale Union in Bayern e.V."
+  },
+  {
+    "index": 2,
+    "id": "cb_parteien_2",
+    "name": "GRÜNE",
+    "full_name": "BÜNDNIS 90/DIE GRÜNEN"
+  },
+  {
+    "index": 3,
+    "id": "cb_parteien_3",
+    "name": "FDP",
+    "full_name": "Freie Demokratische Partei"
+  },
+  {
+    "index": 4,
+    "id": "cb_parteien_4",
+    "name": "AfD",
+    "full_name": "Alternative für Deutschland"
+  },
+  {
+    "index": 5,
+    "id": "cb_parteien_5",
+    "name": "Die Linke",
+    "full_name": "Die Linke"
+  },
+  {
+    "index": 6,
+    "id": "cb_parteien_6",
+    "name": "SSW",
+    "full_name": "Südschleswigscher Wählerverband"
+  },
+  {
+    "index": 7,
+    "id": "cb_parteien_7",
+    "name": "FREIE WÄHLER",
+    "full_name": "FREIE WÄHLER"
+  },
+  {
+    "index": 8,
+    "id": "cb_parteien_8",
+    "name": "Tierschutzpartei",
+    "full_name": "Partei Mensch Umwelt Tierschutz"
+  },
+  {
+    "index": 9,
+    "id": "cb_parteien_9",
+    "name": "dieBasis",
+    "full_name": "dieBasis"
+  },
+  {
+    "index": 10,
+    "id": "cb_parteien_10",
+    "name": "Die PARTEI",
+    "full_name": "Partei für Arbeit, Rechtsstaat, Tierschutz, Elitenförderung und basisdemokratische Initiative"
+  },
+  {
+    "index": 11,
+    "id": "cb_parteien_11",
+    "name": "Die Gerechtigkeitspartei - Team Todenhöfer",
+    "full_name": "Die Gerechtigkeitspartei - Team Todenhöfer"
+  },
+  {
+    "index": 12,
+    "id": "cb_parteien_12",
+    "name": "PIRATEN",
+    "full_name": "Piratenpartei Deutschland"
+  },
+  {
+    "index": 13,
+    "id": "cb_parteien_13",
+    "name": "Volt",
+    "full_name": "Volt Deutschland"
+  },
+  {
+    "index": 14,
+    "id": "cb_parteien_14",
+    "name": "ÖDP",
+    "full_name": "Ökologisch-Demokratische Partei"
+  },
+  {
+    "index": 15,
+    "id": "cb_parteien_15",
+    "name": "Verjüngungsforschung",
+    "full_name": "Partei für Gesundheitsforschung"
+  },
+  {
+    "index": 16,
+    "id": "cb_parteien_16",
+    "name": "PdH",
+    "full_name": "Partei der Humanisten"
+  },
+  {
+    "index": 17,
+    "id": "cb_parteien_17",
+    "name": "Bündnis C",
+    "full_name": "Bündnis C – Christen für Deutschland"
+  },
+  {
+    "index": 18,
+    "id": "cb_parteien_18",
+    "name": "BP",
+    "full_name": "Bayernpartei"
+  },
+  {
+    "index": 19,
+    "id": "cb_parteien_19",
+    "name": "MLPD",
+    "full_name": "Marxistisch-Leninistische Partei Deutschlands"
+  },
+  {
+    "index": 20,
+    "id": "cb_parteien_20",
+    "name": "MENSCHLICHE WELT",
+    "full_name": "MENSCHLICHE WELT"
+  },
+  {
+    "index": 21,
+    "id": "cb_parteien_21",
+    "name": "PdF",
+    "full_name": "Partei des Fortschritts"
+  },
+  {
+    "index": 22,
+    "id": "cb_parteien_22",
+    "name": "SGP",
+    "full_name": "Sozialistische Gleichheitspartei"
+  },
+  {
+    "index": 23,
+    "id": "cb_parteien_23",
+    "name": "BüSo",
+    "full_name": "Bürgerrechtsbewegung Solidarität"
+  },
+  {
+    "index": 24,
+    "id": "cb_parteien_24",
+    "name": "BÜNDNIS DEUTSCHLAND",
+    "full_name": "BÜNDNIS DEUTSCHLAND"
+  },
+  {
+    "index": 25,
+    "id": "cb_parteien_25",
+    "name": "BSW",
+    "full_name": "Bündnis Sahra Wagenknecht – Vernunft und Gerechtigkeit"
+  },
+  {
+    "index": 26,
+    "id": "cb_parteien_26",
+    "name": "MERA25",
+    "full_name": "MERA25"
+  },
+  {
+    "index": 27,
+    "id": "cb_parteien_27",
+    "name": "WerteUnion",
+    "full_name": "WerteUnion"
+  }
+]
