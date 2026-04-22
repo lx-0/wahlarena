@@ -1,0 +1,5 @@
+anthropic==0.96.0
+openai==2.32.0
+google-generativeai==0.8.6
+playwright==1.58.0
+pytest==9.0.3
