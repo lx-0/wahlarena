@@ -5,7 +5,6 @@ No real API keys required — fixture provider is deterministic via md5 hash.
 import json
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 SCRIPTS_DIR = Path(__file__).parent.parent / 'scripts'

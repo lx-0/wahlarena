@@ -108,7 +108,7 @@ def main():
     batch_dir = PROJECT_DIR / 'runs' / f'{args.label}_{timestamp}'
     batch_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"Wahl-O-Mat Multi-Model Runner")
+    print("Wahl-O-Mat Multi-Model Runner")
     print(f"Batch:       {batch_dir}")
     print(f"Models:      {len(models)}")
     print(f"Temperature: {args.temperature}")
