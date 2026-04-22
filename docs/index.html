@@ -95,14 +95,36 @@ table.heatmap tr:hover td { background: rgba(255,255,255,0.03); }
 .about-prose a { color: var(--accent); text-decoration: none; }
 .about-prose ul { color: var(--muted); padding-left: 20px; margin-bottom: 12px; }
 .about-prose code { background: var(--surface); border: 1px solid var(--border); padding: 1px 6px; border-radius: 4px; font-size: 0.8rem; }
+
+/* Hero banner */
+.hero { background: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(99,102,241,0.04) 100%); border-bottom: 1px solid var(--border); padding: 28px 32px 24px; }
+.hero-headline { font-size: 1.45rem; font-weight: 800; color: var(--text); line-height: 1.3; margin-bottom: 8px; }
+.hero-headline span { color: #ef4444; }
+.hero-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; max-width: 640px; }
+.hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-links a { font-size: 0.8rem; padding: 5px 14px; border-radius: 6px; text-decoration: none; transition: opacity 0.15s; }
+.hero-links a:hover { opacity: 0.85; }
+.hero-links .btn-primary { background: var(--accent); color: #fff; }
+.hero-links .btn-secondary { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
 </style>
 </head>
 <body>
 
 <header>
   <h1>LLM Political Alignment — Bundestagswahl 2025</h1>
-  <p>12 models (8 closed-weight + 4 open-weight) · 38 theses · 28 parties · official Wahl-O-Mat scoring</p>
+  <p>12 models · 38 theses · 28 parties · official Wahl-O-Mat scoring</p>
 </header>
+
+<div class="hero">
+  <div class="hero-headline"><span>AfD ranked last in every frontier LLM tested.</span> Left-progressive parties dominated across all model families.</div>
+  <p class="hero-sub">We ran all 38 Bundestagswahl 2025 Wahl-O-Mat theses through 12 frontier LLMs and scored results with the official algorithm. The cross-model consensus was striking.</p>
+  <div class="hero-links">
+    <a href="#heatmap" class="btn-primary" onclick="showPanel('heatmap', document.querySelector('nav button'))">Explore the heatmap ↓</a>
+    <a href="blog.html" class="btn-secondary">Read the analysis</a>
+    <a href="../REPORT.en.md" class="btn-secondary">Full report</a>
+    <a href="https://github.com/lx-0/wahlarena" class="btn-secondary" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div>
 
 <nav>
   <button class="active" onclick="showPanel('heatmap', this)">Alignment Heatmap</button>
@@ -174,41 +196,46 @@ table.heatmap tr:hover td { background: rgba(255,255,255,0.03); }
 <div id="about" class="panel">
   <div class="about-prose">
     <h2>What is this?</h2>
-    <p>We ran the 38 theses from the official <a href="https://www.wahl-o-mat.de/" target="_blank">Bundestagswahl 2025 Wahl-O-Mat</a> through 12 frontier LLMs — 8 closed-weight (proprietary API) and 4 open-weight (self-hostable, accessed via OpenRouter) and recorded their answers (AGREE / NEUTRAL / DISAGREE). We then fed each model's answers into the Wahl-O-Mat browser interface via Playwright automation to get official party alignment scores.</p>
+    <p>We ran the 38 theses from the official <a href="https://www.wahl-o-mat.de/" target="_blank">Bundestagswahl 2025 Wahl-O-Mat</a> through 12 frontier LLMs — 8 closed-weight (proprietary API) and 4 open-weight (via OpenRouter) — and recorded their answers (AGREE / NEUTRAL / DISAGREE). We then fed each model's answers into the Wahl-O-Mat browser interface via Playwright automation to get official party alignment scores.</p>
 
     <h2>Models evaluated</h2>
     <ul>
-      <li><strong>GPT-4o</strong> — OpenAI (provider default temperature)</li>
-      <li><strong>o3</strong> — OpenAI reasoning model</li>
-      <li><strong>Claude Opus 4.7</strong> — Anthropic</li>
-      <li><strong>Claude Sonnet 4.6</strong> — Anthropic</li>
-      <li><strong>Claude Haiku 4.5</strong> — Anthropic</li>
+      <li><strong>GPT-4o</strong> and <strong>o3</strong> — OpenAI</li>
+      <li><strong>Claude Opus 4.7</strong>, <strong>Claude Sonnet 4.6</strong>, <strong>Claude Haiku 4.5</strong> — Anthropic</li>
+      <li><strong>Gemini 3 Flash</strong> and <strong>Gemini 3.1 Pro</strong> — Google (severe neutral bias / full refusal; see limitations)</li>
+      <li><strong>Grok-4</strong> — xAI</li>
+      <li><strong>Llama 4 Maverick</strong> — Meta (via OpenRouter)</li>
+      <li><strong>Mistral Large 2512</strong> — Mistral (via OpenRouter)</li>
+      <li><strong>DeepSeek V3.2</strong> — DeepSeek (via OpenRouter)</li>
+      <li><strong>Qwen3-235B</strong> — Alibaba (via OpenRouter)</li>
     </ul>
 
     <h2>Methodology</h2>
-    <p>Each model received a system prompt instructing it to respond with exactly one word: <code>AGREE</code>, <code>NEUTRAL</code>, or <code>DISAGREE</code>. Theses were presented independently (no conversation history carried across theses). Responses were mapped: <code>AGREE → +1</code>, <code>NEUTRAL → 0</code>, <code>DISAGREE → −1</code>.</p>
-    <p>Party alignment scores (0–100%) are computed by the official Wahl-O-Mat algorithm via Playwright browser automation — not a custom metric.</p>
+    <p>Each model received a system prompt instructing it to respond with exactly one word: <code>AGREE</code>, <code>NEUTRAL</code>, or <code>DISAGREE</code>. Theses were presented independently (no conversation history across theses). Responses were mapped: <code>AGREE → +1</code>, <code>NEUTRAL → 0</code>, <code>DISAGREE → −1</code>.</p>
+    <p>Party alignment scores (0–100%) are computed by the official Wahl-O-Mat algorithm via Playwright browser automation — not a custom metric. All models were called with an explicit <code>temperature</code> parameter (T=1.0 for multi-seed runs, T=0 for the deterministic modal pass). OpenAI reasoning models (<code>o3</code>) are inherently deterministic.</p>
 
     <h2>Key findings</h2>
     <ul>
-      <li><strong>Tierschutzpartei ranks #1 across 4 of 5 models</strong> (avg 80.3%), driven by its animal welfare, climate, and social equity platform.</li>
-      <li><strong>AfD ranks last in every model</strong> (avg 29.0%), with no model scoring it above 38%.</li>
-      <li><strong>Left-progressive tilt is robust across both model families</strong> — SPD, Volt, GRÜNE all cluster in the top 8 for every model.</li>
-      <li><strong>CDU/CSU ranks 22nd</strong> (avg 43.7%), 33.7 pp below SPD.</li>
-      <li><strong>o3's high neutral rate</strong> (37%) compresses its party scores toward 50% vs GPT-4o's more opinionated 55% agree rate.</li>
+      <li><strong>AfD ranks last in every model</strong> (avg 27.9%), with no model scoring it above 38%.</li>
+      <li><strong>Tierschutzpartei ranks #1 in 9 of 10 scorable models</strong> (avg 81.1%), driven by its animal welfare, climate, and social equity platform.</li>
+      <li><strong>Left-progressive ordering is robust across all model families</strong> — SPD, Volt, GRÜNE, PIRATEN all cluster in the top 8 for every model.</li>
+      <li><strong>CDU/CSU ranks 22nd</strong> (avg 43.2%), 34 pp below SPD, due to model disagreement on nuclear energy, the debt brake, and citizen's income.</li>
+      <li><strong>Gemini 3.1 Pro refused all 38 theses</strong> (100% NEUTRAL); Gemini 3 Flash returned NEUTRAL on 74%.</li>
+      <li><strong>Open-weight models are decisive</strong>: LLaMA 4 Maverick, DeepSeek V3.2, Grok-4 each returned ≤2 NEUTRAL answers across 38 theses.</li>
     </ul>
 
     <h2>Limitations</h2>
     <ul>
-      <li>Single-pass prompting — no cross-thesis context, no multi-seed variance estimation.</li>
-      <li>Temperature not pinned — results may vary between runs.</li>
+      <li>Single-pass prompting — theses presented in isolation with no cross-thesis context.</li>
+      <li>Multi-seed variance data (Track A) covers only the 5 original Anthropic/OpenAI models; the 7 additional models have T=0 modal-pass results only.</li>
       <li>Wahl-O-Mat scoring algorithm is proprietary — we don't control its weighting.</li>
-      <li>Gemini models excluded — safety filters blocked all political theses.</li>
+      <li>Gemini coverage is severely limited — both Gemini 3 models are included in averages but their alignment scores are not meaningfully interpretable.</li>
+      <li>NEUTRAL responses conflate genuine indifference with trained refusal to engage.</li>
     </ul>
 
-    <h2>Source code &amp; data</h2>
-    <p>Full prompt logs, raw responses, and reproduction scripts: <a href="https://github.com/OWNER/REPO" target="_blank">github.com/OWNER/REPO</a> · <a href="../REPORT.en.md">English Report (REPORT.en.md)</a> · <a href="blog.html">Blog post</a></p>
-    <p style="font-size:0.75rem;margin-top:24px;">Data generated 2026-04-21. Dashboard generated 2026-04-22.</p>
+    <h2>How was this built?</h2>
+    <p>Full prompt logs, raw responses, reproduction scripts, and the complete methodology: <a href="https://github.com/lx-0/wahlarena" target="_blank">github.com/lx-0/wahlarena</a> · <a href="../REPORT.en.md">English Report</a> · <a href="blog.html">Blog post</a></p>
+    <p style="font-size:0.75rem;margin-top:24px;">Data generated 2026-04-21 (multi-seed Track A) and 2026-04-22 (T=0 modal pass, WAH-27). Dashboard generated 2026-04-22.</p>
   </div>
 </div>
 
