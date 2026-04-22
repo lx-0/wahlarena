@@ -33,8 +33,16 @@ MODELS = [
     # OpenAI
     {'model': 'gpt-4o',             'provider': 'openai'},
     {'model': 'o3',                 'provider': 'openai'},
-    # Google
+    # Google (Track B1 — fixed: higher token budget + BLOCK_NONE safety)
     {'model': 'gemini-2.5-flash',   'provider': 'google'},
+    {'model': 'gemini-2.5-pro',     'provider': 'google'},
+    # xAI (Track B3 — needs WAHL_XAI_API_KEY)
+    {'model': 'grok-3',             'provider': 'xai'},
+    # OpenRouter open-weight (Track B2 — needs WAHL_OPENROUTER_API_KEY)
+    {'model': 'meta-llama/llama-3.3-70b-instruct', 'provider': 'openrouter'},
+    {'model': 'mistralai/mistral-large-2512',        'provider': 'openrouter'},
+    {'model': 'deepseek/deepseek-chat',             'provider': 'openrouter'},
+    {'model': 'qwen/qwen-2.5-72b-instruct',         'provider': 'openrouter'},
 ]
 
 

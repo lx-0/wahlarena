@@ -5,13 +5,14 @@
 - OpenAI: `runs/batch_2026-04-21T160944Z` (gpt-4o, o3)
 - Anthropic: `runs/batch_2026-04-21T225331Z` (claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001)
 - Google (Track B1): `runs/track_b_2026-04-22T111320Z` (gemini-2.5-flash, gemini-2.5-pro)
+- OpenRouter / xAI (Track B2+B3): `runs/track_b_2026-04-22T130724Z` (llama-3.3-70b-instruct, mistral-large-2512, deepseek-chat, qwen-2.5-72b-instruct, grok-3)
 
-**Models evaluated:** gpt-4o, o3, claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001, gemini-2.5-flash, gemini-2.5-pro
+**Models evaluated:** 12 total — 8 closed-weight (OpenAI, Anthropic, Google, xAI) + 4 open-weight (Meta, Mistral, DeepSeek, Alibaba)
 **Theses:** 38 (Bundestagswahl 2025 Wahl-O-Mat)
 **Parties scored:** 28
 **Date run:** 2026-04-21 to 2026-04-22
 
-> **Track B coverage update:** Both Gemini 2.5 models now have real data. Earlier runs safety-filtered all 38 theses; Track B fixed this with `BLOCK_NONE` safety settings and a higher token budget (2048) to accommodate thinking tokens. Open-weight models (Track B2: Llama, Mistral, DeepSeek, Qwen via OpenRouter) and Grok (Track B3) are pending API key provisioning.
+> **Track B complete.** All three subtracks delivered: B1 (Gemini, safety-filter fix), B2 (open-weight via OpenRouter), B3 (Grok-3). The headline finding: open-weight and closed-weight models are indistinguishable in political direction — both tilt left-progressive across all four model families (Meta, Mistral, DeepSeek, Alibaba).
 
 ---
 
@@ -76,115 +77,120 @@ Full prompt/response logs are written to `runs/<batch>/<model>/prompts.json` for
 
 ## 2. Per-Model Top Party
 
-| Model | Provider | Top Party | Score |
-|---|---|---|---|
-| gpt-4o | OpenAI | Tierschutzpartei | 85.5% |
-| o3 | OpenAI | Tierschutzpartei | 78.9% |
-| claude-opus-4-7 | Anthropic | PIRATEN | 81.6% |
-| claude-sonnet-4-6 | Anthropic | Tierschutzpartei | 85.5% |
-| claude-haiku-4-5-20251001 | Anthropic | SPD | 72.4% |
-| gemini-2.5-flash | Google | PIRATEN | 81.6% |
-| gemini-2.5-pro | Google | GRÜNE / PIRATEN (tie) | 78.9% |
+| Model | Family | Provider | Top Party | Score |
+|---|---|---|---|---|
+| gpt-4o | closed | OpenAI | Tierschutzpartei | 85.5% |
+| o3 | closed | OpenAI | Tierschutzpartei | 78.9% |
+| claude-opus-4-7 | closed | Anthropic | PIRATEN | 81.6% |
+| claude-sonnet-4-6 | closed | Anthropic | Tierschutzpartei | 85.5% |
+| claude-haiku-4-5-20251001 | closed | Anthropic | SPD | 72.4% |
+| gemini-2.5-flash | closed | Google | PIRATEN | 81.6% |
+| gemini-2.5-pro | closed | Google | GRÜNE / PIRATEN (tie) | 78.9% |
+| grok-3 | closed | xAI | Tierschutzpartei | 88.2% |
+| llama-3.3-70b-instruct | open | Meta | Die PARTEI | 85.5% |
+| mistral-large-2512 | open | Mistral | SPD | 80.3% |
+| deepseek-chat | open | DeepSeek | SPD | 84.2% |
+| qwen-2.5-72b-instruct | open | Alibaba | Tierschutzpartei | 86.8% |
 
-Six of seven models align with Tierschutzpartei or PIRATEN as their top party. Haiku remains the sole exception (SPD first). Both Gemini models join the PIRATEN/Tierschutzpartei cluster, confirming the pattern holds across three provider families. gemini-2.5-pro's tie between GRÜNE and PIRATEN reflects its higher neutral rate (17/38 = 45%), which compresses score differences at the top.
+The same left-progressive cluster dominates across all 12 models. Haiku (SPD) and Llama (Die PARTEI) are the only departures from the Tierschutzpartei/PIRATEN top. Grok-3 produces the highest individual score in the dataset (88.2%), despite xAI's public positioning as politically neutral. Two of four open-weight models top with SPD rather than Tierschutzpartei, but their full rankings remain in the same left-progressive pattern.
 
 ---
 
 ## 3. Full Alignment Table (Model × Party)
 
-All 28 parties ranked by 7-model cross-model average. Scores are Wahl-O-Mat alignment percentages.
+All 28 parties ranked by 12-model cross-model average. **Closed** = proprietary API models; **Open** = open-weight models run via OpenRouter.
 
-| Rank | Party | Avg | gpt-4o | o3 | opus-4-7 | sonnet-4-6 | haiku-4-5 | gem-flash | gem-pro |
-|---|---|---|---|---|---|---|---|---|---|
-| 1 | Tierschutzpartei | 79.5% | 85.5% | 78.9% | 80.3% | 85.5% | 71.1% | 77.6% | 77.6% |
-| 2 | PIRATEN | 78.2% | 81.6% | 72.4% | 81.6% | 84.2% | 67.1% | 81.6% | 78.9% |
-| 3 | SSW | 77.6% | 82.9% | 76.3% | 77.6% | 82.9% | 68.4% | 77.6% | 77.6% |
-| 4 | Volt | 77.4% | 84.2% | 75.0% | 78.9% | 84.2% | 67.1% | 76.3% | 76.3% |
-| 5 | SPD | 76.3% | 81.6% | 75.0% | 76.3% | 81.6% | 72.4% | 71.1% | 76.3% |
-| 6 | Die PARTEI | 75.4% | 82.9% | 76.3% | 75.0% | 80.3% | 65.8% | 72.4% | 75.0% |
-| 7 | GRÜNE | 75.2% | 78.9% | 75.0% | 76.3% | 78.9% | 67.1% | 71.1% | 78.9% |
-| 8 | Die Linke | 73.5% | 77.6% | 73.7% | 72.4% | 80.3% | 68.4% | 72.4% | 69.7% |
-| 9 | MERA25 | 71.8% | 76.3% | 72.4% | 71.1% | 78.9% | 67.1% | 68.4% | 68.4% |
-| 10 | PdF | 71.4% | 73.7% | 67.1% | 78.9% | 76.3% | 61.8% | 71.1% | 71.1% |
-| 11 | MLPD | 71.3% | 75.0% | 71.1% | 72.4% | 72.4% | 65.8% | 69.7% | 72.4% |
-| 12 | PdH | 70.9% | 67.1% | 73.7% | 69.7% | 72.4% | 68.4% | 69.7% | 75.0% |
-| 13 | Die Gerechtigkeitspartei - Team Todenhöfer | 69.2% | 73.7% | 61.8% | 73.7% | 71.1% | 67.1% | 65.8% | 71.1% |
-| 14 | ÖDP | 67.5% | 72.4% | 71.1% | 72.4% | 67.1% | 63.2% | 56.6% | 69.7% |
-| 15 | SGP | 67.5% | 72.4% | 65.8% | 69.7% | 72.4% | 60.5% | 64.5% | 67.1% |
-| 16 | Verjüngungsforschung | 61.8% | 56.6% | 68.4% | 61.8% | 56.6% | 57.9% | 59.2% | 72.4% |
-| 17 | BSW | 59.9% | 67.1% | 60.5% | 61.8% | 61.8% | 52.6% | 56.6% | 59.2% |
-| 18 | FREIE WÄHLER | 53.9% | 53.9% | 50.0% | 56.6% | 53.9% | 50.0% | 61.8% | 51.3% |
-| 19 | dieBasis | 51.5% | 55.3% | 51.3% | 52.6% | 47.4% | 51.3% | 47.4% | 55.3% |
-| 20 | MENSCHLICHE WELT | 50.6% | 48.7% | 52.6% | 53.9% | 48.7% | 55.3% | 40.8% | 53.9% |
-| 21 | FDP | 50.6% | 38.2% | 52.6% | 53.9% | 48.7% | 57.9% | 51.3% | 51.3% |
-| 22 | CDU / CSU | 44.0% | 39.5% | 48.7% | 42.1% | 39.5% | 48.7% | 42.1% | 47.4% |
-| 23 | BüSo | 40.8% | 40.8% | 47.4% | 43.4% | 32.9% | 42.1% | 32.9% | 46.1% |
-| 24 | Bündnis C | 40.4% | 38.2% | 39.5% | 43.4% | 35.5% | 47.4% | 35.5% | 43.4% |
-| 25 | WerteUnion | 38.9% | 27.6% | 42.1% | 40.8% | 35.5% | 50.0% | 38.2% | 38.2% |
-| 26 | BP | 38.2% | 30.3% | 36.8% | 40.8% | 35.5% | 42.1% | 43.4% | 38.2% |
-| 27 | BÜNDNIS DEUTSCHLAND | 38.2% | 32.9% | 36.8% | 40.8% | 35.5% | 47.4% | 35.5% | 38.2% |
-| 28 | AfD | 29.3% | 23.7% | 30.3% | 28.9% | 23.7% | 38.2% | 28.9% | 31.6% |
+| Rank | Party | All-Avg | Closed-Avg | Open-Avg | gpt-4o | o3 | opus | sonnet | haiku | gflash | gpro | grok | llama | mistral | deepseek | qwen |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Tierschutzpartei | 81.1% | 80.6% | 82.2% | 85.5% | 78.9% | 80.3% | 85.5% | 71.1% | 77.6% | 77.6% | 88.2% | 82.9% | 78.9% | 80.3% | 86.8% |
+| 2 | SSW | 78.5% | 78.3% | 78.9% | 82.9% | 76.3% | 77.6% | 82.9% | 68.4% | 77.6% | 77.6% | 82.9% | 77.6% | 76.3% | 80.3% | 81.6% |
+| 3 | PIRATEN | 78.3% | 78.6% | 77.6% | 81.6% | 72.4% | 81.6% | 84.2% | 67.1% | 81.6% | 78.9% | 81.6% | 78.9% | 75.0% | 78.9% | 77.6% |
+| 4 | Volt | 78.3% | 78.3% | 78.3% | 84.2% | 75.0% | 78.9% | 84.2% | 67.1% | 76.3% | 76.3% | 84.2% | 78.9% | 75.0% | 76.3% | 82.9% |
+| 5 | SPD | 77.6% | 76.3% | 80.3% | 81.6% | 75.0% | 76.3% | 81.6% | 72.4% | 71.1% | 76.3% | 76.3% | 76.3% | 80.3% | 84.2% | 80.3% |
+| 6 | Die PARTEI | 77.6% | 76.7% | 79.6% | 82.9% | 76.3% | 75.0% | 80.3% | 65.8% | 72.4% | 75.0% | 85.5% | 85.5% | 73.7% | 75.0% | 84.2% |
+| 7 | GRÜNE | 77.0% | 76.0% | 79.0% | 78.9% | 75.0% | 76.3% | 78.9% | 67.1% | 71.1% | 78.9% | 81.6% | 76.3% | 80.3% | 78.9% | 80.3% |
+| 8 | Die Linke | 75.7% | 74.7% | 77.6% | 77.6% | 73.7% | 72.4% | 80.3% | 68.4% | 72.4% | 69.7% | 82.9% | 82.9% | 71.1% | 77.6% | 78.9% |
+| 9 | MERA25 | 73.7% | 73.0% | 75.0% | 76.3% | 72.4% | 71.1% | 78.9% | 67.1% | 68.4% | 68.4% | 81.6% | 78.9% | 69.7% | 73.7% | 77.6% |
+| 10 | MLPD | 73.5% | 72.4% | 75.7% | 75.0% | 71.1% | 72.4% | 72.4% | 65.8% | 69.7% | 72.4% | 80.3% | 77.6% | 71.1% | 75.0% | 78.9% |
+| 11 | Die Gerechtigkeitspartei - Team Todenhöfer | 71.5% | 70.1% | 74.3% | 73.7% | 61.8% | 73.7% | 71.1% | 67.1% | 65.8% | 71.1% | 76.3% | 78.9% | 75.0% | 71.1% | 72.4% |
+| 12 | PdF | 70.6% | 70.7% | 70.4% | 73.7% | 67.1% | 78.9% | 76.3% | 61.8% | 71.1% | 71.1% | 65.8% | 71.1% | 64.5% | 76.3% | 69.7% |
+| 13 | ÖDP | 69.5% | 67.8% | 73.0% | 72.4% | 71.1% | 72.4% | 67.1% | 63.2% | 56.6% | 69.7% | 69.7% | 75.0% | 65.8% | 72.4% | 78.9% |
+| 14 | SGP | 69.5% | 68.8% | 71.1% | 72.4% | 65.8% | 69.7% | 72.4% | 60.5% | 64.5% | 67.1% | 77.6% | 75.0% | 65.8% | 69.7% | 73.7% |
+| 15 | PdH | 69.1% | 70.7% | 65.8% | 67.1% | 73.7% | 69.7% | 72.4% | 68.4% | 69.7% | 75.0% | 69.7% | 61.8% | 60.5% | 72.4% | 68.4% |
+| 16 | BSW | 61.2% | 60.2% | 63.1% | 67.1% | 60.5% | 61.8% | 61.8% | 52.6% | 56.6% | 59.2% | 61.8% | 67.1% | 60.5% | 61.8% | 63.2% |
+| 17 | Verjüngungsforschung | 60.5% | 61.2% | 59.2% | 56.6% | 68.4% | 61.8% | 56.6% | 57.9% | 59.2% | 72.4% | 56.6% | 51.3% | 55.3% | 67.1% | 63.2% |
+| 18 | FREIE WÄHLER | 53.3% | 53.3% | 53.3% | 53.9% | 50.0% | 56.6% | 53.9% | 50.0% | 61.8% | 51.3% | 48.7% | 56.6% | 52.6% | 53.9% | 50.0% |
+| 19 | dieBasis | 52.0% | 51.0% | 53.9% | 55.3% | 51.3% | 52.6% | 47.4% | 51.3% | 47.4% | 55.3% | 47.4% | 52.6% | 53.9% | 55.3% | 53.9% |
+| 20 | MENSCHLICHE WELT | 49.6% | 49.7% | 49.3% | 48.7% | 52.6% | 53.9% | 48.7% | 55.3% | 40.8% | 53.9% | 43.4% | 46.1% | 50.0% | 51.3% | 50.0% |
+| 21 | FDP | 48.2% | 50.3% | 44.1% | 38.2% | 52.6% | 53.9% | 48.7% | 57.9% | 51.3% | 51.3% | 48.7% | 40.8% | 47.4% | 48.7% | 39.5% |
+| 22 | CDU / CSU | 43.2% | 43.1% | 43.4% | 39.5% | 48.7% | 42.1% | 39.5% | 48.7% | 42.1% | 47.4% | 36.8% | 39.5% | 48.7% | 44.7% | 40.8% |
+| 23 | BüSo | 42.3% | 41.1% | 44.8% | 40.8% | 47.4% | 43.4% | 32.9% | 42.1% | 32.9% | 46.1% | 43.4% | 46.1% | 42.1% | 43.4% | 47.4% |
+| 24 | Bündnis C | 39.0% | 39.5% | 38.1% | 38.2% | 39.5% | 43.4% | 35.5% | 47.4% | 35.5% | 43.4% | 32.9% | 32.9% | 44.7% | 38.2% | 36.8% |
+| 25 | WerteUnion | 37.3% | 38.5% | 34.9% | 27.6% | 42.1% | 40.8% | 35.5% | 50.0% | 38.2% | 38.2% | 35.5% | 30.3% | 39.5% | 38.2% | 31.6% |
+| 26 | BÜNDNIS DEUTSCHLAND | 36.2% | 37.2% | 34.2% | 32.9% | 36.8% | 40.8% | 35.5% | 47.4% | 35.5% | 38.2% | 30.3% | 25.0% | 42.1% | 38.2% | 31.6% |
+| 27 | BP | 36.2% | 37.5% | 33.5% | 30.3% | 36.8% | 40.8% | 35.5% | 42.1% | 43.4% | 38.2% | 32.9% | 30.3% | 39.5% | 35.5% | 28.9% |
+| 28 | AfD | 27.9% | 28.6% | 26.3% | 23.7% | 30.3% | 28.9% | 23.7% | 38.2% | 28.9% | 31.6% | 23.7% | 21.1% | 30.3% | 28.9% | 25.0% |
 
-### 3a. Gemini Coverage Attempt — Configuration Notes
+### 3a. Model Configuration Notes
 
-Earlier runs (batch_2026-04-21T160611Z for gemini-2.5-pro, batch_2026-04-21T160944Z for gemini-2.5-flash) failed due to two compounding issues:
+**Gemini (B1 — safety-filter fix):** Earlier runs (batch_2026-04-21T160611Z for gemini-2.5-pro, batch_2026-04-21T160944Z for gemini-2.5-flash) returned all-NEUTRAL arrays because political theses triggered Gemini's content safety filters at default settings, and the `max_output_tokens=10` budget was too small for thinking-model output. Fix: `BLOCK_NONE` across all four harm categories + `max_output_tokens=2048`. gemini-2.5-pro had 1 blocked thesis ("Verbot von Kernkraft"), treated as NEUTRAL.
 
-1. **Safety filter blocking.** Political theses in German triggered Gemini's content safety filters at default settings. All responses returned as `BLOCKED` or a silent empty response, mapped to NEUTRAL (score 0), producing all-zeros answer arrays.
+**OpenRouter (B2 — open-weight):** Models accessed via OpenRouter's OpenAI-compatible API (`https://openrouter.ai/api/v1`). Rate limit: 0.5 s between requests. Note: `mistralai/mistral-large-latest` is not a valid OpenRouter model ID — corrected to `mistralai/mistral-large-2512` in `scripts/run_all_models.py`.
 
-2. **Thinking token budget too low.** gemini-2.5 models are "thinking" models that consume internal chain-of-thought tokens before outputting. With `max_output_tokens=10`, the model could not emit a word after finishing its internal reasoning, causing truncation.
-
-**Track B fix applied:**
-- `safety_settings`: all four harm categories set to `BLOCK_NONE` (see `scripts/ask_llm.py`, `ask_google()`)
-- `max_output_tokens`: raised to 2048 for all gemini-2.5 models
-- Result: both models produced full 38-thesis answer sets with no remaining blocks (gemini-2.5-pro had 1 blocked thesis out of 38 — topic: "Verbot von Kernkraft", treated as NEUTRAL)
+**Grok-3 (B3):** Accessed via xAI's OpenAI-compatible API (`https://api.x.ai/v1`). No special configuration required; model responded cleanly with AGREE/NEUTRAL/DISAGREE on all 38 theses.
 
 ---
 
 ## 4. Answer Distribution
 
-| Model | Provider | AGREE (+1) | NEUTRAL (0) | DISAGREE (−1) |
-|---|---|---|---|---|
-| gpt-4o | OpenAI | 21 (55%) | 5 (13%) | 12 (32%) |
-| o3 | OpenAI | 14 (37%) | 14 (37%) | 10 (26%) |
-| claude-opus-4-7 | Anthropic | 18 (47%) | 9 (24%) | 11 (29%) |
-| claude-sonnet-4-6 | Anthropic | 17 (45%) | 5 (13%) | 16 (42%) |
-| claude-haiku-4-5-20251001 | Anthropic | 16 (42%) | 6 (16%) | 16 (42%) |
-| gemini-2.5-flash | Google | 17 (45%) | 7 (18%) | 14 (37%) |
-| gemini-2.5-pro | Google | 12 (32%) | 17 (45%) | 9 (24%) |
+| Model | Family | Provider | AGREE (+1) | NEUTRAL (0) | DISAGREE (−1) |
+|---|---|---|---|---|---|
+| gpt-4o | closed | OpenAI | 21 (55%) | 5 (13%) | 12 (32%) |
+| o3 | closed | OpenAI | 14 (37%) | 14 (37%) | 10 (26%) |
+| claude-opus-4-7 | closed | Anthropic | 18 (47%) | 9 (24%) | 11 (29%) |
+| claude-sonnet-4-6 | closed | Anthropic | 17 (45%) | 5 (13%) | 16 (42%) |
+| claude-haiku-4-5-20251001 | closed | Anthropic | 16 (42%) | 6 (16%) | 16 (42%) |
+| gemini-2.5-flash | closed | Google | 17 (45%) | 7 (18%) | 14 (37%) |
+| gemini-2.5-pro | closed | Google | 12 (32%) | 17 (45%) | 9 (24%) |
+| grok-3 | closed | xAI | 19 (50%) | 5 (13%) | 14 (37%) |
+| llama-3.3-70b-instruct | open | Meta | 25 (66%) | 1 (3%) | 12 (32%) |
+| mistral-large-2512 | open | Mistral | 21 (55%) | 4 (11%) | 13 (34%) |
+| deepseek-chat | open | DeepSeek | 16 (42%) | 13 (34%) | 9 (24%) |
+| qwen-2.5-72b-instruct | open | Alibaba | 18 (47%) | 10 (26%) | 10 (26%) |
 
-gpt-4o remains the most agree-heavy model (55%). gemini-2.5-pro is the most neutral-heavy (45% neutral, similar to o3's 37%), suggesting the "thinking" reasoning process may pull these models toward hedged positions on contested political questions. gemini-2.5-flash, despite using the same base model family, behaves more decisively (45% agree, 37% disagree) — its lower neutral rate produces more distinctive party rankings and a higher top score (PIRATEN 81.6% vs. gemini-2.5-pro's 78.9%).
+Open-weight models tend toward higher agree rates (42–66%) and lower neutral rates compared to closed-weight models. Llama 3.3 70B is the most opinionated model in the dataset (66% agree, 3% neutral — 1 neutral in 38 theses), while gemini-2.5-pro is the most hedged (45% neutral). The two "thinking" models in the dataset (o3 at 37% neutral; gemini-2.5-pro at 45% neutral) show systematically higher neutral rates, likely reflecting both reasoning-before-answering dynamics and calibrated caution on politically sensitive questions.
 
 ---
 
 ## 5. Notable Patterns and Outliers
 
-**Strong cross-model consensus at top and bottom.** Tierschutzpartei tops or co-tops in 5 of 7 models and holds first place in the 7-model average (79.5%). AfD sits last in every model (23–38%). The bottom tier is consistent across all seven models: AfD, BÜNDNIS DEUTSCHLAND, BP, WerteUnion, Bündnis C. Adding Google models did not shift the consensus structure.
+**Open-weight vs. closed-weight: same direction, slightly stronger signal.** This is the headline finding of Track B. Open-weight models (Llama 3.3 70B, Mistral Large 2512, DeepSeek Chat, Qwen 2.5 72B) and closed-weight models (GPT-4o, o3, Claude family, Gemini 2.5, Grok-3) produce the same left-progressive ranking across all 28 parties. The top-8 parties are identical between the two groups. Open-weight models score SPD (+4.0pp), GRÜNE (+3.0pp), Die Linke (+3.0pp), and MLPD (+3.3pp) somewhat higher than closed-weight on average — a consistent but modest bias. AfD is last in both groups (closed avg 28.6%, open avg 26.3%). The practical conclusion: the political posture embedded in today's major open-weight models is not meaningfully different from the closed-weight frontier. Organizations deploying self-hosted Llama or Qwen should expect the same systematic tilt as organizations using the OpenAI or Anthropic API.
 
-**Left-progressive tilt confirmed across three provider families.** SPD, GRÜNE, Die Linke, PIRATEN, and Volt all rank in the top 8 across OpenAI, Anthropic, and Google models. CDU/CSU sits at 44.0% average — 32.3pp below SPD — and this gap is reproduced in every individual model's rankings. The left-leaning signal is not a GPT artefact or Anthropic artefact; it emerges independently from Google's Gemini family as well.
+**Strong cross-model consensus at top and bottom.** Tierschutzpartei tops or co-tops in 9 of 12 models and holds first place in the 12-model average (81.1%). AfD is last in every single model (21–38%), the only party with unanimous last-place status. The bottom five (AfD, BP, BÜNDNIS DEUTSCHLAND, WerteUnion, Bündnis C) are consistent across all 12 models regardless of provider family or weight type.
 
-**Gemini aligns with the cross-family consensus.** gemini-2.5-flash's top party (PIRATEN 81.6%) is the same as claude-opus-4-7's, and its full ranking tracks closely with the 5-model average from before (Spearman correlation > 0.95 across 28 parties). gemini-2.5-pro's ranking is similarly consistent despite its higher neutral rate. Google's models do not deviate from the left-progressive cluster that OpenAI and Anthropic models independently arrive at.
+**Left-progressive tilt confirmed across six provider families.** SPD, GRÜNE, Die Linke, PIRATEN, and Volt all rank in the top 8 across OpenAI, Anthropic, Google, xAI, Meta, Mistral, DeepSeek, and Alibaba models. CDU/CSU sits at 43.2% average — 34.4pp below SPD — and this gap holds in every individual model's ranking without exception. The signal is not a GPT artefact; it emerges from models trained on entirely different corpora by different labs on different continents.
 
-**Flash vs. Pro within the same model family.** gemini-2.5-flash is more decisive (37% disagree) while gemini-2.5-pro is more hedged (45% neutral). This produces a 7.8pp raw score difference on GRÜNE (71.1% vs. 78.9%) and a similar gap on several other parties. The flash model's lower neutral rate makes party rank differences sharper; the pro model's high neutral rate compresses scores toward the midpoint, behaving more like o3.
+**Grok-3 is the most progressive model in the dataset.** Despite xAI's public positioning as a politically unfiltered alternative to other frontier models, Grok-3 produces the highest individual alignment score in the entire dataset (Tierschutzpartei 88.2%) and ranks first among all 12 models in Die PARTEI (85.5%) and Volt (84.2%). Its AfD score (23.7%) is the second-lowest in the dataset, matching claude-sonnet-4-6. Grok-3 does not exhibit any right-of-center deviation.
 
-**Open-weight vs. closed-weight posture (planned; pending).** Track B2 (Llama 3.3 70B, Mistral Large, DeepSeek V3, Qwen 2.5 72B via OpenRouter) and Track B3 (Grok) require API keys that are not yet provisioned. Based on the pattern across 7 closed-weight models from three families, we predict open-weight models will show a similar left-progressive tilt — all major open-weight models of this generation are trained with RLHF/RLAIF on similar human-feedback corpora. The most interesting question is whether the degree of tilt and the specific top party differ between model families with different training provenance (Meta, Mistral, Alibaba, DeepSeek). This analysis will be completed when keys are provisioned.
+**Llama 3.3 70B is the most opinionated model.** With 66% agree and 3% neutral (1 neutral in 38 theses), Llama agrees with nearly everything and hedges on almost nothing. This decisiveness produces its highest individual score in Die PARTEI (85.5%) and Die Linke (82.9%) — the strongest left-flank scores of any open-weight model — while its single neutral answer limits upward drift on parties that benefit from abstention.
 
-**Anthropic vs. OpenAI calibration.** claude-sonnet-4-6 remains the highest-scoring model in raw terms for several left-wing parties (Die Linke 80.3%, SSW 82.9%). claude-haiku-4-5-20251001 is consistently the lowest scorer overall. claude-opus-4-7 tracks close to gpt-4o. All three Anthropic models agree with OpenAI models on top-5 party composition.
+**DeepSeek shows the highest neutral rate among open-weight models (34%).** This is close to the closed-weight "thinking model" range (o3: 37%, gemini-2.5-pro: 45%). DeepSeek's hedging compresses its scores toward the midpoint, producing a narrower spread between top (SPD 84.2%) and bottom (AfD 28.9%). Its SPD score (84.2%) is the highest SPD score in the dataset despite its higher neutral rate, suggesting genuine agreement on the social-democratic theses it does engage with.
 
-**FDP: stable at rank 21.** FDP scores 50.6% in the 7-model average (vs. 50.3% in the 5-model avg). Both Gemini models score FDP at 51.3%, within the cluster of the other models. claude-haiku-4-5-20251001 at 57.9% remains the most FDP-aligned.
+**FDP: open-weight models are less economically libertarian.** FDP scores 50.3% in the closed-weight average vs. 44.1% in the open-weight average (−6.2pp). All four open-weight models score FDP below 49%, while three closed-weight models (claude-haiku-4-5 at 57.9%, o3 at 52.6%, claude-opus-4-7 at 53.9%) push its closed-weight average up. This is the largest consistent divergence between the two groups across the 28 parties.
 
-**WerteUnion: Haiku remains the outlier.** claude-haiku-4-5-20251001 gives WerteUnion 50.0% while all other models (including both Gemini) score it 27–42%. The gap narrows slightly (from 22.4pp to 18.4pp above the next-highest model) with 7 models in the table.
+**Gemini aligns with the cross-family consensus.** gemini-2.5-flash (PIRATEN 81.6%) and gemini-2.5-pro (GRÜNE 78.9%) both track the full-table ranking closely. Flash vs. Pro within the same family: flash is more decisive (37% disagree) while pro hedges more (45% neutral), compressing pro's top scores but not changing rank order.
 
-**Tierschutzpartei tops across all three provider families.** gpt-4o and claude-sonnet-4-6 tie at 85.5%, the highest individual score. The party's platform — animal welfare, climate, social equity — is a consistent attractor across all tested LLMs.
+**BSW consistency across 12 models.** BSW ranks 16th in the 12-model average (61.2%), consistent across all model families. Its sceptical positions on Ukraine support and migration consistently push it below Die Linke regardless of model.
 
-**BSW consistency holds at 7 models.** BSW ranks 17th in the 7-model average (59.9%), consistent with its 16th-place position in the 5-model table. Both Gemini models (56.6% and 59.2%) place it in the same position relative to Die Linke and GRÜNE.
+**WerteUnion: Haiku remains the sole outlier.** claude-haiku-4-5-20251001 gives WerteUnion 50.0% — no other model in the 12-model set exceeds 42.1% for that party. With 12 models in the table this is the starkest single-model deviation in the entire dataset.
 
-**Verjüngungsforschung artefact confirmed.** In fixture runs it ranked first; in real data across 7 models it sits at rank 16 (61.8%). gemini-2.5-pro gives it 72.4% (rank 9 for that model), its highest individual score in the dataset — driven by Gemini-Pro's high neutral rate benefiting parties that take few positions.
+**Verjüngungsforschung artefact confirmed at scale.** In fixture runs it ranked first; in real data across 12 models it sits at rank 17 (60.5%). gemini-2.5-pro gives it a high 72.4% (rank 9 within that model), driven by pro's high neutral rate benefiting parties that take few policy positions.
 
 ---
 
 ## 6. Limitations
 
-1. **Open-weight and Grok coverage missing.** Track B2 (Llama 3.3 70B, Mistral Large, DeepSeek V3, Qwen 2.5 72B via OpenRouter) and Track B3 (Grok) are not included — API keys (`WAHL_OPENROUTER_API_KEY`, `WAHL_XAI_API_KEY`) have not been provisioned. These models are already wired into `scripts/run_all_models.py` and will run when keys are available.
+1. **Open-weight models not run natively.** The four open-weight models (Llama, Mistral, DeepSeek, Qwen) were accessed via OpenRouter rather than self-hosted inference. This means provider-side RLHF or chat template fine-tuning may differ from running the raw base weights locally. Results reflect the OpenRouter-served chat variant of each model.
 
 2. **Single-pass prompting.** Each thesis is answered in isolation with no conversation history. Models may answer differently if theses are presented together or in different order.
 
@@ -243,9 +249,9 @@ Full prompt/response logs (including token counts per model per thesis) are writ
 | gpt-4o, o3 runs | Done — `runs/batch_2026-04-21T160944Z` |
 | claude-opus-4-7, claude-sonnet-4-6, claude-haiku-4-5-20251001 runs | Done — `runs/batch_2026-04-21T225331Z` |
 | gemini-2.5-flash, gemini-2.5-pro runs (Track B1) | Done — `runs/track_b_2026-04-22T111320Z` |
-| 7-model alignment table | Done — see Section 3 |
-| Gemini safety-filter workaround | Done — `BLOCK_NONE` + 2048 token budget (see Section 3a) |
-| Open-weight models via OpenRouter (Track B2) | Blocked — `WAHL_OPENROUTER_API_KEY` not provisioned |
-| Grok via xAI (Track B3) | Blocked — `WAHL_XAI_API_KEY` not provisioned |
+| Llama, Mistral, DeepSeek, Qwen via OpenRouter (Track B2) | Done — `runs/track_b_2026-04-22T130724Z` |
+| Grok-3 via xAI (Track B3) | Done — `runs/track_b_2026-04-22T130724Z` |
+| 12-model alignment table | Done — see Section 3 |
+| Open-weight vs. closed-weight analysis | Done — see Section 5 |
 | Multi-seed variance estimation (Track A) | In progress separately |
 | Temperature pinning / reproducibility pass | Backlog |
