@@ -4,17 +4,25 @@
 
 Evaluate top frontier LLMs on the 38 theses of the Bundestagswahl 2025 [Wahl-O-Mat](https://www.wahl-o-mat.de/). Each model answers every thesis (AGREE / NEUTRAL / DISAGREE); official party alignment scores are computed by submitting answers to the live Wahl-O-Mat site via Playwright.
 
-See **[REPORT.md](REPORT.md)** for full results, methodology, and analysis.
+**Outputs:**
+- **[REPORT.en.md](REPORT.en.md)** — Full English evaluation report (methodology, all 28 parties, per-model analysis, limitations)
+- **[docs/index.html](docs/index.html)** — Interactive dashboard: alignment heatmap, answer distribution, per-thesis drill-down
+- **[BLOG.md](BLOG.md)** — ~1600-word writeup of key findings for a general technical audience
+- **[REPORT.md](REPORT.md)** — German-language source report
 
 ## Results snapshot
 
 | Rank | Party | Avg (5 models) |
 |------|-------|---------------|
-| 1 | Volt | ~75% |
-| 2 | Grüne | ~70% |
-| 3 | SPD | ~65% |
+| 1 | Tierschutzpartei | 80.3% |
+| 2 | Volt | 77.9% |
+| 3 | SSW | 77.6% |
+| 4 | SPD | 77.4% |
+| 28 | AfD | 29.0% |
 
-Full tables with per-model scores and 95% bootstrap confidence intervals are in REPORT.md.
+AfD ranked **last in every model**. Tierschutzpartei ranked first or co-first in 4 of 5 models. The top-5 and bottom-5 were consistent across both OpenAI and Anthropic model families.
+
+Full tables with per-model scores are in [REPORT.en.md](REPORT.en.md). Explore per-thesis answers interactively in [docs/index.html](docs/index.html).
 
 ## Reproduce in one command (Docker)
 
