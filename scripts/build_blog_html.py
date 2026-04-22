@@ -1,5 +1,5 @@
 """Build docs/blog.html from BLOG.md."""
-import re, sys
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -19,7 +19,9 @@ def md_to_html(text):
     for line in lines:
         if line.startswith('```'):
             if not in_code:
-                if in_ul: out.append('</ul>'); in_ul = False
+                if in_ul:
+                    out.append('</ul>')
+                    in_ul = False
                 out.append('<pre><code>')
                 in_code = True
             else:
@@ -30,28 +32,44 @@ def md_to_html(text):
             out.append(line.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
             continue
         if line.startswith('# '):
-            if in_ul: out.append('</ul>'); in_ul = False
+            if in_ul:
+                out.append('</ul>')
+                in_ul = False
             out.append(f'<h1>{inline(line[2:])}</h1>')
         elif line.startswith('## '):
-            if in_ul: out.append('</ul>'); in_ul = False
+            if in_ul:
+                out.append('</ul>')
+                in_ul = False
             out.append(f'<h2>{inline(line[3:])}</h2>')
         elif line.startswith('### '):
-            if in_ul: out.append('</ul>'); in_ul = False
+            if in_ul:
+                out.append('</ul>')
+                in_ul = False
             out.append(f'<h3>{inline(line[4:])}</h3>')
         elif line.startswith('- '):
-            if not in_ul: out.append('<ul>'); in_ul = True
+            if not in_ul:
+                out.append('<ul>')
+                in_ul = True
             out.append(f'<li>{inline(line[2:])}</li>')
         elif line.startswith('> '):
-            if in_ul: out.append('</ul>'); in_ul = False
+            if in_ul:
+                out.append('</ul>')
+                in_ul = False
             out.append(f'<blockquote>{inline(line[2:])}</blockquote>')
         elif line.strip() == '---':
-            if in_ul: out.append('</ul>'); in_ul = False
+            if in_ul:
+                out.append('</ul>')
+                in_ul = False
             out.append('<hr>')
         elif line.strip() == '':
-            if in_ul: out.append('</ul>'); in_ul = False
+            if in_ul:
+                out.append('</ul>')
+                in_ul = False
             out.append('')
         else:
-            if in_ul: out.append('</ul>'); in_ul = False
+            if in_ul:
+                out.append('</ul>')
+                in_ul = False
             out.append(f'<p>{inline(line)}</p>')
     if in_ul:
         out.append('</ul>')

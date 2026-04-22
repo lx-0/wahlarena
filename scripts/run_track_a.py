@@ -203,7 +203,7 @@ def main():
     print(f"Track A Runner — {timestamp}")
     print(f"Models:       {', '.join(models)}")
     print(f"Seeds:        {args.seeds} (seed 1 = canonical M4/M5)")
-    print(f"Ablations:    en, reordered")
+    print("Ablations:    en, reordered")
     print(f"Output:       {batch_dir}")
     print(f"Resume:       {args.resume or 'no'}")
     print(f"Skip browser: {args.skip_wahlomat}")
@@ -250,7 +250,7 @@ def main():
             # Run Wahl-O-Mat for seed 1 if not already scored
             wm_scores_1 = load_seed1_scores(model, seed1_out)
             if wm_scores_1 is None and not args.skip_wahlomat:
-                print(f"  Running Wahl-O-Mat for seed_1...")
+                print("  Running Wahl-O-Mat for seed_1...")
                 wm_res = run_wahlomat(answers_1, seed1_out / 'wahlomat', chromium_path)
                 wm_scores_1 = scores_from_wahlomat_result(wm_res)
 
@@ -304,15 +304,15 @@ def main():
         if (en_dir / 'answers.json').exists():
             run_en = {'success': True, 'elapsed_s': 0,
                       'answers': json.loads((en_dir / 'answers.json').read_text()), 'dir': str(en_dir)}
-            print(f"\n  ablation_en: RESUMED")
+            print("\n  ablation_en: RESUMED")
         else:
-            print(f"\n  Running ablation_en...")
+            print("\n  Running ablation_en...")
             run_en = run_ask_llm(model, provider, en_dir, variant='en', theses_file=theses_en_path)
         wm_scores_en = None
         if (en_dir / 'wahlomat' / 'results.json').exists():
             wm_scores_en = json.loads((en_dir / 'wahlomat' / 'results.json').read_text()).get('results', [])
         elif run_en['success'] and not args.skip_wahlomat:
-            print(f"  Running Wahl-O-Mat for ablation_en...")
+            print("  Running Wahl-O-Mat for ablation_en...")
             wm_res = run_wahlomat(run_en['answers'], en_dir / 'wahlomat', chromium_path)
             wm_scores_en = scores_from_wahlomat_result(wm_res)
         model_manifest['ablations']['en'] = {
@@ -329,15 +329,15 @@ def main():
         if (reo_dir / 'answers.json').exists():
             run_reo = {'success': True, 'elapsed_s': 0,
                        'answers': json.loads((reo_dir / 'answers.json').read_text()), 'dir': str(reo_dir)}
-            print(f"\n  ablation_reordered: RESUMED")
+            print("\n  ablation_reordered: RESUMED")
         else:
-            print(f"\n  Running ablation_reordered...")
+            print("\n  Running ablation_reordered...")
             run_reo = run_ask_llm(model, provider, reo_dir, variant='reordered')
         wm_scores_reo = None
         if (reo_dir / 'wahlomat' / 'results.json').exists():
             wm_scores_reo = json.loads((reo_dir / 'wahlomat' / 'results.json').read_text()).get('results', [])
         elif run_reo['success'] and not args.skip_wahlomat:
-            print(f"  Running Wahl-O-Mat for ablation_reordered...")
+            print("  Running Wahl-O-Mat for ablation_reordered...")
             wm_res = run_wahlomat(run_reo['answers'], reo_dir / 'wahlomat', chromium_path)
             wm_scores_reo = scores_from_wahlomat_result(wm_res)
         model_manifest['ablations']['reordered'] = {
