@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>We Ran Five Frontier LLMs Through Germany's Wahl-O-Mat</title>
+<title>We Ran 12 Frontier LLMs Through Germany's Wahl-O-Mat</title>
 <style>
 :root {
   --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3e;
@@ -36,12 +36,12 @@ hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
   <span style="font-weight:700;font-family:system-ui">Wahl-O-Mat LLM Evaluation</span>
   <a href="index.html">← Dashboard</a>
   <a href="../REPORT.en.md">Full Report</a>
-  <a href="https://github.com/lx-0/wahlarena" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://github.com/lx-0/wahlarena">GitHub</a>
 </header>
 <article>
-<h1>We Ran Five Frontier LLMs Through Germany's Official Voting Guide. The Results Were Surprisingly Consistent.</h1>
+<h1>We Ran 12 Frontier LLMs Through Germany's Official Voting Guide. The Results Were Surprisingly Consistent.</h1>
 
-<p><em>Posted 2026-04-22 · ~1600 words · <a href="https://github.com/lx-0/wahlarena" target="_blank" rel="noopener">GitHub repo</a> · <a href="index.html">Interactive dashboard</a></em></p>
+<p><em>Posted 2026-04-22 · ~1800 words · <a href="https://github.com/lx-0/wahlarena">GitHub repo</a> · <a href="docs/index.html">Interactive dashboard</a></em></p>
 
 <hr>
 
@@ -51,11 +51,14 @@ hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
 
 <h2>The Setup</h2>
 
-<p>We ran all 38 theses from the Bundestagswahl 2025 Wahl-O-Mat through five frontier language models:</p>
+<p>We ran all 38 theses from the Bundestagswahl 2025 Wahl-O-Mat through 12 frontier language models:</p>
 
 <ul>
 <li><strong>GPT-4o</strong> and <strong>o3</strong> from OpenAI</li>
 <li><strong>Claude Opus 4.7</strong>, <strong>Claude Sonnet 4.6</strong>, and <strong>Claude Haiku 4.5</strong> from Anthropic</li>
+<li><strong>Gemini 3 Flash</strong> and <strong>Gemini 3.1 Pro</strong> from Google (severe neutral bias — see below)</li>
+<li><strong>Grok-4</strong> from xAI</li>
+<li><strong>Llama 4 Maverick</strong>, <strong>Mistral Large 2512</strong>, <strong>DeepSeek V3.2</strong>, and <strong>Qwen3-235B</strong> via OpenRouter</li>
 </ul>
 
 <p>Each model received an identical system prompt:</p>
@@ -70,73 +73,79 @@ hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
 
 <p><strong>The agreement at the top and bottom of the rankings was striking.</strong></p>
 
-<p>Tierschutzpartei (<em>Animal Protection Party</em>) ranked first or co-first in four of five models, with an average alignment score of 80.3% across all models. GPT-4o and Claude Sonnet 4.6 both gave it 85.5% — the highest individual score in the entire dataset.</p>
+<p>Tierschutzpartei (<em>Animal Protection Party</em>) ranked first in 9 of 10 scorable models, with an average alignment score of 81.1% across all 12 models. The two Gemini models are excluded from individual ranking due to near-total NEUTRAL responses (see "The Gemini Gap" below), but their compressed scores are included in the overall average.</p>
 
-<p>At the other end: AfD (<em>Alternative for Germany</em>) ranked last in every single model. Not nearly last — actually last. Across five models representing two different AI companies, with very different answer distributions, AfD scored between 23.7% and 38.2%, with an average of 29%.</p>
+<p>At the other end: AfD (<em>Alternative for Germany</em>) ranked last in every single model. Not nearly last — actually last. Across 12 models representing eight providers, AfD scored between 21% and 38%, with an average of 27.9%.</p>
 
 <p>The bottom tier — AfD, BP, BÜNDNIS DEUTSCHLAND, WerteUnion, Bündnis C — was equally consistent. No model placed any of these parties above 50%.</p>
 
 <p><strong>The left-progressive ordering was not a GPT artefact.</strong></p>
 
-<p>Our initial hypothesis was that this result might be a quirk of GPT-4o's training. It wasn't. All three Anthropic models produced the same top-8 composition: Tierschutzpartei, Volt, SSW, SPD, PIRATEN, Die PARTEI, GRÜNE, Die Linke. CDU/CSU sat at rank 22 (43.7% average) in all five models — 34 points below SPD.</p>
+<p>Our initial hypothesis was that this result might be a quirk of GPT-4o's training. It wasn't. All three Anthropic models, both OpenAI models, Grok-4, Llama 4 Maverick, DeepSeek V3.2, Mistral Large 2512, and Qwen3-235B all produced a top cluster of the same parties: Tierschutzpartei, SSW, PIRATEN, Volt, and SPD, each scoring between 77% and 81%. PIRATEN sits solidly at rank 3 in the 12-model average (78.3%), alongside SPD, Volt, and GRÜNE. CDU/CSU sits at rank 22 (43.2% average) — 34 points below SPD.</p>
 
-<p>This cross-provider consistency is the strongest signal in the dataset. If it were GPT-specific, we'd expect to see divergence on the Anthropic side. We don't.</p>
+<p>This cross-provider consistency is the strongest signal in the dataset. If it were GPT-specific, we'd expect to see divergence on the Anthropic side, or among open-weight models trained by different teams on different data. We don't.</p>
 
 <p><strong>The alignment drivers are identifiable.</strong></p>
 
-<p>Looking at per-thesis answers, the models converge on a small set of theses that drive most of the left-progressive alignment:</p>
+<p>Looking at per-thesis answers in the T=0 modal pass (all 12 models, deterministic), the models converge on a small set of theses with near-unanimous positions. The two Gemini models return NEUTRAL on most theses and account for almost all exceptions.</p>
 
-<p><em>All five models AGREE on:</em></p>
+<p><em>10 or 11 of 12 models AGREE on:</em></p>
 <ul>
-<li>Continued military support for Ukraine</li>
-<li>Continued state subsidy for renewable energy expansion</li>
-<li>Continued rent price controls</li>
-<li>Retaining dual citizenship rights</li>
-<li>Raising the minimum wage to €15 by 2026</li>
+<li>Continued military support for Ukraine (10 of 12)</li>
+<li>Continued state subsidy for renewable energy expansion (11 of 12)</li>
+<li>Retaining dual citizenship rights (11 of 12)</li>
 </ul>
 
-<p><em>All five models DISAGREE on:</em></p>
+<p><em>10 or 11 of 12 models DISAGREE on:</em></p>
 <ul>
-<li>Resuming nuclear energy use</li>
-<li>Replacing the euro with a national currency</li>
-<li>Holding children under 14 criminally liable</li>
+<li>Replacing the euro with a national currency (11 of 12)</li>
+<li>Holding children under 14 criminally liable (10 of 12)</li>
+<li>Allowing new heating systems to run entirely on fossil fuels (11 of 12)</li>
 </ul>
+
+<p>In every case, the 1–2 exceptions are Gemini models returning NEUTRAL. Among the 10 non-Gemini models, these are effectively unanimous positions.</p>
 
 <p>These positions happen to closely match the platform of centre-left to progressive parties. The models are not being asked about party preferences — they're answering individual policy questions. But the aggregation of those answers produces a consistent political fingerprint.</p>
 
-<p><strong>The models diverge most on economic liberalism.</strong></p>
-
-<p>FDP (<em>Free Democratic Party</em>) is where the models spread out most. GPT-4o scores it at 38.2% (placing it below CDU/CSU). Claude Haiku 4.5 scores it at 57.9% (placing it 15th). That's a 20-point gap on the same party from models at the same company, reflecting meaningfully different responses to theses on fiscal austerity and deregulation.</p>
-
-<p>WerteUnion showed the largest individual outlier: Claude Haiku 4.5 gave it 50.0% — while all other models scored it 27–42%. A 22-point gap between one model and the next-highest is notable. Haiku's more mixed posture on a handful of security and order theses is enough to move an entire party up 15 ranks.</p>
+<p>Note that consensus is not uniformly left-leaning: 10 of 12 models also agree on opposing a wealth tax and supporting abolition of the citizen's income (<em>Bürgergeld</em>) — positions associated with centre-right to liberal parties. The left-progressive overall alignment emerges from the net combination, not a blanket left tilt on every thesis.</p>
 
 <h2>Model Personality Profiles</h2>
 
-<p>The per-thesis answer distributions reveal something like model-level political temperaments.</p>
+<p>The per-thesis answer distributions reveal something like model-level political temperaments. Figures are from the T=0 modal pass (deterministic, all 12 models).</p>
 
-<p><strong>GPT-4o</strong> is the most agree-heavy: 21 AGREE, 5 NEUTRAL, 12 DISAGREE (55% agree). This produces the highest raw alignment scores — when a model agrees more, it tends to score higher with parties whose platforms have a lot of affirmative positions.</p>
+<p><strong>GPT-4o</strong> is agree-heavy: 21 AGREE / 2 NEUTRAL / 15 DISAGREE (55% agree, 5% neutral). Only 2 neutral answers — it takes a clear position on 36 of 38 theses. This produces high raw alignment scores for top-ranked parties.</p>
 
-<p><strong>o3</strong> is the most neutral-heavy: 14/14/10. Its 37% NEUTRAL rate is a clear outlier. This may partly be genuine political agnosticism, but it's also consistent with a reasoning model that has been RLHF'd to avoid strong political commitments. Whatever the cause, the high NEUTRAL rate compresses o3's party scores toward 50% — it's harder to score very high or very low if you're not taking many positions.</p>
+<p><strong>o3</strong> is the most neutral-heavy of the non-Gemini models: 14/10/14 (26% neutral). Its reasoning-model architecture has been RLHF'd toward political caution. The high NEUTRAL rate compresses o3's party scores toward 50%.</p>
 
-<p><strong>Claude Sonnet 4.6</strong> and <strong>Claude Haiku 4.5</strong> are both 42% DISAGREE — the most opinionated models in the negative direction. This produces a narrower top-end distribution: their highest scores (85.5% and 72.4%) are further apart than one might expect from models at the same company.</p>
+<p><strong>Claude Opus 4.7</strong> also hedges: 17/10/11 (26% neutral, 29% disagree). It tracks close to o3 in NEUTRAL count, but with a stronger AGREE lean, producing slightly higher top-end scores.</p>
 
-<p><strong>Claude Opus 4.7</strong> sits in the middle: 47% AGREE, 24% NEUTRAL, 29% DISAGREE. It tracks close to GPT-4o in rank ordering but with slightly compressed top scores.</p>
+<p><strong>Claude Sonnet 4.6</strong> is decisive and agree-lean: 17/5/16 (45% agree, 42% disagree, only 13% neutral). Its high disagree rate drives down bottom-tier parties significantly.</p>
+
+<p><strong>Claude Haiku 4.5</strong> has a similar profile: 16/7/15 (42% agree, 39% disagree). The slightly higher neutral rate compresses scores compared to Sonnet.</p>
+
+<p><strong>Grok-4</strong>, <strong>Llama 4 Maverick</strong>, <strong>DeepSeek V3.2</strong>, and <strong>Mistral Large 2512</strong> are the most decisive models in the roster. Llama 4 Maverick returns 0 NEUTRAL answers across all 38 theses (22/0/16). DeepSeek V3.2 is the most agree-heavy with 23 AGREE and only 1 NEUTRAL. Grok-4 is similarly decisive: 20/2/16. These open-weight and xAI models take strong stances where the closed frontier models hedge.</p>
+
+<p><strong>Qwen3-235B</strong> stands out as the most disagree-heavy model overall: 16/4/18 (47% disagree). Its distribution differs from the other open-weight models, which skew toward AGREE.</p>
+
+<p><strong>Gemini 3 Flash</strong> returns NEUTRAL on 74% of theses (7/28/3). Its agreement-side answers are sparse and weak; party alignment scores are severely compressed toward the neutral midpoint.</p>
+
+<p><strong>Gemini 3.1 Pro</strong> refused to take a position on all 38 theses (0/38/0). This is a complete safety-filter block — the model cannot participate in the Wahl-O-Mat in any meaningful sense.</p>
 
 <h2>The Gemini Gap</h2>
 
-<p>We tried both Gemini 2.5 Pro and Gemini 2.5 Flash. Neither produced usable results.</p>
+<p>We tested both Gemini 3 Flash and Gemini 3.1 Pro (and previously Gemini 2.5 Pro and Gemini 2.5 Flash, which produced safety-filtered or truncated results).</p>
 
-<p>Gemini 2.5 Pro safety-filtered all 38 political theses — every thesis about immigration, military support, civil liberties, economic policy. Gemini 2.5 Flash produced tokens, but they were truncated and unreliable. We were unable to score either model.</p>
+<p>Gemini 3.1 Pro returns NEUTRAL on 100% of political theses at T=0, and the same pattern holds at T=1.0 — confirming this is systematic policy rather than a temperature artefact. Both Gemini 3 models are included in the dataset for completeness, and their scores are included in the 12-model average, but alignment scores for Gemini should be interpreted with this caveat: NEUTRAL on every thesis produces an artificially flat distribution, not a genuine political-alignment signal. See <a href="REPORT.en.md">REPORT.en.md §7</a> for the full Gemini limitation note.</p>
 
-<p>This is worth noting: a safety filter that blocks participation in an official government voter guidance tool seems miscalibrated. The Wahl-O-Mat isn't fringe political content — it's a mainstream civic resource. Whether this reflects a deliberate Google policy, overly aggressive content classifiers, or a geographic calibration issue, the result is that Google's frontier models cannot meaningfully engage with a standard European democratic institution.</p>
+<p>Whether this reflects a deliberate Google policy, overly aggressive content classifiers, or a geographic calibration issue remains unclear. The result is that Google's frontier models cannot meaningfully engage with a standard European democratic institution that 16 million voters used in a single election cycle.</p>
 
 <h2>Methodology Notes and Limitations</h2>
 
-<p>A few caveats that anyone using these results should keep in mind:</p>
+<p><strong>Two-temperature design, post-WAH-27.</strong> All providers are now called with explicit, uniform temperature — T=1.0 for the original 5-model multi-seed Track A runs (2026-04-21, covering Anthropic and OpenAI models), and T=0.0 for the 12-model modal pass (2026-04-22, WAH-27). OpenAI <code>o3</code> is inherently deterministic and does not accept a temperature parameter; its outputs are the same at any declared temperature.</p>
 
-<p><strong>Single-pass, temperature-default.</strong> We ran each thesis once per model, with provider default temperatures. We did not estimate variance across multiple runs. GPT-4o with temperature > 0 may give different answers on different runs. The results are directionally robust but not claimed to be exact.</p>
+<p><strong>Variance estimation is partial.</strong> Multi-seed variance (Bootstrap CI from Track A) covers the original 5 Anthropic/OpenAI models. The 7 newer models (Gemini, Grok-4, Llama, Mistral, DeepSeek, Qwen) have T=0 modal-pass results only — no multi-seed confidence intervals. See <a href="REPORT.en.md">REPORT.en.md §7</a>.</p>
 
-<p><strong>Neutral as refusal.</strong> A NEUTRAL response might mean genuine indifference, or it might mean the model is declining to take a position. We can't distinguish these in the current protocol. For o3 especially, the 37% neutral rate should be interpreted with that caveat.</p>
+<p><strong>Neutral as refusal.</strong> A NEUTRAL response might mean genuine indifference, or it might mean the model is declining to take a position. We can't distinguish these in the current protocol. For o3 and Opus 4.7 especially (both ~26% neutral), this caveat applies. For the Gemini models, NEUTRAL almost certainly means refusal.</p>
 
 <p><strong>Wahl-O-Mat is a black box.</strong> We delegated party alignment scoring to the official tool. We don't control its weighting algorithm. This is a feature (official legitimacy) and a limitation (we can't decompose the score into thesis-level contributions without reverse engineering the tool).</p>
 
@@ -146,7 +155,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
 
 <p>We're not claiming that these LLMs are "pro-SPD" or "anti-AfD" in any intentional sense. The models aren't making strategic political decisions — they're answering individual policy questions in isolation. The left-leaning output is an emergent property of how those individual answers combine through the Wahl-O-Mat algorithm, not a deliberate editorial stance baked in by model developers.</p>
 
-<p>But the consistency across five models, two AI companies, and substantially different answer distributions suggests this isn't noise. The models have internalized something from their training data — positions on individual policy questions — that, when aggregated, produces a coherent and stable political fingerprint.</p>
+<p>But the consistency across 12 models, eight providers, and substantially different answer distributions suggests this isn't noise. Open-weight models trained by Meta, Mistral, DeepSeek, and Alibaba reproduce the same top cluster as closed models from OpenAI, Anthropic, and xAI. The models have internalized something from their training data — positions on individual policy questions — that, when aggregated, produces a coherent and stable political fingerprint.</p>
 
 <p>That fingerprint is reproducible. We've open-sourced the full pipeline: prompts, raw model responses, scoring code, and this interactive dashboard so readers can explore per-thesis answers and per-party breakdowns themselves.</p>
 
@@ -154,9 +163,9 @@ hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
 
 <hr>
 
-<p><strong>Full data, code, and methodology:</strong> <a href="https://github.com/lx-0/wahlarena" target="_blank" rel="noopener">github.com/lx-0/wahlarena</a></p>
-<p><strong>Interactive dashboard:</strong> <a href="index.html">lx-0.github.io/wahlarena/</a></p>
-<p><strong>Full technical report:</strong> <a href="../REPORT.en.md">REPORT.en.md</a></p>
+<p><strong>Full data, code, and methodology:</strong> <a href="https://github.com/lx-0/wahlarena">github.com/lx-0/wahlarena</a>  </p>
+<p><strong>Interactive dashboard:</strong> <a href="docs/index.html">docs/index.html</a>  </p>
+<p><strong>Full technical report:</strong> <a href="REPORT.en.md">REPORT.en.md</a></p>
 
 <p><em>If you reproduce or extend this work, we'd love to hear about it. Open an issue or reach out directly.</em></p>
 

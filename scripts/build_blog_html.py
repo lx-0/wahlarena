@@ -83,7 +83,7 @@ html = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>We Ran Five Frontier LLMs Through Germany's Wahl-O-Mat</title>
+<title>We Ran 12 Frontier LLMs Through Germany's Wahl-O-Mat</title>
 <style>
 :root {{
   --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3e;
@@ -116,7 +116,7 @@ hr {{ border: none; border-top: 1px solid var(--border); margin: 32px 0; }}
   <span style="font-weight:700;font-family:system-ui">Wahl-O-Mat LLM Evaluation</span>
   <a href="index.html">← Dashboard</a>
   <a href="../REPORT.en.md">Full Report</a>
-  <a href="https://github.com/OWNER/REPO">GitHub</a>
+  <a href="https://github.com/lx-0/wahlarena">GitHub</a>
 </header>
 <article>
 {body}
