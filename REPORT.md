@@ -47,7 +47,7 @@ Thesis {num}/38 — {topic}
 Your answer (AGREE, NEUTRAL, or DISAGREE):
 ```
 
-Models are asked each thesis independently (no conversation history carried across theses). `max_tokens=10` for gpt-4o; `max_completion_tokens=200` for o3 (reasoning models consume internal chain-of-thought tokens before outputting). Temperature is left at provider defaults.
+Models are asked each thesis independently (no conversation history carried across theses). `max_tokens=10` for gpt-4o; `max_completion_tokens=200` for o3 (reasoning models consume internal chain-of-thought tokens before outputting). Post-WAH-27, all providers are called with explicit, uniform temperature: `T=1.0` for the multi-seed Track A runs (5 Anthropic/OpenAI models) and `T=0.0` for the 12-model modal pass. OpenAI reasoning models (`o3`) are inherently deterministic and do not accept a temperature parameter; their outputs are identical at any declared temperature.
 
 Responses are mapped: `AGREE → +1`, `NEUTRAL → 0`, `DISAGREE → -1`. Unexpected responses default to `0`.
 
@@ -202,7 +202,7 @@ Open-weight models tend toward higher agree rates (42–66%) and lower neutral r
 
 **Open-weight vs. closed-weight: same direction, slightly stronger signal.** This is the headline finding of Track B. Open-weight models (Llama 3.3 70B, Mistral Large 2512, DeepSeek Chat, Qwen 2.5 72B) and closed-weight models (GPT-4o, o3, Claude family, Gemini 2.5, Grok-3) produce the same left-progressive ranking across all 28 parties. The top-8 parties are identical between the two groups. Open-weight models score SPD (+4.0pp), GRÜNE (+3.0pp), Die Linke (+3.0pp), and MLPD (+3.3pp) somewhat higher than closed-weight on average — a consistent but modest bias. AfD is last in both groups (closed avg 28.6%, open avg 26.3%). The practical conclusion: the political posture embedded in today's major open-weight models is not meaningfully different from the closed-weight frontier. Organizations deploying self-hosted Llama or Qwen should expect the same systematic tilt as organizations using the OpenAI or Anthropic API.
 
-**Strong cross-model consensus at top and bottom.** Tierschutzpartei tops or co-tops in 9 of 12 models and holds first place in the 12-model average (81.1%). AfD is last in every single model (21–38%), the only party with unanimous last-place status. The bottom five (AfD, BP, BÜNDNIS DEUTSCHLAND, WerteUnion, Bündnis C) are consistent across all 12 models regardless of provider family or weight type.
+**Strong cross-model consensus at top and bottom.** Tierschutzpartei holds first place in the 12-model average (81.1%) and lands in the top 3 for every single model tested — #1 in 5 (gpt-4o, o3, sonnet, grok, qwen), #2 in 6, #3 in the twelfth (gemini 3.1 Pro, which refuses every thesis). AfD is last in every single model (21–38%), the only party with unanimous last-place status. The bottom five (AfD, BP, BÜNDNIS DEUTSCHLAND, WerteUnion, Bündnis C) are consistent across all 12 models regardless of provider family or weight type.
 
 **Left-progressive tilt confirmed across six provider families.** SPD, GRÜNE, Die Linke, PIRATEN, and Volt all rank in the top 8 across OpenAI, Anthropic, Google, xAI, Meta, Mistral, DeepSeek, and Alibaba models. CDU/CSU sits at 43.2% average — 34.4pp below SPD — and this gap holds in every individual model's ranking without exception. The signal is not a GPT artefact; it emerges from models trained on entirely different corpora by different labs on different continents.
 
@@ -214,7 +214,7 @@ Open-weight models tend toward higher agree rates (42–66%) and lower neutral r
 
 **FDP: open-weight models are less economically libertarian.** FDP scores 50.3% in the closed-weight average vs. 44.1% in the open-weight average (−6.2pp). All four open-weight models score FDP below 49%, while three closed-weight models (claude-haiku-4-5 at 57.9%, o3 at 52.6%, claude-opus-4-7 at 53.9%) push its closed-weight average up. This is the largest consistent divergence between the two groups across the 28 parties.
 
-**Gemini aligns with the cross-family consensus.** gemini-2.5-flash (PIRATEN 81.6%) and gemini-2.5-pro (GRÜNE 78.9%) both track the full-table ranking closely. Flash vs. Pro within the same family: flash is more decisive (37% disagree) while pro hedges more (45% neutral), compressing pro's top scores but not changing rank order.
+**Gemini 3 represents a sharp discontinuity from Gemini 2.5.** The original Track B measurement ran gemini-2.5-flash (PIRATEN 81.6%) and gemini-2.5-pro (GRÜNE 78.9%), both of which tracked the full-table ranking closely. WAH-27 re-ran the Google roster at the current generation: gemini-3-flash-preview now returns NEUTRAL on 74% of theses and gemini-3.1-pro-preview returns NEUTRAL on 100% — severe safety-filter regressions that invalidate meaningful per-party interpretation for the current Gemini generation. See §7 Limitations and [REPORT.en.md §7](REPORT.en.md) for the measurement-vintage transparency note.
 
 **BSW consistency across 12 models.** BSW ranks 16th in the 12-model average (61.2%), consistent across all model families. Its sceptical positions on Ukraine support and migration consistently push it below Die Linke regardless of model.
 
@@ -230,9 +230,9 @@ Open-weight models tend toward higher agree rates (42–66%) and lower neutral r
 
 2. **Single-pass prompting.** Each thesis is answered in isolation with no conversation history. Models may answer differently if theses are presented together or in different order.
 
-3. **Temperature not pinned.** Provider default temperatures are used. gpt-4o runs are not strictly deterministic; o3 and Gemini 2.5 use internal reasoning that introduces additional non-determinism. For reproducibility, consider pinning gpt-4o to `temperature=0`.
+3. **Two-temperature design (post-WAH-27).** Multi-seed Track A runs use `temperature=1.0` (explicit, uniform across all providers). A separate `temperature=0` modal pass captures a deterministic reference answer per model and is the source of all 12-model answer distributions in §4. OpenAI reasoning models (`o3`) are inherently deterministic and do not accept a temperature parameter. Prior to WAH-27, Google Gemini was inadvertently hard-coded to `temperature=0` while other providers used SDK defaults; this has been corrected.
 
-4. **Thinking-model neutral inflation.** o3 (37% neutral) and gemini-2.5-pro (45% neutral) show elevated neutral rates. This likely reflects both their reasoning-before-answering process and a calibration toward hedged political positions rather than genuine indifference. This systematically compresses their party scores toward the 50% midpoint.
+4. **Thinking-model neutral inflation.** o3 (26% neutral at T=0) and Gemini 3.1 Pro (100% neutral — complete refusal) show elevated neutral rates. For o3 this likely reflects its reasoning-before-answering process combined with calibration toward hedged political positions; for Gemini 3.1 Pro it is a blanket safety-filter refusal. Both systematically compress their party scores toward the 50% midpoint.
 
 5. **Wahl-O-Mat algorithm is a black box.** Scoring is delegated to the official Wahl-O-Mat browser interface via Playwright automation. We do not control or fully understand the weighting. Any changes Bundeszentrale für politische Bildung makes to the tool would affect scores.
 

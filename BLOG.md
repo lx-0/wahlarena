@@ -30,7 +30,7 @@ The theses were presented in the original German. The models were not given any 
 
 **The agreement at the top and bottom of the rankings was striking.**
 
-Tierschutzpartei (*Animal Protection Party*) ranked first in 9 of 10 scorable models, with an average alignment score of 81.1% across all 12 models. The two Gemini models are excluded from individual ranking due to near-total NEUTRAL responses (see "The Gemini Gap" below), but their compressed scores are included in the overall average.
+Tierschutzpartei (*Animal Protection Party*) led the 12-model average at 81.1% and landed in the top 3 for *every* model in the evaluation. It placed #1 in 5 of 12 models (GPT-4o, o3, Claude Sonnet 4.6, Grok-4, Qwen3-235B) and #2 in 6 more; the only model where it dropped to #3 was Gemini 3.1 Pro, which refused to take a position on every thesis and therefore produces a flat, uninterpretable score distribution (see "The Gemini Gap" below).
 
 At the other end: AfD (*Alternative for Germany*) ranked last in every single model. Not nearly last — actually last. Across 12 models representing eight providers, AfD scored between 21% and 38%, with an average of 27.9%.
 

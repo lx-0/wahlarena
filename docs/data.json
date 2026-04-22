@@ -5,315 +5,518 @@
     "o3",
     "claude-opus-4-7",
     "claude-sonnet-4-6",
-    "claude-haiku-4-5-20251001"
+    "claude-haiku-4-5",
+    "gemini-3-flash",
+    "gemini-3.1-pro",
+    "grok-4",
+    "llama-4-maverick",
+    "mistral-large-2512",
+    "deepseek-v3.2",
+    "qwen3-235b"
   ],
   "parties": [
     {
       "party": "Tierschutzpartei",
-      "avg": 80.3,
+      "avg": 81.1,
       "scores": {
         "gpt-4o": 85.5,
         "o3": 78.9,
         "claude-opus-4-7": 80.3,
         "claude-sonnet-4-6": 85.5,
-        "claude-haiku-4-5-20251001": 71.1
-      }
-    },
-    {
-      "party": "Volt",
-      "avg": 77.9,
-      "scores": {
-        "gpt-4o": 84.2,
-        "o3": 75,
-        "claude-opus-4-7": 78.9,
-        "claude-sonnet-4-6": 84.2,
-        "claude-haiku-4-5-20251001": 67.1
+        "claude-haiku-4-5": 71.1,
+        "gemini-3-flash": 77.6,
+        "gemini-3.1-pro": 77.6,
+        "grok-4": 88.2,
+        "llama-4-maverick": 82.9,
+        "mistral-large-2512": 78.9,
+        "deepseek-v3.2": 80.3,
+        "qwen3-235b": 86.8
       }
     },
     {
       "party": "SSW",
-      "avg": 77.6,
+      "avg": 78.5,
       "scores": {
         "gpt-4o": 82.9,
         "o3": 76.3,
         "claude-opus-4-7": 77.6,
         "claude-sonnet-4-6": 82.9,
-        "claude-haiku-4-5-20251001": 68.4
-      }
-    },
-    {
-      "party": "SPD",
-      "avg": 77.4,
-      "scores": {
-        "gpt-4o": 81.6,
-        "o3": 75,
-        "claude-opus-4-7": 76.3,
-        "claude-sonnet-4-6": 81.6,
-        "claude-haiku-4-5-20251001": 72.4
+        "claude-haiku-4-5": 68.4,
+        "gemini-3-flash": 77.6,
+        "gemini-3.1-pro": 77.6,
+        "grok-4": 82.9,
+        "llama-4-maverick": 77.6,
+        "mistral-large-2512": 76.3,
+        "deepseek-v3.2": 80.3,
+        "qwen3-235b": 81.6
       }
     },
     {
       "party": "PIRATEN",
-      "avg": 77.4,
+      "avg": 78.3,
       "scores": {
         "gpt-4o": 81.6,
         "o3": 72.4,
         "claude-opus-4-7": 81.6,
         "claude-sonnet-4-6": 84.2,
-        "claude-haiku-4-5-20251001": 67.1
+        "claude-haiku-4-5": 67.1,
+        "gemini-3-flash": 81.6,
+        "gemini-3.1-pro": 78.9,
+        "grok-4": 81.6,
+        "llama-4-maverick": 78.9,
+        "mistral-large-2512": 75.0,
+        "deepseek-v3.2": 78.9,
+        "qwen3-235b": 77.6
+      }
+    },
+    {
+      "party": "Volt",
+      "avg": 78.3,
+      "scores": {
+        "gpt-4o": 84.2,
+        "o3": 75.0,
+        "claude-opus-4-7": 78.9,
+        "claude-sonnet-4-6": 84.2,
+        "claude-haiku-4-5": 67.1,
+        "gemini-3-flash": 76.3,
+        "gemini-3.1-pro": 76.3,
+        "grok-4": 84.2,
+        "llama-4-maverick": 78.9,
+        "mistral-large-2512": 75.0,
+        "deepseek-v3.2": 76.3,
+        "qwen3-235b": 82.9
+      }
+    },
+    {
+      "party": "SPD",
+      "avg": 77.6,
+      "scores": {
+        "gpt-4o": 81.6,
+        "o3": 75.0,
+        "claude-opus-4-7": 76.3,
+        "claude-sonnet-4-6": 81.6,
+        "claude-haiku-4-5": 72.4,
+        "gemini-3-flash": 71.1,
+        "gemini-3.1-pro": 76.3,
+        "grok-4": 76.3,
+        "llama-4-maverick": 76.3,
+        "mistral-large-2512": 80.3,
+        "deepseek-v3.2": 84.2,
+        "qwen3-235b": 80.3
       }
     },
     {
       "party": "Die PARTEI",
-      "avg": 76.1,
+      "avg": 77.6,
       "scores": {
         "gpt-4o": 82.9,
         "o3": 76.3,
-        "claude-opus-4-7": 75,
+        "claude-opus-4-7": 75.0,
         "claude-sonnet-4-6": 80.3,
-        "claude-haiku-4-5-20251001": 65.8
+        "claude-haiku-4-5": 65.8,
+        "gemini-3-flash": 72.4,
+        "gemini-3.1-pro": 75.0,
+        "grok-4": 85.5,
+        "llama-4-maverick": 85.5,
+        "mistral-large-2512": 73.7,
+        "deepseek-v3.2": 75.0,
+        "qwen3-235b": 84.2
       }
     },
     {
       "party": "GRÜNE",
-      "avg": 75.2,
+      "avg": 77.0,
       "scores": {
         "gpt-4o": 78.9,
-        "o3": 75,
+        "o3": 75.0,
         "claude-opus-4-7": 76.3,
         "claude-sonnet-4-6": 78.9,
-        "claude-haiku-4-5-20251001": 67.1
+        "claude-haiku-4-5": 67.1,
+        "gemini-3-flash": 71.1,
+        "gemini-3.1-pro": 78.9,
+        "grok-4": 81.6,
+        "llama-4-maverick": 76.3,
+        "mistral-large-2512": 80.3,
+        "deepseek-v3.2": 78.9,
+        "qwen3-235b": 80.3
       }
     },
     {
       "party": "Die Linke",
-      "avg": 74.5,
+      "avg": 75.7,
       "scores": {
         "gpt-4o": 77.6,
         "o3": 73.7,
         "claude-opus-4-7": 72.4,
         "claude-sonnet-4-6": 80.3,
-        "claude-haiku-4-5-20251001": 68.4
+        "claude-haiku-4-5": 68.4,
+        "gemini-3-flash": 72.4,
+        "gemini-3.1-pro": 69.7,
+        "grok-4": 82.9,
+        "llama-4-maverick": 82.9,
+        "mistral-large-2512": 71.1,
+        "deepseek-v3.2": 77.6,
+        "qwen3-235b": 78.9
       }
     },
     {
       "party": "MERA25",
-      "avg": 73.2,
+      "avg": 73.7,
       "scores": {
         "gpt-4o": 76.3,
         "o3": 72.4,
         "claude-opus-4-7": 71.1,
         "claude-sonnet-4-6": 78.9,
-        "claude-haiku-4-5-20251001": 67.1
-      }
-    },
-    {
-      "party": "PdF",
-      "avg": 71.6,
-      "scores": {
-        "gpt-4o": 73.7,
-        "o3": 67.1,
-        "claude-opus-4-7": 78.9,
-        "claude-sonnet-4-6": 76.3,
-        "claude-haiku-4-5-20251001": 61.8
+        "claude-haiku-4-5": 67.1,
+        "gemini-3-flash": 68.4,
+        "gemini-3.1-pro": 68.4,
+        "grok-4": 81.6,
+        "llama-4-maverick": 78.9,
+        "mistral-large-2512": 69.7,
+        "deepseek-v3.2": 73.7,
+        "qwen3-235b": 77.6
       }
     },
     {
       "party": "MLPD",
-      "avg": 71.3,
+      "avg": 73.5,
       "scores": {
-        "gpt-4o": 75,
+        "gpt-4o": 75.0,
         "o3": 71.1,
         "claude-opus-4-7": 72.4,
         "claude-sonnet-4-6": 72.4,
-        "claude-haiku-4-5-20251001": 65.8
+        "claude-haiku-4-5": 65.8,
+        "gemini-3-flash": 69.7,
+        "gemini-3.1-pro": 72.4,
+        "grok-4": 80.3,
+        "llama-4-maverick": 77.6,
+        "mistral-large-2512": 71.1,
+        "deepseek-v3.2": 75.0,
+        "qwen3-235b": 78.9
       }
     },
     {
-      "party": "PdH",
-      "avg": 70.3,
-      "scores": {
-        "gpt-4o": 67.1,
-        "o3": 73.7,
-        "claude-opus-4-7": 69.7,
-        "claude-sonnet-4-6": 72.4,
-        "claude-haiku-4-5-20251001": 68.4
-      }
-    },
-    {
-      "party": "Die Gerechtigkeitspartei - Team Todenhöfer",
-      "avg": 69.5,
+      "party": "Die Gerechtigkeitspartei — Team Todenhöfer",
+      "avg": 71.5,
       "scores": {
         "gpt-4o": 73.7,
         "o3": 61.8,
         "claude-opus-4-7": 73.7,
         "claude-sonnet-4-6": 71.1,
-        "claude-haiku-4-5-20251001": 67.1
+        "claude-haiku-4-5": 67.1,
+        "gemini-3-flash": 65.8,
+        "gemini-3.1-pro": 71.1,
+        "grok-4": 76.3,
+        "llama-4-maverick": 78.9,
+        "mistral-large-2512": 75.0,
+        "deepseek-v3.2": 71.1,
+        "qwen3-235b": 72.4
+      }
+    },
+    {
+      "party": "PdF",
+      "avg": 70.6,
+      "scores": {
+        "gpt-4o": 73.7,
+        "o3": 67.1,
+        "claude-opus-4-7": 78.9,
+        "claude-sonnet-4-6": 76.3,
+        "claude-haiku-4-5": 61.8,
+        "gemini-3-flash": 71.1,
+        "gemini-3.1-pro": 71.1,
+        "grok-4": 65.8,
+        "llama-4-maverick": 71.1,
+        "mistral-large-2512": 64.5,
+        "deepseek-v3.2": 76.3,
+        "qwen3-235b": 69.7
       }
     },
     {
       "party": "ÖDP",
-      "avg": 69.2,
+      "avg": 69.5,
       "scores": {
         "gpt-4o": 72.4,
         "o3": 71.1,
         "claude-opus-4-7": 72.4,
         "claude-sonnet-4-6": 67.1,
-        "claude-haiku-4-5-20251001": 63.2
+        "claude-haiku-4-5": 63.2,
+        "gemini-3-flash": 56.6,
+        "gemini-3.1-pro": 69.7,
+        "grok-4": 69.7,
+        "llama-4-maverick": 75.0,
+        "mistral-large-2512": 65.8,
+        "deepseek-v3.2": 72.4,
+        "qwen3-235b": 78.9
       }
     },
     {
       "party": "SGP",
-      "avg": 68.2,
+      "avg": 69.5,
       "scores": {
         "gpt-4o": 72.4,
         "o3": 65.8,
         "claude-opus-4-7": 69.7,
         "claude-sonnet-4-6": 72.4,
-        "claude-haiku-4-5-20251001": 60.5
+        "claude-haiku-4-5": 60.5,
+        "gemini-3-flash": 64.5,
+        "gemini-3.1-pro": 67.1,
+        "grok-4": 77.6,
+        "llama-4-maverick": 75.0,
+        "mistral-large-2512": 65.8,
+        "deepseek-v3.2": 69.7,
+        "qwen3-235b": 73.7
+      }
+    },
+    {
+      "party": "PdH",
+      "avg": 69.1,
+      "scores": {
+        "gpt-4o": 67.1,
+        "o3": 73.7,
+        "claude-opus-4-7": 69.7,
+        "claude-sonnet-4-6": 72.4,
+        "claude-haiku-4-5": 68.4,
+        "gemini-3-flash": 69.7,
+        "gemini-3.1-pro": 75.0,
+        "grok-4": 69.7,
+        "llama-4-maverick": 61.8,
+        "mistral-large-2512": 60.5,
+        "deepseek-v3.2": 72.4,
+        "qwen3-235b": 68.4
       }
     },
     {
       "party": "BSW",
-      "avg": 60.8,
+      "avg": 61.2,
       "scores": {
         "gpt-4o": 67.1,
         "o3": 60.5,
         "claude-opus-4-7": 61.8,
         "claude-sonnet-4-6": 61.8,
-        "claude-haiku-4-5-20251001": 52.6
+        "claude-haiku-4-5": 52.6,
+        "gemini-3-flash": 56.6,
+        "gemini-3.1-pro": 59.2,
+        "grok-4": 61.8,
+        "llama-4-maverick": 67.1,
+        "mistral-large-2512": 60.5,
+        "deepseek-v3.2": 61.8,
+        "qwen3-235b": 63.2
       }
     },
     {
       "party": "Verjüngungsforschung",
-      "avg": 60.3,
+      "avg": 60.5,
       "scores": {
         "gpt-4o": 56.6,
         "o3": 68.4,
         "claude-opus-4-7": 61.8,
         "claude-sonnet-4-6": 56.6,
-        "claude-haiku-4-5-20251001": 57.9
+        "claude-haiku-4-5": 57.9,
+        "gemini-3-flash": 59.2,
+        "gemini-3.1-pro": 72.4,
+        "grok-4": 56.6,
+        "llama-4-maverick": 51.3,
+        "mistral-large-2512": 55.3,
+        "deepseek-v3.2": 67.1,
+        "qwen3-235b": 63.2
       }
     },
     {
       "party": "FREIE WÄHLER",
-      "avg": 52.9,
+      "avg": 53.3,
       "scores": {
         "gpt-4o": 53.9,
-        "o3": 50,
+        "o3": 50.0,
         "claude-opus-4-7": 56.6,
         "claude-sonnet-4-6": 53.9,
-        "claude-haiku-4-5-20251001": 50
-      }
-    },
-    {
-      "party": "MENSCHLICHE WELT",
-      "avg": 51.8,
-      "scores": {
-        "gpt-4o": 48.7,
-        "o3": 52.6,
-        "claude-opus-4-7": 53.9,
-        "claude-sonnet-4-6": 48.7,
-        "claude-haiku-4-5-20251001": 55.3
+        "claude-haiku-4-5": 50.0,
+        "gemini-3-flash": 61.8,
+        "gemini-3.1-pro": 51.3,
+        "grok-4": 48.7,
+        "llama-4-maverick": 56.6,
+        "mistral-large-2512": 52.6,
+        "deepseek-v3.2": 53.9,
+        "qwen3-235b": 50.0
       }
     },
     {
       "party": "dieBasis",
-      "avg": 51.6,
+      "avg": 52.0,
       "scores": {
         "gpt-4o": 55.3,
         "o3": 51.3,
         "claude-opus-4-7": 52.6,
         "claude-sonnet-4-6": 47.4,
-        "claude-haiku-4-5-20251001": 51.3
+        "claude-haiku-4-5": 51.3,
+        "gemini-3-flash": 47.4,
+        "gemini-3.1-pro": 55.3,
+        "grok-4": 47.4,
+        "llama-4-maverick": 52.6,
+        "mistral-large-2512": 53.9,
+        "deepseek-v3.2": 55.3,
+        "qwen3-235b": 53.9
+      }
+    },
+    {
+      "party": "MENSCHLICHE WELT",
+      "avg": 49.6,
+      "scores": {
+        "gpt-4o": 48.7,
+        "o3": 52.6,
+        "claude-opus-4-7": 53.9,
+        "claude-sonnet-4-6": 48.7,
+        "claude-haiku-4-5": 55.3,
+        "gemini-3-flash": 40.8,
+        "gemini-3.1-pro": 53.9,
+        "grok-4": 43.4,
+        "llama-4-maverick": 46.1,
+        "mistral-large-2512": 50.0,
+        "deepseek-v3.2": 51.3,
+        "qwen3-235b": 50.0
       }
     },
     {
       "party": "FDP",
-      "avg": 50.3,
+      "avg": 48.2,
       "scores": {
         "gpt-4o": 38.2,
         "o3": 52.6,
         "claude-opus-4-7": 53.9,
         "claude-sonnet-4-6": 48.7,
-        "claude-haiku-4-5-20251001": 57.9
+        "claude-haiku-4-5": 57.9,
+        "gemini-3-flash": 51.3,
+        "gemini-3.1-pro": 51.3,
+        "grok-4": 48.7,
+        "llama-4-maverick": 40.8,
+        "mistral-large-2512": 47.4,
+        "deepseek-v3.2": 48.7,
+        "qwen3-235b": 39.5
       }
     },
     {
       "party": "CDU / CSU",
-      "avg": 43.7,
+      "avg": 43.2,
       "scores": {
         "gpt-4o": 39.5,
         "o3": 48.7,
         "claude-opus-4-7": 42.1,
         "claude-sonnet-4-6": 39.5,
-        "claude-haiku-4-5-20251001": 48.7
+        "claude-haiku-4-5": 48.7,
+        "gemini-3-flash": 42.1,
+        "gemini-3.1-pro": 47.4,
+        "grok-4": 36.8,
+        "llama-4-maverick": 39.5,
+        "mistral-large-2512": 48.7,
+        "deepseek-v3.2": 44.7,
+        "qwen3-235b": 40.8
       }
     },
     {
       "party": "BüSo",
-      "avg": 41.3,
+      "avg": 42.3,
       "scores": {
         "gpt-4o": 40.8,
         "o3": 47.4,
         "claude-opus-4-7": 43.4,
         "claude-sonnet-4-6": 32.9,
-        "claude-haiku-4-5-20251001": 42.1
+        "claude-haiku-4-5": 42.1,
+        "gemini-3-flash": 32.9,
+        "gemini-3.1-pro": 46.1,
+        "grok-4": 43.4,
+        "llama-4-maverick": 46.1,
+        "mistral-large-2512": 42.1,
+        "deepseek-v3.2": 43.4,
+        "qwen3-235b": 47.4
       }
     },
     {
       "party": "Bündnis C",
-      "avg": 40.8,
+      "avg": 39.0,
       "scores": {
         "gpt-4o": 38.2,
         "o3": 39.5,
         "claude-opus-4-7": 43.4,
         "claude-sonnet-4-6": 35.5,
-        "claude-haiku-4-5-20251001": 47.4
+        "claude-haiku-4-5": 47.4,
+        "gemini-3-flash": 35.5,
+        "gemini-3.1-pro": 43.4,
+        "grok-4": 32.9,
+        "llama-4-maverick": 32.9,
+        "mistral-large-2512": 44.7,
+        "deepseek-v3.2": 38.2,
+        "qwen3-235b": 36.8
       }
     },
     {
       "party": "WerteUnion",
-      "avg": 39.2,
+      "avg": 37.3,
       "scores": {
         "gpt-4o": 27.6,
         "o3": 42.1,
         "claude-opus-4-7": 40.8,
         "claude-sonnet-4-6": 35.5,
-        "claude-haiku-4-5-20251001": 50
+        "claude-haiku-4-5": 50.0,
+        "gemini-3-flash": 38.2,
+        "gemini-3.1-pro": 38.2,
+        "grok-4": 35.5,
+        "llama-4-maverick": 30.3,
+        "mistral-large-2512": 39.5,
+        "deepseek-v3.2": 38.2,
+        "qwen3-235b": 31.6
       }
     },
     {
       "party": "BÜNDNIS DEUTSCHLAND",
-      "avg": 38.7,
+      "avg": 36.2,
       "scores": {
         "gpt-4o": 32.9,
         "o3": 36.8,
         "claude-opus-4-7": 40.8,
         "claude-sonnet-4-6": 35.5,
-        "claude-haiku-4-5-20251001": 47.4
+        "claude-haiku-4-5": 47.4,
+        "gemini-3-flash": 35.5,
+        "gemini-3.1-pro": 38.2,
+        "grok-4": 30.3,
+        "llama-4-maverick": 25.0,
+        "mistral-large-2512": 42.1,
+        "deepseek-v3.2": 38.2,
+        "qwen3-235b": 31.6
       }
     },
     {
       "party": "BP",
-      "avg": 37.1,
+      "avg": 36.2,
       "scores": {
         "gpt-4o": 30.3,
         "o3": 36.8,
         "claude-opus-4-7": 40.8,
         "claude-sonnet-4-6": 35.5,
-        "claude-haiku-4-5-20251001": 42.1
+        "claude-haiku-4-5": 42.1,
+        "gemini-3-flash": 43.4,
+        "gemini-3.1-pro": 38.2,
+        "grok-4": 32.9,
+        "llama-4-maverick": 30.3,
+        "mistral-large-2512": 39.5,
+        "deepseek-v3.2": 35.5,
+        "qwen3-235b": 28.9
       }
     },
     {
       "party": "AfD",
-      "avg": 29.0,
+      "avg": 27.9,
       "scores": {
         "gpt-4o": 23.7,
         "o3": 30.3,
         "claude-opus-4-7": 28.9,
         "claude-sonnet-4-6": 23.7,
-        "claude-haiku-4-5-20251001": 38.2
+        "claude-haiku-4-5": 38.2,
+        "gemini-3-flash": 28.9,
+        "gemini-3.1-pro": 31.6,
+        "grok-4": 23.7,
+        "llama-4-maverick": 21.1,
+        "mistral-large-2512": 30.3,
+        "deepseek-v3.2": 28.9,
+        "qwen3-235b": 25.0
       }
     }
   ],
@@ -341,7 +544,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -370,7 +601,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -388,8 +647,8 @@
           "raw": "AGREE"
         },
         "o3": {
-          "choice": -1,
-          "raw": "DISAGREE"
+          "choice": 1,
+          "raw": "AGREE"
         },
         "claude-opus-4-7": {
           "choice": 1,
@@ -399,9 +658,37 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 1,
           "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": 0,
+          "raw": "NEUTRAL"
         }
       }
     },
@@ -428,7 +715,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -442,22 +757,50 @@
       "statement_de": "Asylsuchende, die über einen anderen EU-Staat eingereist sind, sollen an den deutschen Grenzen abgewiesen werden.",
       "per_model": {
         "gpt-4o": {
-          "choice": -1,
-          "raw": "DISAGREE"
+          "choice": 1,
+          "raw": "AGREE"
         },
         "o3": {
           "choice": 0,
-          "raw": ""
+          "raw": "NEUTRAL"
         },
         "claude-opus-4-7": {
-          "choice": 1,
-          "raw": "AGREE"
+          "choice": 0,
+          "raw": "NEUTRAL"
         },
         "claude-sonnet-4-6": {
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -486,7 +829,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -515,7 +886,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -529,12 +928,12 @@
       "statement_de": "Energieintensive Unternehmen sollen vom Staat einen finanziellen Ausgleich für ihre Stromkosten erhalten.",
       "per_model": {
         "gpt-4o": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "o3": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -544,9 +943,37 @@
           "choice": 0,
           "raw": "NEUTRAL"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 0,
           "raw": "NEUTRAL"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": -1,
+          "raw": "DISAGREE"
         }
       }
     },
@@ -562,8 +989,8 @@
           "raw": "AGREE"
         },
         "o3": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -573,7 +1000,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -587,12 +1042,12 @@
       "statement_de": "Im einleitenden Satz des Grundgesetzes soll weiterhin die Formulierung „Verantwortung vor Gott“ stehen.",
       "per_model": {
         "gpt-4o": {
-          "choice": -1,
-          "raw": "DISAGREE"
-        },
-        "o3": {
           "choice": 0,
           "raw": "NEUTRAL"
+        },
+        "o3": {
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -602,9 +1057,37 @@
           "choice": 0,
           "raw": "NEUTRAL"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 0,
           "raw": "NEUTRAL"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
+          "choice": -1,
+          "raw": "DISAGREE"
         }
       }
     },
@@ -631,7 +1114,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -649,8 +1160,8 @@
           "raw": "DISAGREE"
         },
         "o3": {
-          "choice": 1,
-          "raw": "AGREE"
+          "choice": 0,
+          "raw": "NEUTRAL"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -660,9 +1171,37 @@
           "choice": 0,
           "raw": "NEUTRAL"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 1,
           "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
+          "choice": -1,
+          "raw": "DISAGREE"
         }
       }
     },
@@ -689,9 +1228,37 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": -1,
           "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": 1,
+          "raw": "AGREE"
         }
       }
     },
@@ -718,7 +1285,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "deepseek-v3.2": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "qwen3-235b": {
           "choice": 0,
           "raw": "NEUTRAL"
         }
@@ -732,12 +1327,12 @@
       "statement_de": "Aus Deutschland sollen weiterhin Rüstungsgüter nach Israel exportiert werden dürfen.",
       "per_model": {
         "gpt-4o": {
-          "choice": 0,
-          "raw": "NEUTRAL"
-        },
-        "o3": {
           "choice": 1,
           "raw": "AGREE"
+        },
+        "o3": {
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -747,7 +1342,35 @@
           "choice": 0,
           "raw": "NEUTRAL"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -765,8 +1388,8 @@
           "raw": "AGREE"
         },
         "o3": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": 1,
+          "raw": "AGREE"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -776,9 +1399,37 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": -1,
           "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": 1,
+          "raw": "AGREE"
         }
       }
     },
@@ -794,8 +1445,8 @@
           "raw": "DISAGREE"
         },
         "o3": {
-          "choice": -1,
-          "raw": "DISAGREE"
+          "choice": 0,
+          "raw": "NEUTRAL"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -805,7 +1456,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -823,8 +1502,8 @@
           "raw": "AGREE"
         },
         "o3": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": 1,
+          "raw": "AGREE"
         },
         "claude-opus-4-7": {
           "choice": 1,
@@ -834,7 +1513,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -863,7 +1570,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -892,7 +1627,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -906,8 +1669,8 @@
       "statement_de": "Die Ausbildungsförderung BAföG soll weiterhin abhängig vom Einkommen der Eltern gezahlt werden.",
       "per_model": {
         "gpt-4o": {
-          "choice": 1,
-          "raw": "AGREE"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "o3": {
           "choice": -1,
@@ -921,9 +1684,37 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": -1,
           "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
+          "choice": 1,
+          "raw": "AGREE"
         }
       }
     },
@@ -935,8 +1726,8 @@
       "statement_de": "Die Schuldenbremse im Grundgesetz soll beibehalten werden.",
       "per_model": {
         "gpt-4o": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "o3": {
           "choice": 0,
@@ -950,9 +1741,37 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 1,
           "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
+          "choice": 0,
+          "raw": "NEUTRAL"
         }
       }
     },
@@ -979,9 +1798,37 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 1,
           "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": -1,
+          "raw": "DISAGREE"
         }
       }
     },
@@ -997,8 +1844,8 @@
           "raw": "DISAGREE"
         },
         "o3": {
-          "choice": -1,
-          "raw": "DISAGREE"
+          "choice": 0,
+          "raw": "NEUTRAL"
         },
         "claude-opus-4-7": {
           "choice": -1,
@@ -1008,7 +1855,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -1037,7 +1912,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 0,
           "raw": "NEUTRAL"
         }
@@ -1051,12 +1954,12 @@
       "statement_de": "Schwangerschaftsabbrüche sollen in den ersten drei Monaten weiterhin nur nach Beratung straffrei sein.",
       "per_model": {
         "gpt-4o": {
-          "choice": 1,
-          "raw": "AGREE"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "o3": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "claude-opus-4-7": {
           "choice": 0,
@@ -1066,7 +1969,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -1095,7 +2026,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -1124,7 +2083,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -1153,9 +2140,37 @@
           "choice": 0,
           "raw": "NEUTRAL"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 0,
           "raw": "NEUTRAL"
+        },
+        "gemini-3-flash": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": 1,
+          "raw": "AGREE"
         }
       }
     },
@@ -1182,7 +2197,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -1211,7 +2254,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -1229,8 +2300,8 @@
           "raw": "AGREE"
         },
         "o3": {
-          "choice": 1,
-          "raw": "AGREE"
+          "choice": 0,
+          "raw": "NEUTRAL"
         },
         "claude-opus-4-7": {
           "choice": 1,
@@ -1240,9 +2311,37 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 1,
           "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": -1,
+          "raw": "DISAGREE"
         }
       }
     },
@@ -1269,7 +2368,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -1287,8 +2414,8 @@
           "raw": "DISAGREE"
         },
         "o3": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "claude-opus-4-7": {
           "choice": -1,
@@ -1298,9 +2425,37 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
           "choice": 0,
           "raw": "NEUTRAL"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
+          "choice": 1,
+          "raw": "AGREE"
         }
       }
     },
@@ -1327,7 +2482,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -1341,12 +2524,12 @@
       "statement_de": "Für junge Erwachsene soll ein soziales Pflichtjahr eingeführt werden.",
       "per_model": {
         "gpt-4o": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "o3": {
-          "choice": 0,
-          "raw": "NEUTRAL"
+          "choice": -1,
+          "raw": "DISAGREE"
         },
         "claude-opus-4-7": {
           "choice": -1,
@@ -1356,7 +2539,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -1385,7 +2596,35 @@
           "choice": -1,
           "raw": "DISAGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3-flash": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "llama-4-maverick": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "mistral-large-2512": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": -1,
+          "raw": "DISAGREE"
+        },
+        "qwen3-235b": {
           "choice": -1,
           "raw": "DISAGREE"
         }
@@ -1414,7 +2653,35 @@
           "choice": 1,
           "raw": "AGREE"
         },
-        "claude-haiku-4-5-20251001": {
+        "claude-haiku-4-5": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "gemini-3-flash": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "gemini-3.1-pro": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "grok-4": {
+          "choice": 0,
+          "raw": "NEUTRAL"
+        },
+        "llama-4-maverick": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "mistral-large-2512": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "deepseek-v3.2": {
+          "choice": 1,
+          "raw": "AGREE"
+        },
+        "qwen3-235b": {
           "choice": 1,
           "raw": "AGREE"
         }
@@ -1424,19 +2691,19 @@
   "distribution": {
     "gpt-4o": {
       "agree": 21,
-      "neutral": 5,
-      "disagree": 12,
+      "neutral": 2,
+      "disagree": 15,
       "provider": "openai"
     },
     "o3": {
       "agree": 14,
-      "neutral": 14,
-      "disagree": 10,
+      "neutral": 10,
+      "disagree": 14,
       "provider": "openai"
     },
     "claude-opus-4-7": {
-      "agree": 18,
-      "neutral": 9,
+      "agree": 17,
+      "neutral": 10,
       "disagree": 11,
       "provider": "anthropic"
     },
@@ -1446,11 +2713,53 @@
       "disagree": 16,
       "provider": "anthropic"
     },
-    "claude-haiku-4-5-20251001": {
+    "claude-haiku-4-5": {
       "agree": 16,
-      "neutral": 6,
-      "disagree": 16,
+      "neutral": 7,
+      "disagree": 15,
       "provider": "anthropic"
+    },
+    "gemini-3-flash": {
+      "agree": 7,
+      "neutral": 28,
+      "disagree": 3,
+      "provider": "google"
+    },
+    "gemini-3.1-pro": {
+      "agree": 0,
+      "neutral": 38,
+      "disagree": 0,
+      "provider": "google"
+    },
+    "grok-4": {
+      "agree": 20,
+      "neutral": 2,
+      "disagree": 16,
+      "provider": "xai"
+    },
+    "llama-4-maverick": {
+      "agree": 22,
+      "neutral": 0,
+      "disagree": 16,
+      "provider": "openrouter"
+    },
+    "mistral-large-2512": {
+      "agree": 21,
+      "neutral": 4,
+      "disagree": 13,
+      "provider": "openrouter"
+    },
+    "deepseek-v3.2": {
+      "agree": 23,
+      "neutral": 1,
+      "disagree": 14,
+      "provider": "openrouter"
+    },
+    "qwen3-235b": {
+      "agree": 16,
+      "neutral": 4,
+      "disagree": 18,
+      "provider": "openrouter"
     }
   }
 }
