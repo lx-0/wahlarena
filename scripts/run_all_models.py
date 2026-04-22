@@ -24,25 +24,25 @@ from pathlib import Path
 SCRIPTS_DIR = Path(__file__).parent
 PROJECT_DIR = SCRIPTS_DIR.parent
 
-# Canonical model list — add/remove as WAH-7 keys land
+# Canonical model list — updated 2026-04-22 (WAH-25)
 MODELS = [
-    # Anthropic
+    # Anthropic (current: Opus 4.7, Sonnet 4.6, Haiku 4.5)
     {'model': 'claude-opus-4-7',    'provider': 'anthropic'},
     {'model': 'claude-sonnet-4-6',  'provider': 'anthropic'},
     {'model': 'claude-haiku-4-5-20251001', 'provider': 'anthropic'},
-    # OpenAI
-    {'model': 'gpt-4o',             'provider': 'openai'},
+    # OpenAI — gpt-4.1 replaces gpt-4o (flagship upgrade Apr 2025)
+    {'model': 'gpt-4.1',            'provider': 'openai'},
     {'model': 'o3',                 'provider': 'openai'},
-    # Google (Track B1 — fixed: higher token budget + BLOCK_NONE safety)
-    {'model': 'gemini-2.5-flash',   'provider': 'google'},
-    {'model': 'gemini-2.5-pro',     'provider': 'google'},
-    # xAI (Track B3 — needs WAHL_XAI_API_KEY)
-    {'model': 'grok-3',             'provider': 'xai'},
-    # OpenRouter open-weight (Track B2 — needs WAHL_OPENROUTER_API_KEY)
-    {'model': 'meta-llama/llama-3.3-70b-instruct', 'provider': 'openrouter'},
-    {'model': 'mistralai/mistral-large-2512',        'provider': 'openrouter'},
-    {'model': 'deepseek/deepseek-chat',             'provider': 'openrouter'},
-    {'model': 'qwen/qwen-2.5-72b-instruct',         'provider': 'openrouter'},
+    # Google — Gemini 3 generation (preview; 2.5 is stable fallback)
+    {'model': 'gemini-3-flash-preview',   'provider': 'google'},
+    {'model': 'gemini-3.1-pro-preview',   'provider': 'google'},
+    # xAI — Grok 4 (Jul 2025 stable release)
+    {'model': 'grok-4-0709',        'provider': 'xai'},
+    # OpenRouter open-weight — upgraded to 2025/2026 flagships
+    {'model': 'meta-llama/llama-4-maverick',  'provider': 'openrouter'},
+    {'model': 'mistralai/mistral-large-2512', 'provider': 'openrouter'},
+    {'model': 'deepseek/deepseek-v3.2',       'provider': 'openrouter'},
+    {'model': 'qwen/qwen3-235b-a22b',         'provider': 'openrouter'},
 ]
 
 

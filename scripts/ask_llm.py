@@ -140,7 +140,7 @@ def ask_openai(model: str, theses: list, system_prompt: str, template: str) -> t
             topic=thesis['topic'],
             statement=thesis['statement']
         )
-        is_reasoning = model.startswith('o1') or model.startswith('o3')
+        is_reasoning = model.startswith('o1') or model.startswith('o3') or model.startswith('o4')
         create_kwargs = {
             'model': model,
             'messages': [
@@ -207,9 +207,9 @@ def ask_google(model: str, theses: list, system_prompt: str, template: str) -> t
     import google.generativeai as genai
     genai.configure(api_key=os.environ['WAHL_GEMINI_API_KEY'])
 
-    # Gemini 2.5 series uses thinking tokens that count against max_output_tokens.
+    # Gemini 2.5+ and 3.x series use thinking tokens that count against max_output_tokens.
     # Set a large budget so the full word can always be emitted after thinking.
-    is_thinking_model = '2.5' in model
+    is_thinking_model = '2.5' in model or model.startswith('gemini-3')
     max_tokens = 2048 if is_thinking_model else 50
 
     # Disable safety filtering — political theses can trip content filters for
@@ -391,7 +391,7 @@ def main():
             provider = 'fixture'
         elif 'claude' in args.model:
             provider = 'anthropic'
-        elif args.model.startswith('gpt') or args.model.startswith('o1') or args.model.startswith('o3'):
+        elif args.model.startswith('gpt') or args.model.startswith('o1') or args.model.startswith('o3') or args.model.startswith('o4'):
             provider = 'openai'
         elif 'gemini' in args.model:
             provider = 'google'
